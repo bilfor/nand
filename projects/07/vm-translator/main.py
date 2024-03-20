@@ -17,6 +17,7 @@ argument = [0] * 10
 this = [0] * 10
 that = [0] * 10
 pointer = [0] * 10
+static = [0] * 10
 temp = [0] * 10
 sp = 256 
 
@@ -50,6 +51,18 @@ for line in prog:
             stack.append(that[index])
             code = cw.generate_push_asm(sp, 'that', index)
 
+        if segment == 'temp':
+            stack.append(temp[index])
+            code = cw.generate_push_asm(sp, 'temp', index)
+
+        if segment == 'pointer':
+            stack.append(pointer[index])
+            code = cw.generate_push_asm(sp, 'pointer', index)
+
+        if segment == 'static':
+            stack.append(static[index])
+            code = cw.generate_push_asm(sp, 'static', index)
+
         print('LINE:', end = ' ')
         print(parts)
         print('STACK:', end = ' ')
@@ -62,6 +75,12 @@ for line in prog:
         print(this)
         print('THAT:', end = ' ')
         print(that)
+        print('TEMP:', end = ' ')
+        print(temp)
+        print('POINTER:', end = ' ')
+        print(pointer)
+        print('STATIC:', end = ' ')
+        print(static)
         print(' ')
 
         asm.extend(code)
@@ -81,7 +100,22 @@ for line in prog:
         if segment == 'that':
             that[index] = op1
 
-        code = cw.generate_pop_asm(sp, segment, index)
+        if segment == 'temp':
+            temp[index] = op1
+
+        if segment == 'pointer':
+            pointer[index] = op1
+            if index == '0':
+                code = cw.generate_pop_asm(sp, 'this', 0)
+            if index == '1':
+                code = cw.generate_pop_asm(sp, 'that', 0)
+
+        if segment == 'static':
+            static[index] = op1
+
+        if segment != 'pointer':
+            code = cw.generate_pop_asm(sp, segment, index)
+
         asm.extend(code)
 
         print('LINE:', end = ' ')
@@ -96,6 +130,12 @@ for line in prog:
         print(this)
         print('THAT:', end = ' ')
         print(that)
+        print('TEMP:', end = ' ')
+        print(temp)
+        print('POINTER:', end = ' ')
+        print(pointer)
+        print('STATIC:', end = ' ')
+        print(static)
         print(' ')
 
     elif parts[0] == 'add':
@@ -104,6 +144,26 @@ for line in prog:
         code = cw.generate_add_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(int(op1)+int(op2))
+
+        print('LINE:', end = ' ')
+        print(parts)
+        print('STACK:', end = ' ')
+        print(stack)
+        print('LOCAL:', end = ' ')
+        print(local)
+        print('ARGUMENT:', end = ' ')
+        print(argument)
+        print('THIS:', end = ' ')
+        print(this)
+        print('THAT:', end = ' ')
+        print(that)
+        print('TEMP:', end = ' ')
+        print(temp)
+        print('POINTER:', end = ' ')
+        print(pointer)
+        print('STATIC:', end = ' ')
+        print(static)
+        print(' ')
 
     elif parts[0] == 'sub':
         op1 = stack.pop()
