@@ -105,16 +105,11 @@ for line in prog:
 
         if segment == 'pointer':
             pointer[index] = op1
-            if index == '0':
-                code = cw.generate_pop_asm(sp, 'this', 0)
-            if index == '1':
-                code = cw.generate_pop_asm(sp, 'that', 0)
 
         if segment == 'static':
             static[index] = op1
 
-        if segment != 'pointer':
-            code = cw.generate_pop_asm(sp, segment, index)
+        code = cw.generate_pop_asm(sp, segment, index)
 
         asm.extend(code)
 

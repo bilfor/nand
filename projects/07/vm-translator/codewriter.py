@@ -50,6 +50,14 @@ def generate_pop_asm(sp, segment, index):
       code.append('@R' + str(address))
       code.append('M=D') # top of stack is in r{base+index}
 
+  if segment == 'static':
+      code.append('@SP')
+      code.append('M=M-1')
+      code.append('A=M')
+      code.append('D=M') #top of stack is in D
+      code.append('@' + {filename} + '.' + index)
+      code.append('M=D') # top of stack is in filename.static_counter}
+
   else:
       code.append('@SP')
       code.append('M=M-1')
