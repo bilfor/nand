@@ -8,6 +8,8 @@ import time
 start_time = time.time()
 
 file_path = sys.argv[1]
+file_name = os.path.splitext(os.path.basename(file_path))[0]
+front = file_path[:-3]
 prog = p.load_file(file_path)
 
 asm = ['@256', 'D=A', '@SP', 'M=D']
@@ -61,27 +63,27 @@ for line in prog:
 
         if segment == 'static':
             stack.append(static[index])
-            code = cw.generate_push_asm(sp, 'static', index)
+            code = cw.generate_push_asm(file_name, 'static', index)
 
-        print('LINE:', end = ' ')
-        print(parts)
-        print('STACK:', end = ' ')
-        print(stack)
-        print('LOCAL:', end = ' ')
-        print(local)
-        print('ARGUMENT:', end = ' ')
-        print(argument)
-        print('THIS:', end = ' ')
-        print(this)
-        print('THAT:', end = ' ')
-        print(that)
-        print('TEMP:', end = ' ')
-        print(temp)
-        print('POINTER:', end = ' ')
-        print(pointer)
-        print('STATIC:', end = ' ')
-        print(static)
-        print(' ')
+        #print('LINE:', end = ' ')
+        #print(parts)
+        #print('STACK:', end = ' ')
+        #print(stack)
+        #print('LOCAL:', end = ' ')
+        #print(local)
+        #print('ARGUMENT:', end = ' ')
+        #print(argument)
+        #print('THIS:', end = ' ')
+        #print(this)
+        #print('THAT:', end = ' ')
+        #print(that)
+        #print('TEMP:', end = ' ')
+        #print(temp)
+        #print('POINTER:', end = ' ')
+        #print(pointer)
+        #print('STATIC:', end = ' ')
+        #print(static)
+        #print(' ')
 
         asm.extend(code)
 
@@ -109,29 +111,29 @@ for line in prog:
         if segment == 'static':
             static[index] = op1
 
-        code = cw.generate_pop_asm(sp, segment, index)
+        code = cw.generate_pop_asm(file_name, segment, index)
 
         asm.extend(code)
 
-        print('LINE:', end = ' ')
-        print(parts)
-        print('STACK:', end = ' ')
-        print(stack)
-        print('LOCAL:', end = ' ')
-        print(local)
-        print('ARGUMENT:', end = ' ')
-        print(argument)
-        print('THIS:', end = ' ')
-        print(this)
-        print('THAT:', end = ' ')
-        print(that)
-        print('TEMP:', end = ' ')
-        print(temp)
-        print('POINTER:', end = ' ')
-        print(pointer)
-        print('STATIC:', end = ' ')
-        print(static)
-        print(' ')
+        #print('LINE:', end = ' ')
+        #print(parts)
+        #print('STACK:', end = ' ')
+        #print(stack)
+        #print('LOCAL:', end = ' ')
+        #print(local)
+        #print('ARGUMENT:', end = ' ')
+        #print(argument)
+        #print('THIS:', end = ' ')
+        #print(this)
+        #print('THAT:', end = ' ')
+        #print(that)
+        #print('TEMP:', end = ' ')
+        #print(temp)
+        #print('POINTER:', end = ' ')
+        #print(pointer)
+        #print('STATIC:', end = ' ')
+        #print(static)
+        #print(' ')
 
     elif parts[0] == 'add':
         op1 = stack.pop()
@@ -140,25 +142,25 @@ for line in prog:
         asm.extend(code)
         stack.append(int(op1)+int(op2))
 
-        print('LINE:', end = ' ')
-        print(parts)
-        print('STACK:', end = ' ')
-        print(stack)
-        print('LOCAL:', end = ' ')
-        print(local)
-        print('ARGUMENT:', end = ' ')
-        print(argument)
-        print('THIS:', end = ' ')
-        print(this)
-        print('THAT:', end = ' ')
-        print(that)
-        print('TEMP:', end = ' ')
-        print(temp)
-        print('POINTER:', end = ' ')
-        print(pointer)
-        print('STATIC:', end = ' ')
-        print(static)
-        print(' ')
+        #print('LINE:', end = ' ')
+        #print(parts)
+        #print('STACK:', end = ' ')
+        #print(stack)
+        #print('LOCAL:', end = ' ')
+        #print(local)
+        #print('ARGUMENT:', end = ' ')
+        #print(argument)
+        #print('THIS:', end = ' ')
+        #print(this)
+        #print('THAT:', end = ' ')
+        #print(that)
+        #print('TEMP:', end = ' ')
+        #print(temp)
+        #print('POINTER:', end = ' ')
+        #print(pointer)
+        #print('STATIC:', end = ' ')
+        #print(static)
+        #print(' ')
 
     elif parts[0] == 'sub':
         op1 = stack.pop()
@@ -214,10 +216,11 @@ for line in prog:
         asm.extend(code)
         stack.append(~op1)
 
-front = file_path[:-3]
+print(asm)
+
 out_name = front + '.asm'
 with open(out_name, 'w') as file:
     for line in asm:
         file.write(f"{line}\n") 
 
-print(time.time() - start_time)
+#print(time.time() - start_time)

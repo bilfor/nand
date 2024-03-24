@@ -15,10 +15,10 @@ def switcher(segment):
         'argument': 2,
         'this': 3,
         'that': 4,
-        'static': 16,
         'temp': 5,
         'gpr': 13,
         'pointer': 3,
+        'static': 16,
     }
 
     return switcher.get(segment)

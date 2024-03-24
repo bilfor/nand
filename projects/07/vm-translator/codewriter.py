@@ -15,6 +15,12 @@ def generate_push_asm(sp, segment, index):
         code.append('@' + str(address)) # go to the true address
         code.append('D=M') # load value inside true address into D
 
+    elif segment == 'static':
+        seg_loc = p.switcher(segment) # seg_loc is the base address
+        address = seg_loc + index # address is the true address
+        code.append('@' + sp + '.' + str(index)) # go to the address in symboltable
+        code.append('D=M') # load value inside true address into D
+
     else:
         seg_loc = p.switcher(segment) # seg_loc is the register holding base address
         code.append('@' + str(seg_loc)) # go to seg_loc
@@ -32,8 +38,6 @@ def generate_push_asm(sp, segment, index):
     code.append('@SP')
     code.append('M=M+1')
 
-    sp += 1
-
     return code
 
 def generate_pop_asm(sp, segment, index):
@@ -47,16 +51,17 @@ def generate_pop_asm(sp, segment, index):
       code.append('M=M-1')
       code.append('A=M')
       code.append('D=M') #top of stack is in D
+      print('@R' + str(address))
       code.append('@R' + str(address))
       code.append('M=D') # top of stack is in r{base+index}
 
-  if segment == 'static':
+  elif segment == 'static':
       code.append('@SP')
       code.append('M=M-1')
       code.append('A=M')
       code.append('D=M') #top of stack is in D
-      code.append('@' + {filename} + '.' + index)
-      code.append('M=D') # top of stack is in filename.static_counter}
+      code.append('@' + sp + '.' + str(index))
+      code.append('M=D') # top of stack is in filename.index}
 
   else:
       code.append('@SP')
@@ -79,8 +84,6 @@ def generate_pop_asm(sp, segment, index):
       code.append('A=M') #base + index in A
       code.append('M=D') #top of stack in base + index
     
-  sp -= 1
-
   return code
 
 def generate_add_asm(sp, op1, op2):
