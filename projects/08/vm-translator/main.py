@@ -15,19 +15,21 @@ prog = p.load_file(file_path)
 asm = ['@256', 'D=A', '@SP', 'M=D']
 stack = []
 local = [0] * 10
-argument = [3] * 10
+argument = [0] * 10
 this = [0] * 10
 that = [0] * 10
 pointer = [0] * 10
 static = [0] * 10
 temp = [0] * 10
 sp = 256 
-print(prog)
 for line in prog:
     clean = line.split('/')[0]
     parts = clean.split()
     asm.append('// ' + clean)
-    command = parts[0]
+    if parts == []:
+        continue
+    if len(parts) > 0:
+        command = parts[0]
     if len(parts) > 1:
         segment = parts[1]
     if len(parts) > 2: 
@@ -82,7 +84,6 @@ for line in prog:
         asm.extend(code)
 
     if command == 'pop':
-        print('im poppin off')
         op1 = stack.pop()
         
         if segment == 'local':
@@ -110,62 +111,62 @@ for line in prog:
 
         asm.extend(code)
 
-    if parts[0] == 'add':
+    if command == 'add':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_add_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(int(op1)+int(op2))
 
-    if parts[0] == 'sub':
+    if command == 'sub':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_sub_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(int(op2)-int(op1))
 
-    if parts[0] == 'neg':
+    if command == 'neg':
         op1 = stack.pop()
         code = cw.generate_neg_asm(sp, op1)
         asm.extend(code)
         stack.append(-op1)
 
-    if parts[0] == 'eq':
+    if command == 'eq':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_eq_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(op1==op2)
 
-    if parts[0] == 'lt':
+    if command == 'lt':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_lt_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(op2<op1)
 
-    if parts[0] == 'gt':
+    if command == 'gt':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_gt_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(op2>op1)
 
-    if parts[0] == 'and':
+    if command == 'and':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_and_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(int(op2)&op1)
 
-    if parts[0] == 'or':
+    if command == 'or':
         op1 = stack.pop()
         op2 = stack.pop()
         code = cw.generate_or_asm(sp, op1, op2)
         asm.extend(code)
         stack.append(op2|int(op1))
 
-    if parts[0] == 'not':
+    if command == 'not':
         op1 = stack.pop()
         code = cw.generate_not_asm(sp, op1)
         asm.extend(code)
@@ -190,6 +191,7 @@ for line in prog:
     print('STATIC:', end = ' ')
     print(static)
     print(' ')
+
 print(asm)
 
 out_name = front + '.asm'
