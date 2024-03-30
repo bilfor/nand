@@ -2,6 +2,26 @@ import os
 import sys
 import parser as p
 
+def generate_function_asm(name, lcls):
+    code = [] 
+    code.extend(generate_label_asm(name))
+    for i in range(lcls):
+        code.extend(generate_push_asm('', 'constant', 0))
+        # code.extend(generate_pop_asm('', 'local', i))
+    print(code)
+    return code
+
+def generate_return_asm():
+    code = []
+    code.extend(generate_push_asm('', 'local', 0))
+    code.extend(generate_pop_asm('', 'gpr', 0))
+     
+    code.append('')
+    code.append('A=D')
+    code.append('D=M')
+    code.append('@THAT')
+    code.append('M=D')
+
 def generate_label_asm(segment):
     code = []
     code.append('(' + segment + ')')

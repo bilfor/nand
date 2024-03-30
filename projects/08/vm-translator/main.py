@@ -12,7 +12,8 @@ file_name = os.path.splitext(os.path.basename(file_path))[0]
 front = file_path[:-3]
 prog = p.load_file(file_path)
 
-asm = ['@256', 'D=A', '@SP', 'M=D']
+# asm = ['@256', 'D=A', '@SP', 'M=D']
+asm = []
 stack = []
 local = [0] * 10
 argument = [0] * 10
@@ -34,6 +35,10 @@ for line in prog:
         segment = parts[1]
     if len(parts) > 2: 
         index = int(parts[2])
+
+    if command == 'function':
+        code = cw.generate_function_asm(segment, index)
+        asm.extend(code)
 
     if command == 'label':
         code = cw.generate_label_asm(segment)
