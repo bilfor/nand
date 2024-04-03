@@ -13,15 +13,79 @@ def generate_function_asm(name, lcls):
 
 def generate_return_asm():
     code = []
-    code.extend(generate_push_asm('', 'local', 0))
-    code.extend(generate_pop_asm('', 'gpr', 0))
-     
-    code.append('')
+    # FRAME = LCL // FRAME is a temporary variable
+    code.append('@LCL') # go to the true address
+    code.append('D=M') # load value inside true address into D
+    code.append('@SP')
+    code.append('A=M')
+    code.append('M=D')
+    code.append('@SP')
+    code.append('M=M+1')
+    code.extend(generate_pop_asm('', 'gpr', 2)) # FRAME in R15
+    # RET = *(FRAME-5) // Put the return-address in a temp. var.
+    code.append('@R15')
+    code.append('D=M')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('A=D')
+    code.append('D=M')
+    code.append('@R14')
+    code.append('M=D') # RET in R14
+    # *ARG = pop() // Reposition the return value for the caller
+    code.extend(generate_pop_asm('', 'argument', 0)) #pops return value to arg
+    # SP = ARG+1 // Restore SP of the caller
+    code.append('@ARG')
+    code.append('D=M')
+    code.append('D=D+1')
+    code.append('@SP')
+    code.append('M=D')
+    # THAT = *(FRAME-1) // Restore THAT of the caller
+    code.append('@R15')
+    code.append('D=M')
+    code.append('D=D-1')
     code.append('A=D')
     code.append('D=M')
     code.append('@THAT')
     code.append('M=D')
-
+    # THIS = *(FRAME-2) // Restore THIS of the caller
+    code.append('@R15')
+    code.append('D=M')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('A=D')
+    code.append('D=M')
+    code.append('@THIS')
+    code.append('M=D')
+    # ARG = *(FRAME-3) // Restore ARG of the caller
+    code.append('@R15')
+    code.append('D=M')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('A=D')
+    code.append('D=M')
+    code.append('@ARG')
+    code.append('M=D')
+    # LCL = *(FRAME-4) // Restore LCL of the caller
+    code.append('@R15')
+    code.append('D=M')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('A=D')
+    code.append('D=M')
+    code.append('@LCL')
+    code.append('M=D')
+    # goto RET // Goto return-address (in the caller’s code
+    code.append('@R14')
+    code.append('0;JMP')
+    
+    return code
+     
 def generate_label_asm(segment):
     code = []
     code.append('(' + segment + ')')

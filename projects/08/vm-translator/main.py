@@ -52,6 +52,10 @@ for line in prog:
         code = cw.generate_goto_asm(segment)
         asm.extend(code)
 
+    if command == 'return':
+        code = cw.generate_return_asm()
+        asm.extend(code)
+
     if command == 'push':
 
         if segment == 'constant':
