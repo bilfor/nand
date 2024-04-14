@@ -2,6 +2,43 @@ import os
 import sys
 import parser as p
 
+def generate_call_asm(f, n, ret_addr):
+    code = []
+
+    # push return-address // (Using the label declared below)
+    code.extend(generate_push_asm('', 'constant', ret_addr)) # need to make this string
+    # push LCL // Save LCL of the calling function
+    code.extend(generate_push_asm('', 'local', 0))  
+    # push ARG // Save ARG of the calling function
+    code.extend(generate_push_asm('', 'argument', 0))  
+    # push THIS // Save THIS of the calling function
+    code.extend(generate_push_asm('', 'this', 0))  
+    # push THAT // Save THAT of the calling function
+    code.extend(generate_push_asm('', 'that' ,0))  
+    # ARG = SP-n-5 // Reposition ARG (n = number of args.)
+    code.append('@SP')
+    code.append('D=M')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    code.append('D=D-1')
+    for i in range(n):
+        code.append('D=D-1')
+    code.append('@ARG')
+    code.append('M=D')
+    # LCL = SP // Reposition LCL
+    code.append('@SP')
+    code.append('D=M')
+    code.append('@LCL')
+    code.append('M=D')
+    # goto f // Transfer control
+    code.extend(generate_goto_asm(f))
+    # (return-address) // Declare a label for the return-addres
+    code.extend(generate_label_asm(ret_addr))
+
+    return code
+
 def generate_function_asm(name, lcls):
     code = [] 
     code.extend(generate_label_asm(name))

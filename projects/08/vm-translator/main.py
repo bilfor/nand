@@ -11,8 +11,10 @@ file_path = sys.argv[1]
 file_name = os.path.splitext(os.path.basename(file_path))[0]
 front = file_path[:-3]
 prog = p.load_file(file_path)
+bootstrap = ['call Sys.init 0']
+#prog = bootstrap + prog 
 
-# asm = ['@256', 'D=A', '@SP', 'M=D']
+#asm = ['@256', 'D=A', '@SP', 'M=D']
 asm = []
 stack = []
 local = [0] * 10
@@ -23,7 +25,11 @@ pointer = [0] * 10
 static = [0] * 10
 temp = [0] * 10
 sp = 256 
+
+call_counter = 1
 for line in prog:
+    print(line)
+    print('\n')
     clean = line.split('/')[0]
     parts = clean.split()
     asm.append('// ' + clean)
@@ -35,6 +41,19 @@ for line in prog:
         segment = parts[1]
     if len(parts) > 2: 
         index = int(parts[2])
+
+    if command == 'call':
+        # Xxx.foo$ret.i
+        # Xxx.foo = segment
+        # ret = ret
+        # i = call_counter
+        ret_addr = segment + '$ret.' + str(call_counter)
+        print('ret_addr: ' + ret_addr)
+
+        code = cw.generate_call_asm(segment, index, ret_addr)
+        asm.extend(code)
+
+        call_counter += 1
 
     if command == 'function':
         code = cw.generate_function_asm(segment, index)
@@ -203,7 +222,7 @@ for line in prog:
 
 print(asm)
 
-out_name = front + '.asm'
+out_name = file_path + '.asm'
 with open(out_name, 'w') as file:
     for line in asm:
         file.write(f"{line}\n") 
