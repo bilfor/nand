@@ -7,15 +7,15 @@ import time
 
 start_time = time.time()
 
-file_path = sys.argv[1]
+file_path = os.path.abspath(sys.argv[1])
+dir_name = os.path.basename(file_path)
 file_name = os.path.splitext(os.path.basename(file_path))[0]
 front = file_path[:-3]
 prog = p.load_file(file_path)
 bootstrap = ['call Sys.init 0']
-#prog = bootstrap + prog 
+prog = bootstrap + prog 
 
-#asm = ['@256', 'D=A', '@SP', 'M=D']
-asm = []
+asm = ['@256', 'D=A', '@SP', 'M=D']
 stack = []
 local = [0] * 10
 argument = [0] * 10
@@ -49,6 +49,10 @@ for line in prog:
         # i = call_counter
         ret_addr = segment + '$ret.' + str(call_counter)
         print('ret_addr: ' + ret_addr)
+
+        #
+        #
+        #
 
         code = cw.generate_call_asm(segment, index, ret_addr)
         asm.extend(code)
@@ -222,7 +226,8 @@ for line in prog:
 
 print(asm)
 
-out_name = file_path + '.asm'
+out_name = file_path + '/' + dir_name + '.asm'
+print(out_name)
 with open(out_name, 'w') as file:
     for line in asm:
         file.write(f"{line}\n") 
