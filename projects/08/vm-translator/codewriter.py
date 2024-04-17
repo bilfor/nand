@@ -264,14 +264,44 @@ def generate_neg_asm(sp, op1):
   return code
 
 def generate_eq_asm(sp, op1, op2):
+  ### setup
   code = []
   code.extend(generate_pop_asm(sp, 'gpr', 0)) #first pop to R13
   code.extend(generate_pop_asm(sp, 'gpr', 1)) #second pop to R14
 
-  code.extend(generate_push_asm(sp, 'constant', 0))
-  if op2 == op1:
-      code.extend(generate_push_asm(sp, 'constant', 1))
-      code.extend(generate_sub_asm(sp, op1, op2))
+  code.extend(generate_sub_asm('','','')) # now, difference in on stack
+  code.extend(generate_pop_asm(sp, 'gpr', 0) # difference in R13
+
+  code.append('@R13')
+  code.append('D=M')
+
+  ### check equality and jump
+
+  code.append('@EQUAL') # target equal block
+  code.append('D;JEQ') # jump to equal block if equal
+
+  code.append('@NOT_EQUAL') # target not equal block
+  code.append('0;JMP') # jump to it always if you're here
+
+  ###
+
+  code.append('(EQUAL)')
+  # what to do if they're equal
+
+  code.append('@END_EQ') # target end of equality check
+  code.append('0;JMP')
+
+  ###
+
+  code.append('(NOT_EQUAL)')
+  # what to do if they're not equal
+  
+  code.append('(END_EQ)')
+
+#  code.extend(generate_push_asm(sp, 'constant', 0))
+#  if op2 == op1:
+#      code.extend(generate_push_asm(sp, 'constant', 1))
+#      code.extend(generate_sub_asm(sp, op1, op2))
 
   return code
 
@@ -280,10 +310,12 @@ def generate_lt_asm(sp, op1, op2):
   code.extend(generate_pop_asm(sp, 'gpr', 0)) #first pop to R13
   code.extend(generate_pop_asm(sp, 'gpr', 1)) #second pop to R14
 
-  code.extend(generate_push_asm(sp, 'constant', 0))
-  if op2 < op1:
-      code.extend(generate_push_asm(sp, 'constant', 1))
-      code.extend(generate_sub_asm(sp, op1, op2))
+  code.extend(generate_sub_asm('','','')
+
+#  code.extend(generate_push_asm(sp, 'constant', 0))
+#  if op2 < op1:
+#      code.extend(generate_push_asm(sp, 'constant', 1))
+#      code.extend(generate_sub_asm(sp, op1, op2))
 
   return code
 
