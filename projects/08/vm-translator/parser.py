@@ -23,6 +23,7 @@ def switcher(segment):
         'gpr': 13,
         'pointer': 3,
         'static': 16,
+        'direct': 0
     }
 
     return switcher.get(segment)

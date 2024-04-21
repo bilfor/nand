@@ -2,19 +2,57 @@ import os
 import sys
 import parser as p
 
+def generate_bootstrap_asm():
+    code = []
+    code.extend(['@256', 'D=A', '@SP', 'M=D']) # setting SP to 256
+    code.extend(generate_push_asm('', 'constant', 999))
+    code.extend(generate_pop_asm('', 'direct', 1))
+    code.extend(generate_push_asm('', 'constant', 888))
+    code.extend(generate_pop_asm('', 'direct', 2))
+    code.extend(generate_push_asm('', 'constant', 777))
+    code.extend(generate_pop_asm('', 'direct', 3))
+    code.extend(generate_push_asm('', 'constant', 666))
+    code.extend(generate_pop_asm('', 'direct', 4))
+
+    return code
+
 def generate_call_asm(f, n, ret_addr):
     code = []
 
     # push return-address // (Using the label declared below)
     code.extend(generate_push_asm('', 'constant', ret_addr)) # need to make this string
     # push LCL // Save LCL of the calling function
-    code.extend(generate_push_asm('', 'local', 0))  
+    code.append('@1') # a to desired register
+    code.append('D=M') # load value in register into D
+    code.append('@SP') # a to stack pointer
+    code.append('A=M') # a to top of stack
+    code.append('M=D') # D ( reg val) to top of stack
+    code.append('@SP') # increment stack pointer step 1
+    code.append('M=M+1') # increment stack pointer step 2
     # push ARG // Save ARG of the calling function
-    code.extend(generate_push_asm('', 'argument', 0))  
+    code.append('@2') # a to desired register
+    code.append('D=M') # load value in register into D
+    code.append('@SP') # a to stack pointer
+    code.append('A=M') # a to top of stack
+    code.append('M=D') # D ( reg val) to top of stack
+    code.append('@SP') # increment stack pointer step 1
+    code.append('M=M+1') # increment stack pointer step 2
     # push THIS // Save THIS of the calling function
-    code.extend(generate_push_asm('', 'this', 0))  
+    code.append('@3') # a to desired register
+    code.append('D=M') # load value in register into D
+    code.append('@SP') # a to stack pointer
+    code.append('A=M') # a to top of stack
+    code.append('M=D') # D ( reg val) to top of stack
+    code.append('@SP') # increment stack pointer step 1
+    code.append('M=M+1') # increment stack pointer step 2
     # push THAT // Save THAT of the calling function
-    code.extend(generate_push_asm('', 'that' ,0))  
+    code.append('@4') # a to desired register
+    code.append('D=M') # load value in register into D
+    code.append('@SP') # a to stack pointer
+    code.append('A=M') # a to top of stack
+    code.append('M=D') # D ( reg val) to top of stack
+    code.append('@SP') # increment stack pointer step 1
+    code.append('M=M+1') # increment stack pointer step 2
     # ARG = SP-n-5 // Reposition ARG (n = number of args.)
     code.append('@SP')
     code.append('D=M')
@@ -119,6 +157,7 @@ def generate_return_asm():
     code.append('M=D')
     # goto RET // Goto return-address (in the caller’s code
     code.append('@R14')
+    code.append('A=M')
     code.append('0;JMP')
     
     return code
@@ -203,6 +242,14 @@ def generate_pop_asm(sp, segment, index):
       code.append('@' + sp + '.' + str(index))
       code.append('M=D') # top of stack is in filename.index}
 
+  elif segment == 'direct':
+      code.append('@SP')
+      code.append('M=M-1')
+      code.append('A=M')
+      code.append('D=M') #top of stack is in D
+      code.append('@' + str(index))
+      code.append('M=D')
+
   else:
       code.append('@SP')
       code.append('M=M-1')
@@ -263,71 +310,128 @@ def generate_neg_asm(sp, op1):
 
   return code
 
-def generate_eq_asm(sp, op1, op2):
+def generate_eq_asm(eq_counter):
   ### setup
   code = []
-  code.extend(generate_pop_asm(sp, 'gpr', 0)) #first pop to R13
-  code.extend(generate_pop_asm(sp, 'gpr', 1)) #second pop to R14
+  # code.extend(generate_pop_asm('', 'gpr', 0)) #first pop to R13
+  # code.extend(generate_pop_asm('', 'gpr', 1)) #second pop to R14
 
   code.extend(generate_sub_asm('','','')) # now, difference in on stack
-  code.extend(generate_pop_asm(sp, 'gpr', 0) # difference in R13
+  code.extend(generate_pop_asm('', 'gpr', 0)) # difference in R13
 
   code.append('@R13')
-  code.append('D=M')
+  code.append('D=M') # difference is in D
 
   ### check equality and jump
 
-  code.append('@EQUAL') # target equal block
-  code.append('D;JEQ') # jump to equal block if equal
+  code.append('@EQUAL_' + str(eq_counter)) # target equal block
+  code.append('D;JEQ') # jump to equal block if equal (diff is 0)
 
-  code.append('@NOT_EQUAL') # target not equal block
+  code.append('@NOT_EQUAL_' + str(eq_counter)) # target not equal block
   code.append('0;JMP') # jump to it always if you're here
 
   ###
 
-  code.append('(EQUAL)')
+  code.append('(EQUAL_' + str(eq_counter) + ')') 
   # what to do if they're equal
+  code.extend(generate_true_asm()) # put true on the stack
 
-  code.append('@END_EQ') # target end of equality check
+  code.append('@END_EQ_' + str(eq_counter)) # target end of equality check
   code.append('0;JMP')
 
   ###
 
-  code.append('(NOT_EQUAL)')
+  code.append('(NOT_EQUAL_' + str(eq_counter) + ')')
   # what to do if they're not equal
+  code.extend(generate_push_asm('', 'constant', 0))
   
-  code.append('(END_EQ)')
-
-#  code.extend(generate_push_asm(sp, 'constant', 0))
-#  if op2 == op1:
-#      code.extend(generate_push_asm(sp, 'constant', 1))
-#      code.extend(generate_sub_asm(sp, op1, op2))
+  code.append('(END_EQ_' + str(eq_counter) + ')')
 
   return code
 
-def generate_lt_asm(sp, op1, op2):
+def generate_true_asm():
   code = []
-  code.extend(generate_pop_asm(sp, 'gpr', 0)) #first pop to R13
-  code.extend(generate_pop_asm(sp, 'gpr', 1)) #second pop to R14
-
-  code.extend(generate_sub_asm('','','')
-
-#  code.extend(generate_push_asm(sp, 'constant', 0))
-#  if op2 < op1:
-#      code.extend(generate_push_asm(sp, 'constant', 1))
-#      code.extend(generate_sub_asm(sp, op1, op2))
+  code.extend(generate_push_asm('', 'constant', 0))
+  code.extend(generate_push_asm('', 'constant', 1))
+  code.extend(generate_sub_asm('','',''))
 
   return code
 
-def generate_gt_asm(sp, op1, op2):
+def generate_lt_asm(lt_counter):
+  ### setup
   code = []
-  code.extend(generate_pop_asm(sp, 'gpr', 0)) #first pop to R13
-  code.extend(generate_pop_asm(sp, 'gpr', 1)) #second pop to R14
+  # code.extend(generate_pop_asm('', 'gpr', 0)) #first pop to R13
+  # code.extend(generate_pop_asm('', 'gpr', 1)) #second pop to R14
 
-  code.extend(generate_push_asm(sp, 'constant', 0))
-  if op2 > op1:
-      code.extend(generate_push_asm(sp, 'constant', 1))
-      code.extend(generate_sub_asm(sp, op1, op2))
+  code.extend(generate_sub_asm('','','')) # now, difference in on stack
+  code.extend(generate_pop_asm('', 'gpr', 0)) # difference in R13
+
+  code.append('@R13')
+  code.append('D=M') # difference is in D
+
+  ### check equality and jump
+
+  code.append('@LT_' + str(lt_counter)) # target equal block
+  code.append('D;JLT') # jump to equal block if equal (diff is 0)
+
+  code.append('@NOT_LT_' + str(lt_counter)) # target not equal block
+  code.append('0;JMP') # jump to it always if you're here
+
+  ###
+
+  code.append('(LT_' + str(lt_counter) + ')') 
+  # what to do if they're equal
+  code.extend(generate_true_asm()) # put true on the stack
+
+  code.append('@END_LT_' + str(lt_counter)) # target end of equality check
+  code.append('0;JMP')
+
+  ###
+
+  code.append('(NOT_LT_' + str(lt_counter) + ')')
+  # what to do if they're not equal
+  code.extend(generate_push_asm('', 'constant', 0))
+  
+  code.append('(END_LT_' + str(lt_counter) + ')')
+
+  return code
+
+def generate_gt_asm(gt_counter):
+  ### setup
+  code = []
+  # code.extend(generate_pop_asm('', 'gpr', 0)) #first pop to R13
+  # code.extend(generate_pop_asm('', 'gpr', 1)) #second pop to R14
+
+  code.extend(generate_sub_asm('','','')) # now, difference in on stack
+  code.extend(generate_pop_asm('', 'gpr', 0)) # difference in R13
+
+  code.append('@R13')
+  code.append('D=M') # difference is in D
+
+  ### check equality and jump
+
+  code.append('@GT_' + str(gt_counter)) # target equal block
+  code.append('D;JGT') # jump to equal block if equal (diff is 0)
+
+  code.append('@NOT_GT_' + str(gt_counter)) # target not equal block
+  code.append('0;JMP') # jump to it always if you're here
+
+  ###
+
+  code.append('(GT_' + str(gt_counter) + ')') 
+  # what to do if they're equal
+  code.extend(generate_true_asm()) # put true on the stack
+
+  code.append('@END_GT_' + str(gt_counter)) # target end of equality check
+  code.append('0;JMP')
+
+  ###
+
+  code.append('(NOT_GT_' + str(gt_counter) + ')')
+  # what to do if they're not equal
+  code.extend(generate_push_asm('', 'constant', 0))
+  
+  code.append('(END_GT_' + str(gt_counter) + ')')
 
   return code
 

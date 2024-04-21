@@ -12,10 +12,11 @@ dir_name = os.path.basename(file_path)
 file_name = os.path.splitext(os.path.basename(file_path))[0]
 front = file_path[:-3]
 prog = p.load_file(file_path)
-bootstrap = ['call Sys.init 0']
-prog = bootstrap + prog 
+bootstrap_vm = ['call Sys.init 0']
+prog = bootstrap_vm + prog 
 
-asm = ['@256', 'D=A', '@SP', 'M=D']
+asm = cw.generate_bootstrap_asm()
+# asm = []
 stack = []
 local = [0] * 10
 argument = [0] * 10
@@ -27,6 +28,10 @@ temp = [0] * 10
 sp = 256 
 
 call_counter = 1
+eq_counter = 1
+gt_counter = 1
+lt_counter = 1
+
 for line in prog:
     print(line)
     print('\n')
@@ -116,7 +121,10 @@ for line in prog:
         asm.extend(code)
 
     if command == 'pop':
-        op1 = stack.pop()
+        try:
+            op1 = stack.pop()
+        except IndexError:
+            print('emptypop')
         
         if segment == 'local':
             local[index] = op1
@@ -166,21 +174,24 @@ for line in prog:
     if command == 'eq':
         op1 = stack.pop()
         op2 = stack.pop()
-        code = cw.generate_eq_asm(sp, op1, op2)
+        code = cw.generate_eq_asm(eq_counter)
+        eq_counter += 1
         asm.extend(code)
         stack.append(op1==op2)
 
     if command == 'lt':
         op1 = stack.pop()
         op2 = stack.pop()
-        code = cw.generate_lt_asm(sp, op1, op2)
+        code = cw.generate_lt_asm(lt_counter)
+        lt_counter += 1
         asm.extend(code)
         stack.append(op2<op1)
 
     if command == 'gt':
         op1 = stack.pop()
         op2 = stack.pop()
-        code = cw.generate_gt_asm(sp, op1, op2)
+        code = cw.generate_gt_asm(gt_counter)
+        gt_counter += 1
         asm.extend(code)
         stack.append(op2>op1)
 
