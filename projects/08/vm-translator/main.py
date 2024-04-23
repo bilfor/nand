@@ -31,10 +31,13 @@ call_counter = 1
 eq_counter = 1
 gt_counter = 1
 lt_counter = 1
+cur_file = ''
 
 for line in prog:
     print(line)
     print('\n')
+    if '~' in line:
+       cur_file = line[line.find('~')+1:] 
     clean = line.split('/')[0]
     parts = clean.split()
     asm.append('// ' + clean)
@@ -116,7 +119,7 @@ for line in prog:
 
         if segment == 'static':
             stack.append(static[index])
-            code = cw.generate_push_asm(file_name, 'static', index)
+            code = cw.generate_push_asm(cur_file, 'static', index)
 
         asm.extend(code)
 
@@ -147,7 +150,7 @@ for line in prog:
         if segment == 'static':
             static[index] = op1
 
-        code = cw.generate_pop_asm(file_name, segment, index)
+        code = cw.generate_pop_asm(cur_file, segment, index)
 
         asm.extend(code)
 

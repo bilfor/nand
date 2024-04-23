@@ -106,6 +106,7 @@ M=D
 @Sys.init
 0;JMP
 (Sys.init$ret.1)
+// ~Sys.vm
 // function Sys.init 0
 (Sys.init)
 // push constant 6
@@ -371,6 +372,7 @@ M=D
 // goto END
 @END
 0;JMP
+// ~Class2.vm
 // function Class2.set 0
 (Class2.set)
 // push argument 0
@@ -389,7 +391,7 @@ M=M+1
 M=M-1
 A=M
 D=M
-@StaticsTest.0
+@Class2.vm.0
 M=D
 // push argument 1
 @2
@@ -407,7 +409,7 @@ M=M+1
 M=M-1
 A=M
 D=M
-@StaticsTest.1
+@Class2.vm.1
 M=D
 // push constant 0
 @0
@@ -496,7 +498,7 @@ A=M
 // function Class2.get 0
 (Class2.get)
 // push static 0
-@StaticsTest.0
+@Class2.vm.0
 D=M
 @SP
 A=M
@@ -504,7 +506,7 @@ M=D
 @SP
 M=M+1
 // push static 1
-@StaticsTest.1
+@Class2.vm.1
 D=M
 @SP
 A=M
@@ -611,6 +613,7 @@ M=D
 @R14
 A=M
 0;JMP
+// ~Class1.vm
 // function Class1.set 0
 (Class1.set)
 // push argument 0
@@ -629,7 +632,7 @@ M=M+1
 M=M-1
 A=M
 D=M
-@StaticsTest.0
+@Class1.vm.0
 M=D
 // push argument 1
 @2
@@ -647,7 +650,7 @@ M=M+1
 M=M-1
 A=M
 D=M
-@StaticsTest.1
+@Class1.vm.1
 M=D
 // push constant 0
 @0
@@ -736,7 +739,7 @@ A=M
 // function Class1.get 0
 (Class1.get)
 // push static 0
-@StaticsTest.0
+@Class1.vm.0
 D=M
 @SP
 A=M
@@ -744,7 +747,7 @@ M=D
 @SP
 M=M+1
 // push static 1
-@StaticsTest.1
+@Class1.vm.1
 D=M
 @SP
 A=M

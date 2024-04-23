@@ -6,6 +6,7 @@ def load_file(directory_path):
     files = glob.glob(os.path.join(directory_path, f'*.vm'))
     lines = []
     for file_path in files:
+        lines.append('~' + os.path.basename(file_path))
         with open(file_path, 'r', encoding='utf-8') as file:
             for line in file:
                 if line.strip():
