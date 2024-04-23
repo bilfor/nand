@@ -88,6 +88,10 @@ def generate_function_asm(name, lcls):
 
 def generate_return_asm():
     code = []
+    # we will store FRAME in R15
+    # we will store RET in R14
+    # we will use R13 for movement
+
     # FRAME = LCL // FRAME is a temporary variable
     code.append('@LCL') # go to the true address
     code.append('D=M') # load value inside true address into D
@@ -110,7 +114,22 @@ def generate_return_asm():
     code.append('@R14')
     code.append('M=D') # RET in R14
     # *ARG = pop() // Reposition the return value for the caller
-    code.extend(generate_pop_asm('', 'argument', 0)) #pops return value to arg
+    # go to SP-1
+    code.append('@SP')
+    code.append('A=M')
+    code.append('A=A-1')
+    # store value of SP-1 in D
+    code.append('D=M')
+    # go to reg2 (ARG)
+    code.append('@ARG')
+    # go to value in reg2 (ARG) (somewhere on the stack)
+    code.append('A=M')
+    # put return value in *ARG
+    code.append('M=D')
+    # decrement stack pointer
+    code.append('@SP')
+    code.append('M=M-1')
+    #code.extend(generate_pop_asm('', 'argument', 0)) #pops return value to arg
     # SP = ARG+1 // Restore SP of the caller
     code.append('@ARG')
     code.append('D=M')
