@@ -1,0 +1,58 @@
+class TetrisGame {
+   field int direction;
+   field Piece piece;
+   field int score;
+
+   constructor TetrisGame new() {
+      let piece = Piece.new(0, 32, 30);
+      let score = 0;
+      let direction = 2;
+	    do Output.moveCursor(22,0);
+	    do Output.printString("Score: 0");
+      return this;
+   }
+
+   method void dispose() {
+      do piece.dispose();
+      do Memory.deAlloc(this);
+      return;
+   }
+
+   method void movePiece() {
+      if (direction = 2) { do piece.moveDown(); }
+      if (direction = 3) { do piece.moveLeft(); do piece.moveDown(); }
+      if (direction = 4) { do piece.moveRight(); do piece.moveDown(); }
+      do Sys.wait(10);  // delays the next movement
+      return;
+   }
+
+   /** Runs the game: handles the user's inputs and moves the square accordingly */
+   method void run() {
+      var char key;  // the key currently pressed by the user
+      var boolean exit;
+      let exit = false;
+      
+      while (~exit) {
+         // waits for a key to be pressed
+         do Sys.wait(5);  // delays the next movement
+         let direction = 2;
+         do movePiece();
+         while (key = 0) {
+            let key = Keyboard.keyPressed();
+            do movePiece();
+         }
+         if (key = 81)  { let exit = true; }     // q key
+         if (key = 131) { let direction = 2; }   // up arrow
+         if (key = 133) { let direction = 2; }   // down arrow
+         if (key = 130) { let direction = 3; }   // left arrow
+         if (key = 132) { let direction = 4; }   // right arrow
+
+         // waits for the key to be released
+         while (~(key = 0)) {
+            let key = Keyboard.keyPressed();
+            do movePiece();
+         }
+     } // while
+     return;
+   }
+}
