@@ -9,17 +9,17 @@ def string_tokenize(s):
         if char == '"':
             if inside_quotes:
                 if word:
-                    words_and_chars.append(word)
+                    words_and_chars.append('"' + word + '"')
                     word = ''
                 inside_quotes = False
             else:
                 if word:
-                    words_and_chars.append(word)
+                    words_and_chars.append('"' + word + '"')
                     word = ''
                 inside_quotes = True
         elif inside_quotes:
             word += char
-        elif char.isalpha():
+        elif char.isalnum():
             word += char
         else:
             if word:
@@ -47,7 +47,7 @@ def simple_tokenize(s):
                 words_and_chars.append(char)
     if word:
         words_and_chars.append(word)
-
+    
     return words_and_chars
 
 def merge_entries_with_quotes(lst):
@@ -74,7 +74,7 @@ def merge_entries_with_quotes(lst):
 
 def tokenize(nc_nnl_code):
     simple = string_tokenize(nc_nnl_code) 
-    nw = [item for item in simple if item != "\n"] 
-    nt = [item for item in nw if item != "\t"] 
-    merged = merge_entries_with_quotes(nt)
+    simple_nw = [item for item in simple if item != "\n"] 
+    simple_nw_nt = [item for item in simple_nw if item != "\t"] 
+    merged = merge_entries_with_quotes(simple_nw_nt)
     return merged

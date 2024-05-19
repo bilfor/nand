@@ -6,6 +6,14 @@ import engine as e
 # Specify the directory you want to work with as a cmd line arg
 directory = sys.argv[1]
 
+# keywords
+keywords = ['class', 'constructor', 'function', 'method', 'field', 'static',
+            'var', 'int', 'char', 'boolean', 'void', 'true', 'false', 'null', 
+            'this', 'let', 'do', 'if', 'else', 'while', 'return']
+# symbols
+symbols = ['{', '}', '(', ')', '[', ']', '.', ',', ';', '+', '-', '*', '/', 
+           '&', '|', '<', '>', '=', '~']
+
 def remove_comments(code):
     lines = code.split('\n')
     cleaned_code = []
@@ -48,7 +56,7 @@ for filename in os.listdir(directory):
 
         jack_file_path = os.path.join(directory, filename)
 
-        xml_file_path = os.path.join(directory, filename.replace('.jack', '.xml'))
+        xml_file_path = os.path.join(directory, filename.replace('.jack', 'T.xml'))
         
         with open(jack_file_path, 'r') as jack_file:
             code = jack_file.read()
@@ -62,8 +70,28 @@ for filename in os.listdir(directory):
             # Write arbitrary text to the .xml file
             xml_file.write('<tokens>\n')
             for token in tokens:
-                #xml_file.write(token + '\n')
-                xml_file.write('<>' + token + '</>' + '\n')
+                if token in symbols:
+                    tag = 'symbol'
+                    if token == '<':
+                        token = '&lt;'
+                    if token == '>':
+                        token = '&gt;'
+                    if token == '"':
+                        token = '&quot;'
+                    if token == '&':
+                        token = '&amp;'
+                elif token in keywords:
+                    tag = 'keyword'
+                elif token[0].isdigit():
+                    tag = 'integerConstant'
+                elif '"' in token:
+                    tag = 'stringConstant'
+                    token = token.replace('"', '')
+                else:
+                    tag = 'identifier'
+
+
+                xml_file.write('<' + tag + '>' + token + '</' + tag + '>' + '\n')
             xml_file.write('</tokens>')
 
         print(f'Processed {jack_file_path} and wrote to {xml_file_path}')
