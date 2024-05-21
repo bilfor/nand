@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 import tokenizer as t
 import engine as e
 
@@ -13,6 +14,15 @@ keywords = ['class', 'constructor', 'function', 'method', 'field', 'static',
 # symbols
 symbols = ['{', '}', '(', ')', '[', ']', '.', ',', ';', '+', '-', '*', '/', 
            '&', '|', '<', '>', '=', '~']
+
+def read_file_lines(filename):
+    # Open the file in read mode
+    with open(filename, 'r') as file:
+        # Read all lines from the file
+        lines = file.readlines()
+        # Strip newline characters from each line and create a list
+        lines = [line.strip() for line in lines]
+    return lines
 
 def remove_comments(code):
     lines = code.split('\n')
@@ -90,9 +100,12 @@ for filename in os.listdir(directory):
                 else:
                     tag = 'identifier'
 
-
                 xml_file.write('<' + tag + '>' + token + '</' + tag + '>' + '\n')
             xml_file.write('</tokens>')
 
-        print(f'Processed {jack_file_path} and wrote to {xml_file_path}')
+        print(f'Processed {jack_file_path} and wrote to {xml_file_path}\n\n')
 
+xml = read_file_lines(xml_file_path)
+#print(xml)
+print('Compiling...\n\n')
+e.compile(xml)
