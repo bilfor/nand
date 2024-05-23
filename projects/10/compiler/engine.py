@@ -1,5 +1,6 @@
 import re
-
+import xml.dom.minidom
+####
 def notag(text):
     # Define regex pattern to match text outside <> tags
     pattern = r'(?<=>)([^<]*)(?=<)'
@@ -12,24 +13,20 @@ def notag(text):
 
     return result 
 
-def compile_class(text, index, lst):
+def compile_class(text, index, lst, cpy):
     # insert opening tag @ index
-    lst.insert(index, '<class>\n')
-    # insert closing tag after last instance of }
-    last_element = None
-    for item in reversed(lst):
-        if '}' in item:
-            last_index = len(lst) - index - 1
-            break
-    lst.insert(last_index+1, '</class>\n')
+    cpy.insert(index, '<class>\n')
+    print('compile_class')
+
 # def compile_class_var_dec(cur_loc):
 # def compile_subroutine():
 # def comile_var_dec():
 
-def triage(text, index, lst):
+def triage(text, index, lst, cpy):
     # compile_class
     if text == 'class':
-        compile_class(text, index, lst)
+        print('class detected')
+        compile_class(text, index, lst, cpy)
     # compile_class_var_dec
     #if (text == 'static' or text == 'field'):
         #compile_class_var_dec(text, index, lst)
@@ -41,10 +38,14 @@ def triage(text, index, lst):
         #compile_var_dec(text, index, lst)
   
 def compile(lst):
+    cpy = lst.copy()
     for index, line in enumerate(lst):
-        triage(notag(line), index, lst)
+        #print(f"Index: {index}, Value: {line}")
+        triage(notag(line), index, lst, cpy)
 
-    print(lst)
+    print('\n'.join(cpy))
+
+    return cpy
 
 # def token_type():
 # def content():
