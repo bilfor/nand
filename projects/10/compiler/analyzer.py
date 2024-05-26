@@ -3,29 +3,7 @@ import sys
 import re
 import tokenizer as t
 import engine as e
-import xml.dom.minidom
-
-def pretty_print_xml_elements(xml_elements):
-    """
-    Pretty print a list of XML elements with indentation.
-
-    Args:
-    xml_elements (list of str): List of XML element strings to be formatted and printed.
-    """
-    # Wrap the individual XML elements in a root element
-    wrapped_xml = f"<root>{''.join(xml_elements)}</root>"
-    
-    # Parse the wrapped XML string into a DOM object
-    dom = xml.dom.minidom.parseString(wrapped_xml)
-    
-    # Pretty print the DOM object with tabs for indentation
-    pretty_xml_as_string = dom.toprettyxml(indent="\t")
-    
-    # Remove the added root element and the first line (XML declaration)
-    pretty_xml_body = '\n'.join(pretty_xml_as_string.split('\n')[2:])
-    
-    # Print the formatted XML string
-    print(pretty_xml_body)
+from lxml import etree
 
 # Specify the directory you want to work with as a cmd line arg
 directory = sys.argv[1]
@@ -37,6 +15,26 @@ keywords = ['class', 'constructor', 'function', 'method', 'field', 'static',
 # symbols
 symbols = ['{', '}', '(', ')', '[', ']', '.', ',', ';', '+', '-', '*', '/', 
            '&', '|', '<', '>', '=', '~']
+
+def print_xml_to_file(elements, filename):
+    # Create a new XML document
+    doc = minidom.Document()
+
+    # Create the root element
+    root = doc.createElement("root")
+    doc.appendChild(root)
+
+    # Add each element from the list
+    for element in elements:
+        # Create XML element
+        xml_element = doc.createElement(element)
+
+        # Append it to the root
+        root.appendChild(xml_element)
+
+    # Write the XML to a file with proper indentation
+    with open(filename, "w") as file:
+        file.write(doc.toprettyxml(indent="  "))
 
 def read_file_lines(filename):
     # Open the file in read mode
@@ -128,9 +126,25 @@ for filename in os.listdir(directory):
 
         print(f'Processed {jack_file_path} and wrote to {xml_file_path}\n\n')
 
-xml_tokens = read_file_lines(xml_file_path)
-#print(xml)
-print('Compiling...\n\n')
-compiled_xml_list = e.compile(xml_tokens)
+def pretty_print_xml_to_file(tree, output_filename):
 
-pretty_print_xml_elements(compiled_xml_list)
+    # Get the root element
+    root = tree.getroot()
+    
+    # Indent the XML tree for pretty printing
+    etree.indent(root, space="    ")
+    
+    # Pretty print the root element to a string
+    xml_string = etree.tostring(root, encoding="unicode")
+    
+    # Write the pretty-printed XML to the output file
+    with open(output_filename, "w") as file:
+        file.write(xml_string)
+
+for filename in os.listdir(directory):
+    if filename.endswith('T.xml'):
+        token_file_path = os.path.join(directory, filename)
+        compiled_file_path = os.path.join(directory, filename.replace('T.xml', 'C.xml'))
+        tree = etree.parse(token_file_path)
+        e.compile(tree) 
+        pretty_print_xml_to_file(tree, compiled_file_path)
