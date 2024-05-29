@@ -128,9 +128,10 @@ for filename in os.listdir(directory):
 
 def pretty_print_xml_to_file(tree, output_filename):
 
-    # Get the root element
-    root = tree.getroot()
-    
+    tree_string = ''.join(tree)
+    print(tree_string)
+    root = etree.fromstring(tree_string)
+
     # Indent the XML tree for pretty printing
     etree.indent(root, space="    ")
     
@@ -145,6 +146,7 @@ for filename in os.listdir(directory):
     if filename.endswith('T.xml'):
         token_file_path = os.path.join(directory, filename)
         compiled_file_path = os.path.join(directory, filename.replace('T.xml', 'C.xml'))
-        tree = etree.parse(token_file_path)
+        with open(token_file_path, 'r') as token_file: 
+            tree = token_file.readlines()
         e.compile(tree) 
         pretty_print_xml_to_file(tree, compiled_file_path)
