@@ -25,29 +25,52 @@ def rename_root_element(tree, new_root_tag):
     tree._setroot(new_root)  # Use _setroot() to set the root without triggering validation errors
 
 def find_next(tree, symbol, start):
-    for index, item in enumerate(tree[start:]):
+    index = start
+    for item in tree[start:]:
         if get_text(item) == symbol:
-            return index
+            return index + 1
+        else:
+            index += 1
 
 # def compile_subroutine():
 # def comile_var_dec():
 
 def triage(text, index, tree):
+    insertion = False
+
+    parent = find_one_higher_parent(tree, index)
+    print('PARENT: ' + parent)
+
     # compile_class_var_dec
-    if (text == 'static' or text == 'field'):
-        print('text: ' + text + '\n')
-        print('pre insert index: ' + str(index))
+    if (text == ' static ' or text == ' field '):
         tree.insert(index, '<classVarDec>')
-        print('post insert index: ' + str(index))
-        final_element_index = find_next(tree, ';', index)
-        print('final_element_index: ' + str(final_element_index))
-        tree.insert(final_element_index + 40, '</classVarDec>')
-        
-        return True
+        final_element_index = find_next(tree, ' ; ', index)
+        tree.insert(final_element_index, '</classVarDec>')
+        insertion = 'before'
 
-    else:
-        return False
+    if (text == ' constructor ' or text == ' function ' or text == ' method' ):
+        tree.insert(index, '<subroutineDec>')
+        final_element_index = find_next(tree, ' } ', index)
+        tree.insert(final_element_index, '</subroutineDec>')
+        insertion = 'before'
 
+    if (text == ' ( '):
+        tree.insert(index + 1, '<parameterList>')
+        final_element_index = find_next(tree, ' ) ', index)
+        tree.insert(final_element_index - 1, '</parameterList>')
+        insertion = 'after'
+
+    if (parent == 'subroutineDec' and text == ' { '):
+        tree.insert(index, '<subroutineBody>')
+        final_element_index = find_next(tree, ' } ', index)
+        tree.insert(final_element_index, '</subroutineBody>')
+        insertion = 'before'
+
+    return insertion
+        # print('final_element_index: ' + str(final_element_index))
+        # print('post insert index: ' + str(index))
+        # print('text: ' + text + '\n')
+        # print('pre insert index: ' + str(index))
     # compile_subroutine
     #if text == ('constructor' or text == 'function' or text == 'method'):
         #compile_subroutine(text, index, lst)
@@ -70,17 +93,35 @@ def get_text(input_string):
   
 # def find_closing(symbol, start) 
 
+def replace_first_and_last(lst, x, y):
+    if len(lst) >= 1:
+        lst[0] = x
+    if len(lst) >= 2:
+        lst[-1] = y
+    return lst
+
 def compile(tree):
+    tree = replace_first_and_last(tree, '<class>', '</class>')
+
     index = 0
+    insertion = 'none'
+
     for element in tree:
-        print('\n' + element + '\n')
-
-        text = get_text(element)
-
-        if triage(text, index, tree):
-            index += 2
-        else:
+        if insertion == 'before':
             index += 1
+            insertion = 'none'
+            continue
+        if insertion == 'after':
+            index += 1
+            insertion = 'before'
+            continue
+
+        print(element)
+        # print('\n' + element + '\n')
+        text = get_text(element)
+        insertion = triage(text, index, tree)
+        index += 1
+        print('INDEX: ' + str(index))
 
 # def token_type():
 # def content():

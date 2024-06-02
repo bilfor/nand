@@ -121,7 +121,7 @@ for filename in os.listdir(directory):
                 else:
                     tag = 'identifier'
 
-                xml_file.write('<' + tag + '>' + token + '</' + tag + '>' + '\n')
+                xml_file.write('<' + tag + '> ' + token + ' </' + tag + '>' + '\n')
             xml_file.write('</tokens>')
 
         print(f'Processed {jack_file_path} and wrote to {xml_file_path}\n\n')
@@ -129,11 +129,11 @@ for filename in os.listdir(directory):
 def pretty_print_xml_to_file(tree, output_filename):
 
     tree_string = ''.join(tree)
-    print(tree_string)
+    # print(tree_string)
     root = etree.fromstring(tree_string)
 
     # Indent the XML tree for pretty printing
-    etree.indent(root, space="    ")
+    etree.indent(root, space="  ")
     
     # Pretty print the root element to a string
     xml_string = etree.tostring(root, encoding="unicode")
