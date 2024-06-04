@@ -15,35 +15,45 @@
     <symbol> ( </symbol>
     <parameterList/>
     <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <keyword> var </keyword>
-    <identifier> SquareGame </identifier>
-    <identifier> game </identifier>
-    <symbol> ; </symbol>
-    <keyword> let </keyword>
-    <identifier> game </identifier>
-    <symbol> = </symbol>
-    <identifier> game </identifier>
-    <symbol> ; </symbol>
-    <keyword> do </keyword>
-    <identifier> game </identifier>
-    <symbol> . </symbol>
-    <identifier> run </identifier>
-    <symbol> ( </symbol>
-    <parameterList/>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-    <keyword> do </keyword>
-    <identifier> game </identifier>
-    <symbol> . </symbol>
-    <identifier> dispose </identifier>
-    <symbol> ( </symbol>
-    <parameterList/>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-    <symbol> } </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <keyword> var </keyword>
+      <identifier> SquareGame </identifier>
+      <identifier> game </identifier>
+      <symbol> ; </symbol>
+      <letStatement>
+        <keyword> let </keyword>
+        <identifier> game </identifier>
+        <symbol> = </symbol>
+        <identifier> game </identifier>
+        <symbol> ; </symbol>
+      </letStatement>
+      <doStatement>
+        <keyword> do </keyword>
+        <identifier> game </identifier>
+        <symbol> . </symbol>
+        <identifier> run </identifier>
+        <symbol> ( </symbol>
+        <parameterList/>
+        <symbol> ) </symbol>
+        <symbol> ; </symbol>
+      </doStatement>
+      <doStatement>
+        <keyword> do </keyword>
+        <identifier> game </identifier>
+        <symbol> . </symbol>
+        <identifier> dispose </identifier>
+        <symbol> ( </symbol>
+        <parameterList/>
+        <symbol> ) </symbol>
+        <symbol> ; </symbol>
+      </doStatement>
+      <returnStatement>
+        <keyword> return </keyword>
+        <symbol> ; </symbol>
+      </returnStatement>
+      <symbol> } </symbol>
+    </subroutineBody>
   </subroutineDec>
   <subroutineDec>
     <keyword> function </keyword>
@@ -52,25 +62,31 @@
     <symbol> ( </symbol>
     <parameterList/>
     <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <keyword> var </keyword>
-    <keyword> boolean </keyword>
-    <identifier> b </identifier>
-    <symbol> ; </symbol>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <keyword> var </keyword>
+      <keyword> boolean </keyword>
       <identifier> b </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <symbol> } </symbol>
+      <symbol> ; </symbol>
+      <ifStatement>
+        <keyword> if </keyword>
+        <symbol> ( </symbol>
+        <parameterList>
+          <identifier> b </identifier>
+        </parameterList>
+        <symbol> ) </symbol>
+        <symbol> { </symbol>
+        <symbol> } </symbol>
+      </ifStatement>
+    </subroutineBody>
   </subroutineDec>
   <keyword> else </keyword>
   <symbol> { </symbol>
   <symbol> } </symbol>
-  <keyword> return </keyword>
-  <symbol> ; </symbol>
+  <returnStatement>
+    <keyword> return </keyword>
+    <symbol> ; </symbol>
+  </returnStatement>
   <symbol> } </symbol>
   <symbol> } </symbol>
 </class>

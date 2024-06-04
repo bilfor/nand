@@ -21,21 +21,29 @@
     <symbol> ( </symbol>
     <parameterList/>
     <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <keyword> let </keyword>
-    <identifier> square </identifier>
-    <symbol> = </symbol>
-    <identifier> square </identifier>
-    <symbol> ; </symbol>
-    <keyword> let </keyword>
-    <identifier> direction </identifier>
-    <symbol> = </symbol>
-    <identifier> direction </identifier>
-    <symbol> ; </symbol>
-    <keyword> return </keyword>
-    <identifier> square </identifier>
-    <symbol> ; </symbol>
-    <symbol> } </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <letStatement>
+        <keyword> let </keyword>
+        <identifier> square </identifier>
+        <symbol> = </symbol>
+        <identifier> square </identifier>
+        <symbol> ; </symbol>
+      </letStatement>
+      <letStatement>
+        <keyword> let </keyword>
+        <identifier> direction </identifier>
+        <symbol> = </symbol>
+        <identifier> direction </identifier>
+        <symbol> ; </symbol>
+      </letStatement>
+      <returnStatement>
+        <keyword> return </keyword>
+        <identifier> square </identifier>
+        <symbol> ; </symbol>
+      </returnStatement>
+      <symbol> } </symbol>
+    </subroutineBody>
   </subroutineDec>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -44,26 +52,32 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> dispose </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <keyword> do </keyword>
-  <identifier> Memory </identifier>
-  <symbol> . </symbol>
-  <identifier> deAlloc </identifier>
-  <symbol> ( </symbol>
-  <parameterList>
+  <doStatement>
+    <keyword> do </keyword>
     <identifier> square </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <keyword> return </keyword>
-  <symbol> ; </symbol>
+    <symbol> . </symbol>
+    <identifier> dispose </identifier>
+    <symbol> ( </symbol>
+    <parameterList/>
+    <symbol> ) </symbol>
+    <symbol> ; </symbol>
+  </doStatement>
+  <doStatement>
+    <keyword> do </keyword>
+    <identifier> Memory </identifier>
+    <symbol> . </symbol>
+    <identifier> deAlloc </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> square </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> ; </symbol>
+  </doStatement>
+  <returnStatement>
+    <keyword> return </keyword>
+    <symbol> ; </symbol>
+  </returnStatement>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -72,82 +86,102 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> direction </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> moveUp </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> direction </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> moveDown </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> direction </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> moveLeft </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> direction </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> moveRight </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> do </keyword>
-  <identifier> Sys </identifier>
-  <symbol> . </symbol>
-  <identifier> wait </identifier>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> direction </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <keyword> return </keyword>
-  <symbol> ; </symbol>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> direction </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> moveUp </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> direction </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> moveDown </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> direction </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> moveLeft </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> direction </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> moveRight </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <doStatement>
+    <keyword> do </keyword>
+    <identifier> Sys </identifier>
+    <symbol> . </symbol>
+    <identifier> wait </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> direction </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> ; </symbol>
+  </doStatement>
+  <returnStatement>
+    <keyword> return </keyword>
+    <symbol> ; </symbol>
+  </returnStatement>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -164,156 +198,202 @@
   <keyword> boolean </keyword>
   <identifier> exit </identifier>
   <symbol> ; </symbol>
-  <keyword> let </keyword>
-  <identifier> exit </identifier>
-  <symbol> = </symbol>
-  <identifier> key </identifier>
-  <symbol> ; </symbol>
-  <keyword> while </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
+  <letStatement>
+    <keyword> let </keyword>
     <identifier> exit </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> while </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
+    <symbol> = </symbol>
     <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> key </identifier>
-  <symbol> = </symbol>
-  <identifier> key </identifier>
-  <symbol> ; </symbol>
-  <keyword> do </keyword>
-  <identifier> moveSquare </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
+    <symbol> ; </symbol>
+  </letStatement>
+  <whileStatement>
+    <keyword> while </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> exit </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <whileStatement>
+      <keyword> while </keyword>
+      <symbol> ( </symbol>
+      <parameterList>
+        <identifier> key </identifier>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <letStatement>
+        <keyword> let </keyword>
+        <identifier> key </identifier>
+        <symbol> = </symbol>
+        <identifier> key </identifier>
+        <symbol> ; </symbol>
+      </letStatement>
+      <doStatement>
+        <keyword> do </keyword>
+        <identifier> moveSquare </identifier>
+        <symbol> ( </symbol>
+        <parameterList/>
+        <symbol> ) </symbol>
+        <symbol> ; </symbol>
+      </doStatement>
+      <symbol> } </symbol>
+    </whileStatement>
+  </whileStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> exit </identifier>
+      <symbol> = </symbol>
+      <identifier> exit </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> decSize </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> square </identifier>
+      <symbol> . </symbol>
+      <identifier> incSize </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> direction </identifier>
+      <symbol> = </symbol>
+      <identifier> exit </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> direction </identifier>
+      <symbol> = </symbol>
+      <identifier> key </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> direction </identifier>
+      <symbol> = </symbol>
+      <identifier> square </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <ifStatement>
+    <keyword> if </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> direction </identifier>
+      <symbol> = </symbol>
+      <identifier> direction </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <symbol> } </symbol>
+  </ifStatement>
+  <whileStatement>
+    <keyword> while </keyword>
+    <symbol> ( </symbol>
+    <parameterList>
+      <identifier> key </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <symbol> { </symbol>
+    <letStatement>
+      <keyword> let </keyword>
+      <identifier> key </identifier>
+      <symbol> = </symbol>
+      <identifier> key </identifier>
+      <symbol> ; </symbol>
+    </letStatement>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> moveSquare </identifier>
+      <symbol> ( </symbol>
+      <parameterList/>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <symbol> } </symbol>
+  </whileStatement>
   <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> exit </identifier>
-  <symbol> = </symbol>
-  <identifier> exit </identifier>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> decSize </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> do </keyword>
-  <identifier> square </identifier>
-  <symbol> . </symbol>
-  <identifier> incSize </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> direction </identifier>
-  <symbol> = </symbol>
-  <identifier> exit </identifier>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> direction </identifier>
-  <symbol> = </symbol>
-  <identifier> key </identifier>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> direction </identifier>
-  <symbol> = </symbol>
-  <identifier> square </identifier>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> if </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> direction </identifier>
-  <symbol> = </symbol>
-  <identifier> direction </identifier>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <keyword> while </keyword>
-  <symbol> ( </symbol>
-  <parameterList>
-    <identifier> key </identifier>
-  </parameterList>
-  <symbol> ) </symbol>
-  <symbol> { </symbol>
-  <keyword> let </keyword>
-  <identifier> key </identifier>
-  <symbol> = </symbol>
-  <identifier> key </identifier>
-  <symbol> ; </symbol>
-  <keyword> do </keyword>
-  <identifier> moveSquare </identifier>
-  <symbol> ( </symbol>
-  <parameterList/>
-  <symbol> ) </symbol>
-  <symbol> ; </symbol>
-  <symbol> } </symbol>
-  <symbol> } </symbol>
-  <keyword> return </keyword>
-  <symbol> ; </symbol>
+  <returnStatement>
+    <keyword> return </keyword>
+    <symbol> ; </symbol>
+  </returnStatement>
   <symbol> } </symbol>
   <symbol> } </symbol>
 </class>

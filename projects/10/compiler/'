@@ -36,30 +36,14 @@ def find_next(tree, symbol, start):
 # def comile_var_dec():
 
 def get_parent(tree, index):
-    i = 0
-    stack = []
     for element in tree:
-        if element.count('<') == 1 and element.count('/') == 1:
-            popped = stack.pop()
-            # print('popping: ' + popped)
-        if element.count('<') == 1 and element.count('/') == 0:
-            stack.append(element)
-            # print('appending: ' + element)
-        if index == i:
-            if stack:
-                # print(stack[-1])
-                return stack.pop()
-            else:
-                return 'class'
-
-        i += 1
+        if 
 
 def triage(text, index, tree):
-    insertion = 'none' 
+    insertion = False
 
-    parent = get_parent(tree, index)
-    print('PARENT: ' + str(parent))
-
+    parent = find_one_higher_parent(tree, index)
+    print('PARENT: ' + parent)
 
     # compile_class_var_dec
     if (text == ' static ' or text == ' field '):
@@ -80,40 +64,10 @@ def triage(text, index, tree):
         tree.insert(final_element_index - 1, '</parameterList>')
         insertion = 'after'
 
-    if (parent == '<subroutineDec>' and text == ' { '):
+    if (parent == 'subroutineDec' and text == ' { '):
         tree.insert(index, '<subroutineBody>')
         final_element_index = find_next(tree, ' } ', index)
         tree.insert(final_element_index, '</subroutineBody>')
-        insertion = 'before'
-
-    if (text == ' let '):
-        tree.insert(index, '<letStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</letStatement>')
-        insertion = 'before'
-
-    if (text == ' do '):
-        tree.insert(index, '<doStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</doStatement>')
-        insertion = 'before'
-
-    if (text == ' return '):
-        tree.insert(index, '<returnStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</returnStatement>')
-        insertion = 'before'
-
-    if (text == ' if '):
-        tree.insert(index, '<ifStatement>')
-        final_element_index = find_next(tree, ' } ', index)
-        tree.insert(final_element_index, '</ifStatement>')
-        insertion = 'before'
-
-    if (text == ' while '):
-        tree.insert(index, '<whileStatement>')
-        final_element_index = find_next(tree, ' } ', index)
-        tree.insert(final_element_index, '</whileStatement>')
         insertion = 'before'
 
     return insertion
@@ -143,14 +97,6 @@ def get_text(input_string):
   
 # def find_closing(symbol, start) 
 
-def group_lets(tree):
-    index = 0
-    statements = ['letStatement', 'ifStatement', 'doStatement', 'returnStatement', 'whileStatement']
-
-    for element in tree:
-        text = get_text(element)
-        if text 
-
 def replace_first_and_last(lst, x, y):
     if len(lst) >= 1:
         lst[0] = x
@@ -174,15 +120,12 @@ def compile(tree):
             insertion = 'before'
             continue
 
-        #print(element)
+        print(element)
         # print('\n' + element + '\n')
         text = get_text(element)
         insertion = triage(text, index, tree)
         index += 1
-        # print('INDEX: ' + str(index))
-        # print('ELEMENT: ' + str(element))
-
-    group_lets(tree)
+        print('INDEX: ' + str(index))
 
 # def token_type():
 # def content():
