@@ -34,40 +34,42 @@
     <symbol> ) </symbol>
     <subroutineBody>
       <symbol> { </symbol>
-      <letStatement>
-        <keyword> let </keyword>
-        <identifier> x </identifier>
-        <symbol> = </symbol>
-        <identifier> Ax </identifier>
-        <symbol> ; </symbol>
-      </letStatement>
-      <letStatement>
-        <keyword> let </keyword>
-        <identifier> y </identifier>
-        <symbol> = </symbol>
-        <identifier> Ay </identifier>
-        <symbol> ; </symbol>
-      </letStatement>
-      <letStatement>
-        <keyword> let </keyword>
-        <identifier> size </identifier>
-        <symbol> = </symbol>
-        <identifier> Asize </identifier>
-        <symbol> ; </symbol>
-      </letStatement>
-      <doStatement>
-        <keyword> do </keyword>
-        <identifier> draw </identifier>
-        <symbol> ( </symbol>
-        <parameterList/>
-        <symbol> ) </symbol>
-        <symbol> ; </symbol>
-      </doStatement>
-      <returnStatement>
-        <keyword> return </keyword>
-        <identifier> x </identifier>
-        <symbol> ; </symbol>
-      </returnStatement>
+      <statements>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> x </identifier>
+          <symbol> = </symbol>
+          <identifier> Ax </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> y </identifier>
+          <symbol> = </symbol>
+          <identifier> Ay </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> size </identifier>
+          <symbol> = </symbol>
+          <identifier> Asize </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> draw </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <identifier> x </identifier>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
       <symbol> } </symbol>
     </subroutineBody>
   </subroutineDec>
@@ -78,22 +80,24 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <doStatement>
-    <keyword> do </keyword>
-    <identifier> Memory </identifier>
-    <symbol> . </symbol>
-    <identifier> deAlloc </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <keyword> this </keyword>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-  </doStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+  <statements>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> Memory </identifier>
+      <symbol> . </symbol>
+      <identifier> deAlloc </identifier>
+      <symbol> ( </symbol>
+      <parameterList>
+        <keyword> this </keyword>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <returnStatement>
+      <keyword> return </keyword>
+      <symbol> ; </symbol>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -102,40 +106,42 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <doStatement>
-    <keyword> do </keyword>
-    <identifier> Screen </identifier>
-    <symbol> . </symbol>
-    <identifier> setColor </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-  </doStatement>
-  <doStatement>
-    <keyword> do </keyword>
-    <identifier> Screen </identifier>
-    <symbol> . </symbol>
-    <identifier> drawRectangle </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-      <symbol> , </symbol>
-      <identifier> y </identifier>
-      <symbol> , </symbol>
-      <identifier> x </identifier>
-      <symbol> , </symbol>
-      <identifier> y </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-  </doStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+  <statements>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> Screen </identifier>
+      <symbol> . </symbol>
+      <identifier> setColor </identifier>
+      <symbol> ( </symbol>
+      <parameterList>
+        <identifier> x </identifier>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> Screen </identifier>
+      <symbol> . </symbol>
+      <identifier> drawRectangle </identifier>
+      <symbol> ( </symbol>
+      <parameterList>
+        <identifier> x </identifier>
+        <symbol> , </symbol>
+        <identifier> y </identifier>
+        <symbol> , </symbol>
+        <identifier> x </identifier>
+        <symbol> , </symbol>
+        <identifier> y </identifier>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <returnStatement>
+      <keyword> return </keyword>
+      <symbol> ; </symbol>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -144,40 +150,42 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <doStatement>
-    <keyword> do </keyword>
-    <identifier> Screen </identifier>
-    <symbol> . </symbol>
-    <identifier> setColor </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-  </doStatement>
-  <doStatement>
-    <keyword> do </keyword>
-    <identifier> Screen </identifier>
-    <symbol> . </symbol>
-    <identifier> drawRectangle </identifier>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-      <symbol> , </symbol>
-      <identifier> y </identifier>
-      <symbol> , </symbol>
-      <identifier> x </identifier>
-      <symbol> , </symbol>
-      <identifier> y </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> ; </symbol>
-  </doStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+  <statements>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> Screen </identifier>
+      <symbol> . </symbol>
+      <identifier> setColor </identifier>
+      <symbol> ( </symbol>
+      <parameterList>
+        <identifier> x </identifier>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <doStatement>
+      <keyword> do </keyword>
+      <identifier> Screen </identifier>
+      <symbol> . </symbol>
+      <identifier> drawRectangle </identifier>
+      <symbol> ( </symbol>
+      <parameterList>
+        <identifier> x </identifier>
+        <symbol> , </symbol>
+        <identifier> y </identifier>
+        <symbol> , </symbol>
+        <identifier> x </identifier>
+        <symbol> , </symbol>
+        <identifier> y </identifier>
+      </parameterList>
+      <symbol> ) </symbol>
+      <symbol> ; </symbol>
+    </doStatement>
+    <returnStatement>
+      <keyword> return </keyword>
+      <symbol> ; </symbol>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -186,43 +194,47 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> erase </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
-      <parameterList/>
+      <parameterList>
+        <identifier> x </identifier>
+      </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> erase </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> size </identifier>
+          <symbol> = </symbol>
+          <identifier> size </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> draw </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> size </identifier>
-      <symbol> = </symbol>
-      <identifier> size </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> draw </identifier>
-      <symbol> ( </symbol>
-      <parameterList/>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -231,43 +243,47 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> size </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> erase </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
-      <parameterList/>
+      <parameterList>
+        <identifier> size </identifier>
+      </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> erase </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> size </identifier>
+          <symbol> = </symbol>
+          <identifier> size </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> draw </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> size </identifier>
-      <symbol> = </symbol>
-      <identifier> size </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> draw </identifier>
-      <symbol> ( </symbol>
-      <parameterList/>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -276,87 +292,91 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> y </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
       <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
         <identifier> y </identifier>
       </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> y </identifier>
+          <symbol> = </symbol>
+          <identifier> y </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> y </identifier>
-      <symbol> = </symbol>
-      <identifier> y </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -365,87 +385,91 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> y </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
       <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
         <identifier> y </identifier>
       </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> y </identifier>
+          <symbol> = </symbol>
+          <identifier> y </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> y </identifier>
-      <symbol> = </symbol>
-      <identifier> y </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -454,87 +478,91 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
       <parameterList>
         <identifier> x </identifier>
       </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> x </identifier>
+          <symbol> = </symbol>
+          <identifier> x </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> x </identifier>
-      <symbol> = </symbol>
-      <identifier> x </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <keyword> method </keyword>
   <keyword> void </keyword>
@@ -543,87 +571,91 @@
   <parameterList/>
   <symbol> ) </symbol>
   <symbol> { </symbol>
-  <ifStatement>
-    <keyword> if </keyword>
-    <symbol> ( </symbol>
-    <parameterList>
-      <identifier> x </identifier>
-    </parameterList>
-    <symbol> ) </symbol>
-    <symbol> { </symbol>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
+  <statements>
+    <ifStatement>
+      <keyword> if </keyword>
       <symbol> ( </symbol>
       <parameterList>
         <identifier> x </identifier>
       </parameterList>
       <symbol> ) </symbol>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> x </identifier>
+          <symbol> = </symbol>
+          <identifier> x </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> setColor </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> Screen </identifier>
+          <symbol> . </symbol>
+          <identifier> drawRectangle </identifier>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+            <symbol> , </symbol>
+            <identifier> x </identifier>
+            <symbol> , </symbol>
+            <identifier> y </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+      </statements>
+      <symbol> } </symbol>
+    </ifStatement>
+    <returnStatement>
+      <keyword> return </keyword>
       <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <letStatement>
-      <keyword> let </keyword>
-      <identifier> x </identifier>
-      <symbol> = </symbol>
-      <identifier> x </identifier>
-      <symbol> ; </symbol>
-    </letStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> setColor </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <doStatement>
-      <keyword> do </keyword>
-      <identifier> Screen </identifier>
-      <symbol> . </symbol>
-      <identifier> drawRectangle </identifier>
-      <symbol> ( </symbol>
-      <parameterList>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-        <symbol> , </symbol>
-        <identifier> x </identifier>
-        <symbol> , </symbol>
-        <identifier> y </identifier>
-      </parameterList>
-      <symbol> ) </symbol>
-      <symbol> ; </symbol>
-    </doStatement>
-    <symbol> } </symbol>
-  </ifStatement>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <symbol> } </symbol>
 </class>

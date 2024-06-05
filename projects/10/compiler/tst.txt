@@ -1,0 +1,8542 @@
+Processed ../ExpressionLessSquare/Main.jack and wrote to ../ExpressionLessSquare/MainT.xml
+
+
+Processed ../ExpressionLessSquare/Square.jack and wrote to ../ExpressionLessSquare/SquareT.xml
+
+
+Processed ../ExpressionLessSquare/SquareGame.jack and wrote to ../ExpressionLessSquare/SquareGameT.xml
+
+
+
+
+ELEMENT: <class>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> class </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> field </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> field </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> constructor </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> new </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Ax </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Ay </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Asize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Ax </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Ay </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Asize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> draw </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> dispose </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Memory </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> deAlloc </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> this </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> draw </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> erase </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> incSize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> erase </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> draw </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> decSize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> erase </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> size </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> draw </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveUp </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveDown </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveLeft </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveRight </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> setColor </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Screen </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> drawRectangle </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> x </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> , </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> y </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </class>
+OPENING: False
+CLOSING: False
+<class>
+<keyword> class </keyword>
+
+<identifier> Square </identifier>
+
+<symbol> { </symbol>
+
+<classVarDec>
+<keyword> field </keyword>
+
+<keyword> int </keyword>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> ; </symbol>
+
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+
+<keyword> int </keyword>
+
+<identifier> size </identifier>
+
+<symbol> ; </symbol>
+
+</classVarDec>
+<subroutineDec>
+<keyword> constructor </keyword>
+
+<identifier> Square </identifier>
+
+<identifier> new </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<keyword> int </keyword>
+
+<identifier> Ax </identifier>
+
+<symbol> , </symbol>
+
+<keyword> int </keyword>
+
+<identifier> Ay </identifier>
+
+<symbol> , </symbol>
+
+<keyword> int </keyword>
+
+<identifier> Asize </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<subroutineBody>
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> x </identifier>
+
+<symbol> = </symbol>
+
+<identifier> Ax </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> y </identifier>
+
+<symbol> = </symbol>
+
+<identifier> Ay </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> size </identifier>
+
+<symbol> = </symbol>
+
+<identifier> Asize </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> draw </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<identifier> x </identifier>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+</subroutineBody>
+</subroutineDec>
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> dispose </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Memory </identifier>
+
+<symbol> . </symbol>
+
+<identifier> deAlloc </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<keyword> this </keyword>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> draw </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> erase </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> incSize </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> erase </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> size </identifier>
+
+<symbol> = </symbol>
+
+<identifier> size </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> draw </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> decSize </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> size </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> erase </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> size </identifier>
+
+<symbol> = </symbol>
+
+<identifier> size </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> draw </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> moveUp </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> y </identifier>
+
+<symbol> = </symbol>
+
+<identifier> y </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> moveDown </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> y </identifier>
+
+<symbol> = </symbol>
+
+<identifier> y </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> moveLeft </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> x </identifier>
+
+<symbol> = </symbol>
+
+<identifier> x </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> moveRight </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> x </identifier>
+
+<symbol> = </symbol>
+
+<identifier> x </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> setColor </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Screen </identifier>
+
+<symbol> . </symbol>
+
+<identifier> drawRectangle </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+<symbol> , </symbol>
+
+<identifier> x </identifier>
+
+<symbol> , </symbol>
+
+<identifier> y </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<symbol> } </symbol>
+
+</class>
+
+
+ELEMENT: <class>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> class </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Main </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> static </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> boolean </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> test </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> function </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> main </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> var </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> SquareGame </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> game </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> game </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> game </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> game </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> run </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> game </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> dispose </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> function </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> more </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> var </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> boolean </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> b </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> b </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: </subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> else </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </class>
+OPENING: False
+CLOSING: False
+<class>
+<keyword> class </keyword>
+
+<identifier> Main </identifier>
+
+<symbol> { </symbol>
+
+<classVarDec>
+<keyword> static </keyword>
+
+<keyword> boolean </keyword>
+
+<identifier> test </identifier>
+
+<symbol> ; </symbol>
+
+</classVarDec>
+<subroutineDec>
+<keyword> function </keyword>
+
+<keyword> void </keyword>
+
+<identifier> main </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<subroutineBody>
+<symbol> { </symbol>
+
+<keyword> var </keyword>
+
+<identifier> SquareGame </identifier>
+
+<identifier> game </identifier>
+
+<symbol> ; </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> game </identifier>
+
+<symbol> = </symbol>
+
+<identifier> game </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> game </identifier>
+
+<symbol> . </symbol>
+
+<identifier> run </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> game </identifier>
+
+<symbol> . </symbol>
+
+<identifier> dispose </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
+<keyword> function </keyword>
+
+<keyword> void </keyword>
+
+<identifier> more </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<subroutineBody>
+<symbol> { </symbol>
+
+<keyword> var </keyword>
+
+<keyword> boolean </keyword>
+
+<identifier> b </identifier>
+
+<symbol> ; </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> b </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<symbol> } </symbol>
+
+</ifStatement>
+</statements>
+</subroutineBody>
+</subroutineDec>
+<keyword> else </keyword>
+
+<symbol> { </symbol>
+
+<symbol> } </symbol>
+
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<symbol> } </symbol>
+
+</class>
+
+
+ELEMENT: <class>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> class </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> SquareGame </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> field </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> field </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> int </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </classVarDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> constructor </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> SquareGame </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> new </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineBody>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </subroutineDec>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> dispose </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> dispose </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Memory </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> deAlloc </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveSquare </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveUp </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveDown </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveLeft </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveRight </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> Sys </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> wait </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> method </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> void </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> run </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> var </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> char </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> var </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <keyword> boolean </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <whileStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> while </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <whileStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> while </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveSquare </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </whileStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: </whileStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> decSize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> . </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> incSize </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> exit </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> square </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <ifStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> if </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> direction </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </ifStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <whileStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> while </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> { </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <letStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> let </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> = </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> key </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </letStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <doStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> do </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <identifier> moveSquare </identifier>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ( </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </parameterList>
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ) </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </doStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </whileStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <returnStatement>
+OPENING: True
+CLOSING: False
+
+
+ELEMENT: <keyword> return </keyword>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> ; </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </returnStatement>
+OPENING: False
+CLOSING: True
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: <symbol> } </symbol>
+
+OPENING: False
+CLOSING: False
+
+
+ELEMENT: </class>
+OPENING: False
+CLOSING: False
+<class>
+<keyword> class </keyword>
+
+<identifier> SquareGame </identifier>
+
+<symbol> { </symbol>
+
+<classVarDec>
+<keyword> field </keyword>
+
+<identifier> Square </identifier>
+
+<identifier> square </identifier>
+
+<symbol> ; </symbol>
+
+</classVarDec>
+<classVarDec>
+<keyword> field </keyword>
+
+<keyword> int </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> ; </symbol>
+
+</classVarDec>
+<subroutineDec>
+<keyword> constructor </keyword>
+
+<identifier> SquareGame </identifier>
+
+<identifier> new </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<subroutineBody>
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> square </identifier>
+
+<symbol> = </symbol>
+
+<identifier> square </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> = </symbol>
+
+<identifier> direction </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<identifier> square </identifier>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+</subroutineBody>
+</subroutineDec>
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> dispose </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> dispose </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Memory </identifier>
+
+<symbol> . </symbol>
+
+<identifier> deAlloc </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> square </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> moveSquare </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> direction </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> moveUp </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> direction </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> moveDown </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> direction </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> moveLeft </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> direction </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> moveRight </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> Sys </identifier>
+
+<symbol> . </symbol>
+
+<identifier> wait </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> direction </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<keyword> method </keyword>
+
+<keyword> void </keyword>
+
+<identifier> run </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<keyword> var </keyword>
+
+<keyword> char </keyword>
+
+<identifier> key </identifier>
+
+<symbol> ; </symbol>
+
+<keyword> var </keyword>
+
+<keyword> boolean </keyword>
+
+<identifier> exit </identifier>
+
+<symbol> ; </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> exit </identifier>
+
+<symbol> = </symbol>
+
+<identifier> key </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<whileStatement>
+<keyword> while </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> exit </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<whileStatement>
+<keyword> while </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> key </identifier>
+
+<symbol> = </symbol>
+
+<identifier> key </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> moveSquare </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</whileStatement>
+</statements>
+</whileStatement>
+<statements>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> exit </identifier>
+
+<symbol> = </symbol>
+
+<identifier> exit </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> decSize </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> square </identifier>
+
+<symbol> . </symbol>
+
+<identifier> incSize </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> = </symbol>
+
+<identifier> exit </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> = </symbol>
+
+<identifier> key </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> = </symbol>
+
+<identifier> square </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<ifStatement>
+<keyword> if </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> direction </identifier>
+
+<symbol> = </symbol>
+
+<identifier> direction </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+</statements>
+<symbol> } </symbol>
+
+</ifStatement>
+<whileStatement>
+<keyword> while </keyword>
+
+<symbol> ( </symbol>
+
+<parameterList>
+<identifier> key </identifier>
+
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> { </symbol>
+
+<statements>
+<letStatement>
+<keyword> let </keyword>
+
+<identifier> key </identifier>
+
+<symbol> = </symbol>
+
+<identifier> key </identifier>
+
+<symbol> ; </symbol>
+
+</letStatement>
+<doStatement>
+<keyword> do </keyword>
+
+<identifier> moveSquare </identifier>
+
+<symbol> ( </symbol>
+
+<parameterList>
+</parameterList>
+<symbol> ) </symbol>
+
+<symbol> ; </symbol>
+
+</doStatement>
+</statements>
+<symbol> } </symbol>
+
+</whileStatement>
+</statements>
+<symbol> } </symbol>
+
+<statements>
+<returnStatement>
+<keyword> return </keyword>
+
+<symbol> ; </symbol>
+
+</returnStatement>
+</statements>
+<symbol> } </symbol>
+
+<symbol> } </symbol>
+
+</class>

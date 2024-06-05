@@ -21,37 +21,39 @@
       <identifier> SquareGame </identifier>
       <identifier> game </identifier>
       <symbol> ; </symbol>
-      <letStatement>
-        <keyword> let </keyword>
-        <identifier> game </identifier>
-        <symbol> = </symbol>
-        <identifier> game </identifier>
-        <symbol> ; </symbol>
-      </letStatement>
-      <doStatement>
-        <keyword> do </keyword>
-        <identifier> game </identifier>
-        <symbol> . </symbol>
-        <identifier> run </identifier>
-        <symbol> ( </symbol>
-        <parameterList/>
-        <symbol> ) </symbol>
-        <symbol> ; </symbol>
-      </doStatement>
-      <doStatement>
-        <keyword> do </keyword>
-        <identifier> game </identifier>
-        <symbol> . </symbol>
-        <identifier> dispose </identifier>
-        <symbol> ( </symbol>
-        <parameterList/>
-        <symbol> ) </symbol>
-        <symbol> ; </symbol>
-      </doStatement>
-      <returnStatement>
-        <keyword> return </keyword>
-        <symbol> ; </symbol>
-      </returnStatement>
+      <statements>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier> game </identifier>
+          <symbol> = </symbol>
+          <identifier> game </identifier>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> game </identifier>
+          <symbol> . </symbol>
+          <identifier> run </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier> game </identifier>
+          <symbol> . </symbol>
+          <identifier> dispose </identifier>
+          <symbol> ( </symbol>
+          <parameterList/>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
       <symbol> } </symbol>
     </subroutineBody>
   </subroutineDec>
@@ -68,25 +70,29 @@
       <keyword> boolean </keyword>
       <identifier> b </identifier>
       <symbol> ; </symbol>
-      <ifStatement>
-        <keyword> if </keyword>
-        <symbol> ( </symbol>
-        <parameterList>
-          <identifier> b </identifier>
-        </parameterList>
-        <symbol> ) </symbol>
-        <symbol> { </symbol>
-        <symbol> } </symbol>
-      </ifStatement>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <parameterList>
+            <identifier> b </identifier>
+          </parameterList>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <symbol> } </symbol>
+        </ifStatement>
+      </statements>
     </subroutineBody>
   </subroutineDec>
   <keyword> else </keyword>
   <symbol> { </symbol>
   <symbol> } </symbol>
-  <returnStatement>
-    <keyword> return </keyword>
-    <symbol> ; </symbol>
-  </returnStatement>
+  <statements>
+    <returnStatement>
+      <keyword> return </keyword>
+      <symbol> ; </symbol>
+    </returnStatement>
+  </statements>
   <symbol> } </symbol>
   <symbol> } </symbol>
 </class>

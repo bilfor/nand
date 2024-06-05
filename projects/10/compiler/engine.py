@@ -58,7 +58,7 @@ def triage(text, index, tree):
     insertion = 'none' 
 
     parent = get_parent(tree, index)
-    print('PARENT: ' + str(parent))
+    #print('PARENT: ' + str(parent))
 
 
     # compile_class_var_dec
@@ -145,11 +145,41 @@ def get_text(input_string):
 
 def group_lets(tree):
     index = 0
-    statements = ['letStatement', 'ifStatement', 'doStatement', 'returnStatement', 'whileStatement']
+    statements = ['<letStatement>', '<ifStatement>', '<doStatement>', '<returnStatement>', '<whileStatement>']
+    closing_statements = ['</letStatement>', '</ifStatement>', '</doStatement>', '</returnStatement>', '</whileStatement>']
+    prev_opening = False
+    prev_closing = False
+    flag = False
 
     for element in tree:
-        text = get_text(element)
-        if text 
+        opening = any(substring in element for substring in statements)
+        closing = any(substring in element for substring in closing_statements)
+
+        if flag:
+            flag = False
+            continue
+
+        print('\n\nELEMENT: ' + str(element))
+        print('OPENING: ' + str(opening))
+        print('CLOSING: ' + str(closing))
+
+        if opening and not prev_closing: 
+            tree.insert(index, '<statements>')
+            index += 1
+            flag = True
+
+        if prev_closing and not opening:
+            tree.insert(index, '</statements>')
+            index += 1
+            flag = True
+            
+        index += 1
+        prev_opening = opening
+        prev_closing = closing
+
+        if flag:
+            prev_opening = False
+            prev_closing = False
 
 def replace_first_and_last(lst, x, y):
     if len(lst) >= 1:
@@ -183,6 +213,8 @@ def compile(tree):
         # print('ELEMENT: ' + str(element))
 
     group_lets(tree)
+    for item in tree:
+        print(item)
 
 # def token_type():
 # def content():
