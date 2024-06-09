@@ -129,17 +129,14 @@ for filename in os.listdir(directory):
 def pretty_print_xml_to_file(tree, output_filename):
 
     tree_string = ''.join(tree)
-    # print(tree_string)
+    print(tree_string)
     root = etree.fromstring(tree_string)
 
     # Indent the XML tree for pretty printing
     etree.indent(root, space="  ")
     
     # Pretty print the root element to a string
-    try:
-        xml_string = etree.tostring(root, encoding="unicode")
-    except etree.XMLSyntaxError as e:
-        print('oops')
+    xml_string = etree.tostring(root, encoding="unicode")
     
     # Write the pretty-printed XML to the output file
     with open(output_filename, "w") as file:
@@ -157,5 +154,5 @@ for filename in os.listdir(directory):
         with open(token_file_path, 'r') as token_file: 
             tree = token_file.readlines()
         e.compile(tree) 
-        # ugly_print(tree, compiled_file_path)
-        pretty_print_xml_to_file(tree, compiled_file_path)
+        ugly_print(tree, compiled_file_path)
+        #pretty_print_xml_to_file(tree, compiled_file_path)

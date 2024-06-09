@@ -1,0 +1,9 @@
+Processed ../ExpressionLessSquare/Main.jack and wrote to ../ExpressionLessSquare/MainT.xml
+
+
+Processed ../ExpressionLessSquare/Square.jack and wrote to ../ExpressionLessSquare/SquareT.xml
+
+
+Processed ../ExpressionLessSquare/SquareGame.jack and wrote to ../ExpressionLessSquare/SquareGameT.xml
+
+

@@ -49,8 +49,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> square </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -61,16 +65,24 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> direction </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
 <returnStatement>
 <keyword> return </keyword>
 
+<expression>
+<term>
 <identifier> square </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </returnStatement>
@@ -79,6 +91,7 @@
 
 </subroutineBody>
 </subroutineDec>
+<subroutineDec>
 <keyword> method </keyword>
 
 <keyword> void </keyword>
@@ -91,6 +104,7 @@
 </parameterList>
 <symbol> ) </symbol>
 
+<subroutineBody>
 <symbol> { </symbol>
 
 <statements>
@@ -105,8 +119,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -123,10 +137,14 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
+<expressionList>
+<expression>
+<term>
 <identifier> square </identifier>
 
-</parameterList>
+</term>
+</expression>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -141,6 +159,9 @@
 </statements>
 <symbol> } </symbol>
 
+</subroutineBody>
+</subroutineDec>
+<subroutineDec>
 <keyword> method </keyword>
 
 <keyword> void </keyword>
@@ -153,6 +174,7 @@
 </parameterList>
 <symbol> ) </symbol>
 
+<subroutineBody>
 <symbol> { </symbol>
 
 <statements>
@@ -181,8 +203,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -192,6 +214,10 @@
 <symbol> } </symbol>
 
 </ifStatement>
+</statements>
+</subroutineBody>
+</subroutineDec>
+<statements>
 <ifStatement>
 <keyword> if </keyword>
 
@@ -217,8 +243,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -253,8 +279,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -289,8 +315,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -311,10 +337,14 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
+<expressionList>
+<expression>
+<term>
 <identifier> direction </identifier>
 
-</parameterList>
+</term>
+</expression>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -329,6 +359,7 @@
 </statements>
 <symbol> } </symbol>
 
+<subroutineDec>
 <keyword> method </keyword>
 
 <keyword> void </keyword>
@@ -341,6 +372,7 @@
 </parameterList>
 <symbol> ) </symbol>
 
+<subroutineBody>
 <symbol> { </symbol>
 
 <keyword> var </keyword>
@@ -367,8 +399,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> key </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -407,8 +443,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> key </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -419,8 +459,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -432,6 +472,8 @@
 </whileStatement>
 </statements>
 </whileStatement>
+</subroutineBody>
+</subroutineDec>
 <statements>
 <ifStatement>
 <keyword> if </keyword>
@@ -454,8 +496,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> exit </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -488,8 +534,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -524,8 +570,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>
@@ -556,8 +602,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> exit </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -586,8 +636,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> key </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -616,8 +670,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> square </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -646,8 +704,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> direction </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -676,8 +738,12 @@
 
 <symbol> = </symbol>
 
+<expression>
+<term>
 <identifier> key </identifier>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </letStatement>
@@ -688,8 +754,8 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 
 <symbol> ; </symbol>

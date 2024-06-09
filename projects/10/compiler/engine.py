@@ -68,7 +68,7 @@ def triage(text, index, tree):
         tree.insert(final_element_index, '</classVarDec>')
         insertion = 'before'
 
-    if (text == ' constructor ' or text == ' function ' or text == ' method' ):
+    if (text == ' constructor ' or text == ' function ' or text == ' method ' ):
         tree.insert(index, '<subroutineDec>')
         final_element_index = find_next(tree, ' } ', index)
         tree.insert(final_element_index, '</subroutineDec>')
@@ -159,9 +159,9 @@ def group_lets(tree):
             flag = False
             continue
 
-        print('\n\nELEMENT: ' + str(element))
-        print('OPENING: ' + str(opening))
-        print('CLOSING: ' + str(closing))
+        #print('\n\nELEMENT: ' + str(element))
+        #print('OPENING: ' + str(opening))
+        #print('CLOSING: ' + str(closing))
 
         if opening and not prev_closing: 
             tree.insert(index, '<statements>')
@@ -180,6 +180,79 @@ def group_lets(tree):
         if flag:
             prev_opening = False
             prev_closing = False
+
+def expressions(tree):
+    statements = ['<doStatement>', '<letStatement>', '<ifStatement>', '<returnStatement>', '<whileStatement>']
+    closing_statements = ['</doStatement>', '</letStatement>', '</ifStatement>', '</returnStatement>', '</whileStatement>']
+    index = 0
+    flag = False
+    insertion_count = 0
+    insertion_flag = False
+
+    for element in tree:
+
+        if insertion_count > 0:
+            insertion_count -= 1
+            continue
+
+        opening = any(substring in element for substring in statements)
+        closing = any(substring in element for substring in closing_statements)
+
+        if flag:
+            if parent == '<letStatement>':
+                if '=' in last:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                if ';' in last:
+                    tree.insert(index-1, '</expression>')
+                    tree.insert(index-1, '</term>')
+                    index += 2
+                    insertion_count += 2
+            if parent == '<doStatement>':
+                tree[index] = element.replace('parameter', 'expression')
+                if 'List' in last and not '/' in last and get_text(element):
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
+                if ')' in last and insertion_flag:
+                    tree.insert(index-2, '</expression>')
+                    tree.insert(index-2, '</term>')
+                    index += 2
+                    insertion_count += 2
+                    insertion_flag = False
+                # WORKING HERE!!!!
+                if ',' in element:
+                    tree.insert(index, '</term>')
+                    tree.insert(index, '</expression>')
+                    insertion_count += 2
+                    index += 2
+      
+            if parent == '<returnStatement>':
+                if ' return ' in last and not ' ; ' in element:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
+                if ';' in last and insertion_flag:
+                    tree.insert(index-1, '</expression>')
+                    tree.insert(index-1, '</term>')
+                    index += 2
+                    insertion_count += 2
+                    insertion_flag = False
+
+        if opening:
+            flag = True
+            parent = element
+        if closing:
+            flag = False
+
+        last = element
+        index += 1
 
 def replace_first_and_last(lst, x, y):
     if len(lst) >= 1:
@@ -213,8 +286,9 @@ def compile(tree):
         # print('ELEMENT: ' + str(element))
 
     group_lets(tree)
-    for item in tree:
-        print(item)
+    expressions(tree)
+#    for item in tree:
+#        print(item)
 
 # def token_type():
 # def content():
