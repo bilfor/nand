@@ -7,3 +7,302 @@ Processed ../ExpressionLessSquare/Square.jack and wrote to ../ExpressionLessSqua
 Processed ../ExpressionLessSquare/SquareGame.jack and wrote to ../ExpressionLessSquare/SquareGameT.xml
 
 
+index: 115
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <keyword> this </keyword>
+
+
+
+
+
+
+index: 150
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 184
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 219
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 253
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 431
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 465
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 492
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 526
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 577
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 611
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 638
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 672
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 723
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 757
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 784
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 818
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 869
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 903
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 930
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> x </identifier>
+
+
+
+
+
+
+index: 964
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> y </identifier>
+
+
+
+
+
+
+index: 96
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> square </identifier>
+
+
+
+
+
+
+index: 235
+element: <symbol> ; </symbol>
+
+last: <symbol> ) </symbol>
+
+last2: </parameterList>
+last3: <identifier> direction </identifier>
+
+
+
+
+
+

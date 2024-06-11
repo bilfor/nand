@@ -133,10 +133,12 @@
 
 <symbol> ( </symbol>
 
-<parameterList>
+<expression>
+<term>
 <identifier> b </identifier>
 
-</parameterList>
+</term>
+</expression>
 <symbol> ) </symbol>
 
 <symbol> { </symbol>
@@ -157,6 +159,8 @@
 <returnStatement>
 <keyword> return </keyword>
 
+</term>
+</expression>
 <symbol> ; </symbol>
 
 </returnStatement>

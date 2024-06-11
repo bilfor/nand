@@ -60,7 +60,6 @@ def triage(text, index, tree):
     parent = get_parent(tree, index)
     #print('PARENT: ' + str(parent))
 
-
     # compile_class_var_dec
     if (text == ' static ' or text == ' field '):
         tree.insert(index, '<classVarDec>')
@@ -74,7 +73,7 @@ def triage(text, index, tree):
         tree.insert(final_element_index, '</subroutineDec>')
         insertion = 'before'
 
-    if (text == ' ( '):
+    if (text == ' ( ' and 'ifStatement' not in parent):
         tree.insert(index + 1, '<parameterList>')
         final_element_index = find_next(tree, ' ) ', index)
         tree.insert(final_element_index - 1, '</parameterList>')
@@ -181,6 +180,10 @@ def group_lets(tree):
             prev_opening = False
             prev_closing = False
 
+def wrap(tree, index, content):
+    tree.insert(index, '<' + content + '>')
+    tree.insert(index+2, '</' + content + '>')
+
 def expressions(tree):
     statements = ['<doStatement>', '<letStatement>', '<ifStatement>', '<returnStatement>', '<whileStatement>']
     closing_statements = ['</doStatement>', '</letStatement>', '</ifStatement>', '</returnStatement>', '</whileStatement>']
@@ -188,6 +191,9 @@ def expressions(tree):
     flag = False
     insertion_count = 0
     insertion_flag = False
+    last3 = None
+    last2 = None
+    last = None
 
     for element in tree:
 
@@ -199,6 +205,19 @@ def expressions(tree):
         closing = any(substring in element for substring in closing_statements)
 
         if flag:
+            if parent == '<ifStatement>':
+                if '(' in last:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
+                if ')' in element:
+                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</term>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
             if parent == '<letStatement>':
                 if '=' in last:
                     tree.insert(index, '<term>')
@@ -218,18 +237,30 @@ def expressions(tree):
                     insertion_count += 2
                     index += 2
                     insertion_flag = True
-                if ')' in last and insertion_flag:
+                if ')' in last and insertion_flag and '<parameterList>' not in last2 and 'parameterList' not in last3:
+                    print('index: ' + str(index))
+                    print('element: ' + element)
+                    print('last: ' + last)
+                    print('last2: ' + last2)
+                    print('last3: ' + last3)
+                    print('\n\n\n\n')
                     tree.insert(index-2, '</expression>')
                     tree.insert(index-2, '</term>')
                     index += 2
                     insertion_count += 2
                     insertion_flag = False
-                # WORKING HERE!!!!
                 if ',' in element:
-                    tree.insert(index, '</term>')
                     tree.insert(index, '</expression>')
+                    tree.insert(index, '</term>')
                     insertion_count += 2
                     index += 2
+                    insertion_flag = True
+                if ',' in last and 'identifier' in element:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
       
             if parent == '<returnStatement>':
                 if ' return ' in last and not ' ; ' in element:
@@ -251,7 +282,10 @@ def expressions(tree):
         if closing:
             flag = False
 
+        last3 = last2
+        last2 = last
         last = element
+
         index += 1
 
 def replace_first_and_last(lst, x, y):
