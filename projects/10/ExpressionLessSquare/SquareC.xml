@@ -82,6 +82,7 @@
 <expression>
 <term>
 <identifier> x </identifier>
+</subroutineDec>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -89,7 +90,6 @@
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -119,12 +119,16 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -188,12 +192,16 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -257,12 +265,16 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -319,11 +331,15 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -380,11 +396,15 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -523,11 +543,15 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -666,11 +690,15 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -809,11 +837,15 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -952,10 +984,14 @@
 </ifStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
-</subroutineDec>
 <symbol> } </symbol>
 </class>

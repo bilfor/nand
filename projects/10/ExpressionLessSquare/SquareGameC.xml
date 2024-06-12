@@ -52,6 +52,7 @@
 <expression>
 <term>
 <identifier> square </identifier>
+</subroutineDec>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -59,7 +60,6 @@
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -100,12 +100,16 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -167,9 +171,6 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineDec>
-<statements>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
@@ -238,6 +239,11 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -341,9 +347,6 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineDec>
-<statements>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
@@ -531,6 +534,11 @@
 <statements>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>

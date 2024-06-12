@@ -73,15 +73,16 @@ def find_match(tags, start_index):
     nested_level = 0
 
     for i in range(start_index, len(tags)):
-        if tags[i] == opening_tag:
+        tag = tags[i]
+        if "<symbol> { </symbol>" in tag:
             nested_level += 1
-        elif tags[i] == opening_tag.replace('{', '}'):
+        elif "<symbol> } </symbol>" in tag:
+            nested_level -= 1
             if nested_level == 0:
                 return i  # Found the matching closing tag
-            else:
-                nested_level -= 1
 
     # If no matching closing tag is found
+    print(opening_tag)
     return None
 
 def triage(text, index, tree):
@@ -98,11 +99,10 @@ def triage(text, index, tree):
         insertion = 'before'
 
     if (text == ' constructor ' or text == ' function ' or text == ' method ' ):
+        opening = find_next(tree, ' { ', index) - 1
+        closing = find_match(tree, opening)
         tree.insert(index, '<subroutineDec>')
-        final_element_index = find_next(tree, ' } ', index)
-        if 'return' in tree[final_element_index] or 'if' in tree[final_element_index]:
-            final_element_index = find_next(tree, ' } ', final_element_index)
-        tree.insert(final_element_index, '</subroutineDec>')
+        tree.insert(closing, '</subroutineDec>')
         insertion = 'before'
 
     if (text == ' ( ' and 'ifStatement' not in parent):

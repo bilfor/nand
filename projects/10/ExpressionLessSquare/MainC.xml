@@ -58,12 +58,16 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
-</subroutineDec>
 <subroutineDec>
 <keyword> function </keyword>
 <keyword> void </keyword>
@@ -93,13 +97,18 @@
 </ifStatement>
 </statements>
 </subroutineBody>
-</subroutineDec>
 <keyword> else </keyword>
+<subroutineBody>
 <symbol> { </symbol>
 <symbol> } </symbol>
 <statements>
 <returnStatement>
 <keyword> return </keyword>
+<expression>
+<term>
+</subroutineDec>
+</term>
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
