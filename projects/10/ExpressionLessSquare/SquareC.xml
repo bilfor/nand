@@ -317,18 +317,13 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -383,18 +378,13 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -531,16 +521,13 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -677,16 +664,13 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -823,16 +807,13 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -969,15 +950,12 @@
 </statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-</subroutineDec>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineDec>
 <symbol> } </symbol>
 </class>

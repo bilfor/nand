@@ -147,6 +147,16 @@ def ugly_print(input_list, output_filename):
         for item in input_list:
             f.write(str(item) + '\n')
 
+def remove_blank_lines(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    # Remove blank lines
+    lines = [line.strip() for line in lines if line.strip()]
+
+    with open(filename, 'w') as file:
+        file.write('\n'.join(lines))
+
 for filename in os.listdir(directory):
     if filename.endswith('T.xml'):
         token_file_path = os.path.join(directory, filename)
@@ -156,3 +166,4 @@ for filename in os.listdir(directory):
         e.compile(tree) 
         ugly_print(tree, compiled_file_path)
         #pretty_print_xml_to_file(tree, compiled_file_path)
+        remove_blank_lines(compiled_file_path)

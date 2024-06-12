@@ -32,6 +32,20 @@ def find_next(tree, symbol, start):
         else:
             index += 1
 
+def sub_find_next(tree, symbol, start):
+    index = start
+    for item in tree[start:]:
+        if get_text(item) == symbol:
+            new_start = start + index + 1
+            ans = find_next(tree, symbol, new_start)
+            print(ans)
+            if ans is not None:
+                return ans
+            else:
+                return index
+        else:
+            index += 1
+
 # def compile_subroutine():
 # def comile_var_dec():
 
@@ -54,6 +68,22 @@ def get_parent(tree, index):
 
         i += 1
 
+def find_match(tags, start_index):
+    opening_tag = tags[start_index]
+    nested_level = 0
+
+    for i in range(start_index, len(tags)):
+        if tags[i] == opening_tag:
+            nested_level += 1
+        elif tags[i] == opening_tag.replace('{', '}'):
+            if nested_level == 0:
+                return i  # Found the matching closing tag
+            else:
+                nested_level -= 1
+
+    # If no matching closing tag is found
+    return None
+
 def triage(text, index, tree):
     insertion = 'none' 
 
@@ -70,6 +100,8 @@ def triage(text, index, tree):
     if (text == ' constructor ' or text == ' function ' or text == ' method ' ):
         tree.insert(index, '<subroutineDec>')
         final_element_index = find_next(tree, ' } ', index)
+        if 'return' in tree[final_element_index] or 'if' in tree[final_element_index]:
+            final_element_index = find_next(tree, ' } ', final_element_index)
         tree.insert(final_element_index, '</subroutineDec>')
         insertion = 'before'
 
@@ -82,7 +114,12 @@ def triage(text, index, tree):
     if (parent == '<subroutineDec>' and text == ' { '):
         tree.insert(index, '<subroutineBody>')
         final_element_index = find_next(tree, ' } ', index)
-        tree.insert(final_element_index, '</subroutineBody>')
+        print(tree[final_element_index])
+        if ('return' not in tree[final_element_index] 
+        and 'if' not in tree[final_element_index]):
+        # or 'if' in tree[final_element_index + 1]
+        # or 'if' in tree[final_element_index + 2]):
+            tree.insert(final_element_index, '</subroutineBody>')
         insertion = 'before'
 
     if (text == ' let '):
@@ -116,6 +153,7 @@ def triage(text, index, tree):
         insertion = 'before'
 
     return insertion
+
         # print('final_element_index: ' + str(final_element_index))
         # print('post insert index: ' + str(index))
         # print('text: ' + text + '\n')
@@ -238,12 +276,12 @@ def expressions(tree):
                     index += 2
                     insertion_flag = True
                 if ')' in last and insertion_flag and '<parameterList>' not in last2 and 'parameterList' not in last3:
-                    print('index: ' + str(index))
-                    print('element: ' + element)
-                    print('last: ' + last)
-                    print('last2: ' + last2)
-                    print('last3: ' + last3)
-                    print('\n\n\n\n')
+                    #print('index: ' + str(index))
+                    #print('element: ' + element)
+                    #print('last: ' + last)
+                    #print('last2: ' + last2)
+                    #print('last3: ' + last3)
+                    #print('\n\n\n\n')
                     tree.insert(index-2, '</expression>')
                     tree.insert(index-2, '</term>')
                     index += 2
@@ -269,9 +307,9 @@ def expressions(tree):
                     insertion_count += 2
                     index += 2
                     insertion_flag = True
-                if ';' in last and insertion_flag:
-                    tree.insert(index-1, '</expression>')
-                    tree.insert(index-1, '</term>')
+                if ';' in element and insertion_flag and not 'return' in last:
+                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</term>')
                     index += 2
                     insertion_count += 2
                     insertion_flag = False
