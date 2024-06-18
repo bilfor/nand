@@ -52,7 +52,6 @@
 <expression>
 <term>
 <identifier> square </identifier>
-</subroutineDec>
 </term>
 </expression>
 <symbol> ; </symbol>
@@ -60,6 +59,7 @@
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -100,16 +100,12 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
-</subroutineDec>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -239,15 +235,12 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
-</subroutineDec>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
 <subroutineDec>
 <keyword> method </keyword>
 <keyword> void </keyword>
@@ -258,14 +251,18 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
+<varDec>
 <keyword> var </keyword>
 <keyword> char </keyword>
 <identifier> key </identifier>
 <symbol> ; </symbol>
+</varDec>
+<varDec>
 <keyword> var </keyword>
 <keyword> boolean </keyword>
 <identifier> exit </identifier>
 <symbol> ; </symbol>
+</varDec>
 <statements>
 <letStatement>
 <keyword> let </keyword>
@@ -281,18 +278,22 @@
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<parameterList>
+<expression>
+<term>
 <identifier> exit </identifier>
-</parameterList>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<parameterList>
+<expression>
+<term>
 <identifier> key </identifier>
-</parameterList>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -319,9 +320,6 @@
 </statements>
 <symbol> } </symbol>
 </whileStatement>
-</statements>
-</whileStatement>
-<statements>
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
@@ -500,9 +498,11 @@
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<parameterList>
+<expression>
+<term>
 <identifier> key </identifier>
-</parameterList>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -531,17 +531,14 @@
 </whileStatement>
 </statements>
 <symbol> } </symbol>
-<statements>
+</whileStatement>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
-</subroutineDec>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
 <symbol> } </symbol>
 </class>

@@ -167,3 +167,4 @@ for filename in os.listdir(directory):
         ugly_print(tree, compiled_file_path)
         #pretty_print_xml_to_file(tree, compiled_file_path)
         remove_blank_lines(compiled_file_path)
+        print(f'Processed {token_file_path} and wrote to {compiled_file_path}\n\n')

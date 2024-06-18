@@ -1,29 +1,6 @@
 from lxml import etree
 import re
 
-def print_elements(element):
-    #print(etree.tostring(element, pretty_print=True).decode())
-    for child in element:
-        print_elements(child)
-
-def rename_root_element(tree, new_root_tag):
-    # Get the current root element
-    root = tree.getroot()
-
-    # Create a new root element with the desired tag
-    new_root = etree.Element(new_root_tag)
-
-    # Copy attributes from the original root to the new root
-    for key, value in root.attrib.items():
-        new_root.set(key, value)
-
-    # Copy children from the original root to the new root
-    for child in root:
-        new_root.append(child)
-
-    # Set the new root as the root of the tree
-    tree._setroot(new_root)  # Use _setroot() to set the root without triggering validation errors
-
 def find_next(tree, symbol, start):
     index = start
     for item in tree[start:]:
@@ -38,7 +15,6 @@ def sub_find_next(tree, symbol, start):
         if get_text(item) == symbol:
             new_start = start + index + 1
             ans = find_next(tree, symbol, new_start)
-            print(ans)
             if ans is not None:
                 return ans
             else:
@@ -46,22 +22,16 @@ def sub_find_next(tree, symbol, start):
         else:
             index += 1
 
-# def compile_subroutine():
-# def comile_var_dec():
-
 def get_parent(tree, index):
     i = 0
     stack = []
     for element in tree:
         if element.count('<') == 1 and element.count('/') == 1:
             popped = stack.pop()
-            # print('popping: ' + popped)
         if element.count('<') == 1 and element.count('/') == 0:
             stack.append(element)
-            # print('appending: ' + element)
         if index == i:
             if stack:
-                # print(stack[-1])
                 return stack.pop()
             else:
                 return 'class'
@@ -82,88 +52,82 @@ def find_match(tags, start_index):
                 return i  # Found the matching closing tag
 
     # If no matching closing tag is found
-    print(opening_tag)
     return None
 
 def triage(text, index, tree):
     insertion = 'none' 
 
     parent = get_parent(tree, index)
-    #print('PARENT: ' + str(parent))
 
-    # compile_class_var_dec
     if (text == ' static ' or text == ' field '):
         tree.insert(index, '<classVarDec>')
         final_element_index = find_next(tree, ' ; ', index)
         tree.insert(final_element_index, '</classVarDec>')
         insertion = 'before'
 
-    if (text == ' constructor ' or text == ' function ' or text == ' method ' ):
+    elif (text == ' constructor ' or text == ' function ' or text == ' method ' ):
         opening = find_next(tree, ' { ', index) - 1
         closing = find_match(tree, opening)
         tree.insert(index, '<subroutineDec>')
-        tree.insert(closing, '</subroutineDec>')
+        tree.insert(closing+2, '</subroutineDec>')
         insertion = 'before'
 
-    if (text == ' ( ' and 'ifStatement' not in parent):
+    elif (text == ' ( ' and 'ifStatement' not in parent and 'while' not in parent):
         tree.insert(index + 1, '<parameterList>')
         final_element_index = find_next(tree, ' ) ', index)
         tree.insert(final_element_index - 1, '</parameterList>')
         insertion = 'after'
 
-    if (parent == '<subroutineDec>' and text == ' { '):
+    elif (parent == '<subroutineDec>' and text == ' { '):
+        closing = find_match(tree, index)
         tree.insert(index, '<subroutineBody>')
-        final_element_index = find_next(tree, ' } ', index)
-        print(tree[final_element_index])
-        if ('return' not in tree[final_element_index] 
-        and 'if' not in tree[final_element_index]):
-        # or 'if' in tree[final_element_index + 1]
-        # or 'if' in tree[final_element_index + 2]):
-            tree.insert(final_element_index, '</subroutineBody>')
+        tree.insert(closing+2, '</subroutineBody>')
         insertion = 'before'
 
-    if (text == ' let '):
+    elif (text == ' let '):
         tree.insert(index, '<letStatement>')
         final_element_index = find_next(tree, ' ; ', index)
         tree.insert(final_element_index, '</letStatement>')
         insertion = 'before'
 
-    if (text == ' do '):
+    elif (text == ' do '):
         tree.insert(index, '<doStatement>')
         final_element_index = find_next(tree, ' ; ', index)
         tree.insert(final_element_index, '</doStatement>')
         insertion = 'before'
 
-    if (text == ' return '):
+    elif (text == ' return '):
         tree.insert(index, '<returnStatement>')
         final_element_index = find_next(tree, ' ; ', index)
         tree.insert(final_element_index, '</returnStatement>')
         insertion = 'before'
 
-    if (text == ' if '):
+    elif (text == ' if '):
+        opening = find_next(tree, ' { ', index) - 1
+        closing = find_match(tree, opening)
         tree.insert(index, '<ifStatement>')
-        final_element_index = find_next(tree, ' } ', index)
-        tree.insert(final_element_index, '</ifStatement>')
+        if 'else' in tree[closing + 2]:
+            opening = find_next(tree, ' { ', closing) + 1
+            closing = find_match(tree, opening)
+            tree.insert(closing + 1, '</ifStatement>')
+        else:
+            tree.insert(closing + 2, '</ifStatement>')
         insertion = 'before'
 
-    if (text == ' while '):
+    elif (text == ' while '):
+        opening = find_next(tree, ' { ', index) - 1
+        closing = find_match(tree, opening)
         tree.insert(index, '<whileStatement>')
-        final_element_index = find_next(tree, ' } ', index)
-        tree.insert(final_element_index, '</whileStatement>')
+        tree.insert(closing+2, '</whileStatement>')
+        insertion = 'before'
+
+    elif (text == ' var '):
+        tree.insert(index, '<varDec>')
+        final_element_index = find_next(tree, ' ; ', index)
+        tree.insert(final_element_index, '</varDec>')
         insertion = 'before'
 
     return insertion
-
-        # print('final_element_index: ' + str(final_element_index))
-        # print('post insert index: ' + str(index))
-        # print('text: ' + text + '\n')
-        # print('pre insert index: ' + str(index))
-    # compile_subroutine
-    #if text == ('constructor' or text == 'function' or text == 'method'):
-        #compile_subroutine(text, index, lst)
-    # compile_var_dec
-    #if text == 'var':
-        #compile_var_dec(text, index, lst)
 
 def get_text(input_string):
     # Define a regular expression pattern to match the text between <tag> and </tag>
@@ -195,10 +159,6 @@ def group_lets(tree):
         if flag:
             flag = False
             continue
-
-        #print('\n\nELEMENT: ' + str(element))
-        #print('OPENING: ' + str(opening))
-        #print('CLOSING: ' + str(closing))
 
         if opening and not prev_closing: 
             tree.insert(index, '<statements>')
@@ -256,6 +216,30 @@ def expressions(tree):
                     insertion_count += 2
                     index += 2
                     insertion_flag = True
+                if '{' in last and '}' in element:
+                    tree.insert(index, '</statements>')
+                    tree.insert(index, '<statements>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
+                #if '}' in element:
+                    #tree.insert(index, '</statements>')
+                    #insertion_count += 1
+                    #index += 1
+                    #insertion_flag = True
+            if parent == '<whileStatement>':
+                if '(' in last:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
+                if ')' in element:
+                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</term>')
+                    insertion_count += 2
+                    index += 2
+                    insertion_flag = True
             if parent == '<letStatement>':
                 if '=' in last:
                     tree.insert(index, '<term>')
@@ -276,12 +260,6 @@ def expressions(tree):
                     index += 2
                     insertion_flag = True
                 if ')' in last and insertion_flag and '<parameterList>' not in last2 and 'parameterList' not in last3:
-                    #print('index: ' + str(index))
-                    #print('element: ' + element)
-                    #print('last: ' + last)
-                    #print('last2: ' + last2)
-                    #print('last3: ' + last3)
-                    #print('\n\n\n\n')
                     tree.insert(index-2, '</expression>')
                     tree.insert(index-2, '</term>')
                     index += 2
@@ -349,18 +327,12 @@ def compile(tree):
             insertion = 'before'
             continue
 
-        #print(element)
-        # print('\n' + element + '\n')
         text = get_text(element)
         insertion = triage(text, index, tree)
         index += 1
-        # print('INDEX: ' + str(index))
-        # print('ELEMENT: ' + str(element))
 
-    group_lets(tree)
     expressions(tree)
-#    for item in tree:
-#        print(item)
+    group_lets(tree)
 
 # def token_type():
 # def content():

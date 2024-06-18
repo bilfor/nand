@@ -18,10 +18,12 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
+<varDec>
 <keyword> var </keyword>
 <identifier> SquareGame </identifier>
 <identifier> game </identifier>
 <symbol> ; </symbol>
+</varDec>
 <statements>
 <letStatement>
 <keyword> let </keyword>
@@ -58,16 +60,12 @@
 </doStatement>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
-</subroutineDec>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
 </subroutineBody>
+</subroutineDec>
 <subroutineDec>
 <keyword> function </keyword>
 <keyword> void </keyword>
@@ -78,10 +76,12 @@
 <symbol> ) </symbol>
 <subroutineBody>
 <symbol> { </symbol>
+<varDec>
 <keyword> var </keyword>
 <keyword> boolean </keyword>
 <identifier> b </identifier>
 <symbol> ; </symbol>
+</varDec>
 <statements>
 <ifStatement>
 <keyword> if </keyword>
@@ -93,25 +93,22 @@
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
+<statements>
+</statements>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<statements>
+</statements>
 <symbol> } </symbol>
 </ifStatement>
-</statements>
-</subroutineBody>
-<keyword> else </keyword>
-<subroutineBody>
-<symbol> { </symbol>
-<symbol> } </symbol>
-<statements>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
-</subroutineDec>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
 <symbol> } </symbol>
+</subroutineBody>
+</subroutineDec>
 <symbol> } </symbol>
 </class>
