@@ -38,6 +38,22 @@ def get_parent(tree, index):
 
         i += 1
 
+def get_parent_list(tree, index):
+    i = 0
+    stack = []
+    for element in tree:
+        if element.count('<') == 1 and element.count('/') == 1:
+            popped = stack.pop()
+        if element.count('<') == 1 and element.count('/') == 0:
+            stack.append(element)
+        if index == i:
+            if stack:
+                return stack
+            else:
+                return 'class'
+
+        i += 1
+
 def find_match(tags, start_index):
     opening_tag = tags[start_index]
     nested_level = 0
@@ -54,10 +70,17 @@ def find_match(tags, start_index):
     # If no matching closing tag is found
     return None
 
+def substring_in_list(substring, string_list):
+    for string in string_list:
+        if substring in string:
+            return True
+    return False
+
 def triage(text, index, tree):
     insertion = 'none' 
 
     parent = get_parent(tree, index)
+    parent_list = get_parent_list(tree, index)
 
     if (text == ' static ' or text == ' field '):
         tree.insert(index, '<classVarDec>')
@@ -107,7 +130,7 @@ def triage(text, index, tree):
         closing = find_match(tree, opening)
         tree.insert(index, '<ifStatement>')
         if 'else' in tree[closing + 2]:
-            opening = find_next(tree, ' { ', closing) + 1
+            opening = find_next(tree, ' { ', closing) - 1
             closing = find_match(tree, opening)
             tree.insert(closing + 1, '</ifStatement>')
         else:
@@ -304,6 +327,17 @@ def expressions(tree):
 
         index += 1
 
+def rename_lists(tree):
+    index = 0
+
+    for element in tree:
+        if 'parameterList' in element:
+            print(index)
+            parent_list = get_parent_list(tree, index)
+            #print(parent_list)
+
+        index += 1
+
 def replace_first_and_last(lst, x, y):
     if len(lst) >= 1:
         lst[0] = x
@@ -334,17 +368,4 @@ def compile(tree):
     expressions(tree)
     group_lets(tree)
 
-# def token_type():
-# def content():
-
-# def compile_parameter_list():
-# def compile_statements():
-# def compile_do():
-# def compile_let():
-# def compile_while():
-# def compile_return():
-# def compile_if():
-# def compile_expression():
-# def compile_term():
-# def compile_expression_list():
-
+    rename_lists(tree)
