@@ -35,8 +35,8 @@
 <symbol> . </symbol>
 <identifier> new </identifier>
 <symbol> ( </symbol>
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -140,14 +140,22 @@
 <keyword> let </keyword>
 <identifier> a </identifier>
 <symbol> [ </symbol>
+<expression>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
+</expression>
 <symbol> ] </symbol>
 <symbol> = </symbol>
 <expression>
 <term>
 <identifier> a </identifier>
 <symbol> [ </symbol>
+<expression>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
+</expression>
 <symbol> ] </symbol>
 </term>
 </expression>
@@ -165,12 +173,13 @@
 <expression>
 <term>
 <identifier> i </identifier>
+</term>
 <symbol> * </symbol>
 <symbol> ( </symbol>
-<parameterList>
+<expressionList>
 <symbol> - </symbol>
 <identifier> j </identifier>
-</parameterList>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -183,12 +192,13 @@
 <expression>
 <term>
 <identifier> j </identifier>
+</term>
 <symbol> / </symbol>
 <symbol> ( </symbol>
-<parameterList>
+<expressionList>
 <symbol> - </symbol>
 <integerConstant> 2 </integerConstant>
-</parameterList>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -201,6 +211,7 @@
 <expression>
 <term>
 <identifier> i </identifier>
+</term>
 <symbol> | </symbol>
 <identifier> j </identifier>
 </term>

@@ -43,7 +43,10 @@ def get_parent_list(tree, index):
     stack = []
     for element in tree:
         if element.count('<') == 1 and element.count('/') == 1:
-            popped = stack.pop()
+            try: 
+                popped = stack.pop()
+            except IndexError:
+                return 'class'
         if element.count('<') == 1 and element.count('/') == 0:
             stack.append(element)
         if index == i:
@@ -208,6 +211,7 @@ def wrap(tree, index, content):
 def expressions(tree):
     statements = ['<doStatement>', '<letStatement>', '<ifStatement>', '<returnStatement>', '<whileStatement>']
     closing_statements = ['</doStatement>', '</letStatement>', '</ifStatement>', '</returnStatement>', '</whileStatement>']
+    op_list = [' + ', ' - ', ' * ', ' / ', ' & ', ' | ', ' < ', ' > ', ' = ']
     index = 0
     flag = False
     insertion_count = 0
@@ -224,6 +228,13 @@ def expressions(tree):
 
         opening = any(substring in element for substring in statements)
         closing = any(substring in element for substring in closing_statements)
+
+        parent_list = get_parent_list(tree, index)
+        if '<term>' in parent_list:
+            if get_text(element) in op_list: 
+                tree.insert(index, '</term>')
+                insertion_count += 1
+                index += 1
 
         if flag:
             if parent == '<ifStatement>':
@@ -264,6 +275,16 @@ def expressions(tree):
                     index += 2
                     insertion_flag = True
             if parent == '<letStatement>':
+                if '[' in last:
+                    tree.insert(index, '<term>')
+                    tree.insert(index, '<expression>')
+                    insertion_count += 2
+                    index += 2
+                if ']' in element:
+                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</term>')
+                    insertion_count += 2
+                    index += 2
                 if '=' in last:
                     tree.insert(index, '<term>')
                     tree.insert(index, '<expression>')
@@ -332,10 +353,11 @@ def rename_lists(tree):
 
     for element in tree:
         if 'parameterList' in element:
-            print(index)
             parent_list = get_parent_list(tree, index)
-            #print(parent_list)
-
+            #if '<expression>' in parent_list and '<term>' in parent_list:
+                #tree[index] = element.replace('parameterList', 'expression')
+            if '<expression>' in parent_list:
+                tree[index] = element.replace('parameter', 'expression')
         index += 1
 
 def replace_first_and_last(lst, x, y):
@@ -367,5 +389,4 @@ def compile(tree):
 
     expressions(tree)
     group_lets(tree)
-
     rename_lists(tree)
