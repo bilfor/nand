@@ -367,6 +367,69 @@ def replace_first_and_last(lst, x, y):
         lst[-1] = y
     return lst
 
+def get_expression_elements(tree):
+    new_tree = []
+    for element in tree:
+        if 'term' not in element:
+            new_tree.append(element)
+
+    tree = new_tree
+
+def mark_on_condition(tree):
+    for i in range(len(tree)):
+        parent_list = get_parent_list(tree, i)
+        if '<expression>' in parent_list:
+            tree[i] = tree[i].upper()
+
+def compile_expressions(statements):
+
+    op_list = [' + ', ' - ', ' * ', ' / ', ' & ', ' | ', ' < ', ' > ', ' = ']
+
+    expression_stack = []
+    processed_statements = []
+    inside_expression = False
+    inside_bracket = False
+    term_open = False
+
+    for statement in statements:
+        if "<expression>" in statement:
+            if term_open:
+                processed_statements.append("</term>")
+                term_open = False
+            processed_statements.append(statement)
+            expression_stack.append((inside_expression, inside_bracket))
+            inside_expression = True
+            processed_statements.append("<term>")
+            term_open = True
+        elif "</expression>" in statement:
+            if term_open:
+                processed_statements.append("</term>")
+                term_open = False
+            if expression_stack:
+                inside_expression, inside_bracket = expression_stack.pop()
+            if not inside_bracket and inside_expression:
+                processed_statements.append("</term>")
+            processed_statements.append(statement)
+        elif inside_expression:
+            if "<symbol> [" in statement:
+                inside_bracket = True
+            elif "<symbol> ]" in statement:
+                inside_bracket = False
+            processed_statements.append(statement)
+            if any(op in statement for op in op_list):
+                if term_open:
+                    processed_statements.append("</term>")
+                    term_open = False
+                processed_statements.append("<term>")
+                term_open = True
+        else:
+            processed_statements.append(statement)
+
+    if term_open:
+        processed_statements.append("</term>")
+
+    return processed_statements
+
 def compile(tree):
     tree = replace_first_and_last(tree, '<class>', '</class>')
 
@@ -390,3 +453,5 @@ def compile(tree):
     expressions(tree)
     group_lets(tree)
     rename_lists(tree)
+    #mark_on_condition(tree)
+    #get_expression_elements(tree)

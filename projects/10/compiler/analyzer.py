@@ -164,7 +164,9 @@ for filename in os.listdir(directory):
         with open(token_file_path, 'r') as token_file: 
             tree = token_file.readlines()
         e.compile(tree) 
-        ugly_print(tree, compiled_file_path)
+        tree = [item for item in tree if 'term' not in item]
+        expression_tree = e.compile_expressions(tree)
+        ugly_print(expression_tree, compiled_file_path)
         #pretty_print_xml_to_file(tree, compiled_file_path)
         remove_blank_lines(compiled_file_path)
         print(f'Processed {token_file_path} and wrote to {compiled_file_path}\n\n')

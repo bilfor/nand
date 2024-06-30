@@ -134,8 +134,9 @@
 <expression>
 <term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 1 </integerConstant>
 </term>
 </expression>
@@ -162,8 +163,9 @@
 <expression>
 <term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 2 </integerConstant>
 </term>
 </expression>
@@ -190,8 +192,9 @@
 <expression>
 <term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 3 </integerConstant>
 </term>
 </expression>
@@ -218,8 +221,9 @@
 <expression>
 <term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 4 </integerConstant>
 </term>
 </expression>
@@ -317,6 +321,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 0 </integerConstant>
 </term>
 </expression>
@@ -359,6 +365,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 81 </integerConstant>
 </term>
 </expression>
@@ -386,6 +394,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 90 </integerConstant>
 </term>
 </expression>
@@ -413,6 +423,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 88 </integerConstant>
 </term>
 </expression>
@@ -440,6 +452,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 131 </integerConstant>
 </term>
 </expression>
@@ -467,6 +481,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 133 </integerConstant>
 </term>
 </expression>
@@ -494,6 +510,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 130 </integerConstant>
 </term>
 </expression>
@@ -521,6 +539,8 @@
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 132 </integerConstant>
 </term>
 </expression>
@@ -548,15 +568,18 @@
 <term>
 <symbol> ~ </symbol>
 <symbol> ( </symbol>
+</term>
 <expression>
 <term>
 <identifier> key </identifier>
 <symbol> = </symbol>
+</term>
+<term>
 <integerConstant> 0 </integerConstant>
+</term>
 </term>
 </expression>
 <symbol> ) </symbol>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
