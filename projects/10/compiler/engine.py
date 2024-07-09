@@ -304,13 +304,13 @@ def expressions(tree):
                     index += 2
                     insertion_flag = True
                 if ')' in last and insertion_flag and '<parameterList>' not in last2 and 'parameterList' not in last3:
-                    tree.insert(index-2, '</expression>')
+                    tree.insert(index-2, '</expression>5')
                     tree.insert(index-2, '</term>')
                     index += 2
                     insertion_count += 2
                     insertion_flag = False
                 if ',' in element:
-                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</expression>5')
                     tree.insert(index, '</term>')
                     insertion_count += 2
                     index += 2
@@ -330,7 +330,7 @@ def expressions(tree):
                     index += 2
                     insertion_flag = True
                 if ';' in element and insertion_flag and not 'return' in last:
-                    tree.insert(index, '</expression>')
+                    tree.insert(index, '</expression>6')
                     tree.insert(index, '</term>')
                     index += 2
                     insertion_count += 2
@@ -385,48 +385,42 @@ def compile_expressions(statements):
 
     op_list = [' + ', ' - ', ' * ', ' / ', ' & ', ' | ', ' < ', ' > ', ' = ']
 
-    expression_stack = []
     processed_statements = []
     inside_expression = False
-    inside_bracket = False
     term_open = False
+    last = ''
 
     for statement in statements:
         if "<expression>" in statement:
-            if term_open:
-                processed_statements.append("</term>")
-                term_open = False
             processed_statements.append(statement)
-            expression_stack.append((inside_expression, inside_bracket))
-            inside_expression = True
             processed_statements.append("<term>")
+            inside_expression = True
             term_open = True
         elif "</expression>" in statement:
             if term_open:
                 processed_statements.append("</term>")
                 term_open = False
-            if expression_stack:
-                inside_expression, inside_bracket = expression_stack.pop()
-            if not inside_bracket and inside_expression:
+            if ']' in last:
+                processed_statements.append('</term>')
+            processed_statements.append(statement)
+            inside_expression = False
+        elif any(op in statement for op in op_list):
+            if term_open:
                 processed_statements.append("</term>")
+                term_open = False
             processed_statements.append(statement)
-        elif inside_expression:
-            if "<symbol> [" in statement:
-                inside_bracket = True
-            elif "<symbol> ]" in statement:
-                inside_bracket = False
+        elif "(" in statement and inside_expression and not term_open:
+            processed_statements.append("<term>")
             processed_statements.append(statement)
-            if any(op in statement for op in op_list):
-                if term_open:
-                    processed_statements.append("</term>")
-                    term_open = False
-                processed_statements.append("<term>")
-                term_open = True
+        #    if term_open:
+        #        processed_statements.append("</term>")
+        #        term_open = False
+        #    processed_statements.append("<term>")
+        #    term_open = True
         else:
             processed_statements.append(statement)
 
-    if term_open:
-        processed_statements.append("</term>")
+        last = statement
 
     return processed_statements
 

@@ -83,7 +83,7 @@
 <term>
 <keyword> this </keyword>
 </term>
-</expression>
+</expression>6
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -112,7 +112,7 @@
 <term>
 <keyword> this </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -147,7 +147,7 @@
 <term>
 <keyword> true </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -163,33 +163,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -224,7 +220,7 @@
 <term>
 <keyword> false </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -240,33 +236,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -296,25 +288,19 @@
 <expression>
 <term>
 <symbol> ( </symbol>
-</term>
 <expression>
 <term>
 <symbol> ( </symbol>
-</term>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> &lt; </symbol>
 <integerConstant> 254 </integerConstant>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> &amp; </symbol>
@@ -322,21 +308,16 @@
 <expression>
 <term>
 <symbol> ( </symbol>
-</term>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> &lt; </symbol>
 <integerConstant> 510 </integerConstant>
-</term>
 </expression>
 <symbol> ) </symbol>
 </expression>
@@ -359,11 +340,9 @@
 <expression>
 <term>
 <identifier> size </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -427,11 +406,9 @@
 <expression>
 <term>
 <identifier> size </identifier>
+</term>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -490,7 +467,7 @@
 <term>
 <keyword> false </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -506,45 +483,37 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
 <identifier> y </identifier>
-<symbol> + </symbol>
 </term>
-<term>
+<symbol> + </symbol>
 <identifier> size </identifier>
 </expressionList>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
-</term>
-</expression>
+</expression>5
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -556,11 +525,9 @@
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -575,7 +542,7 @@
 <term>
 <keyword> true </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -591,33 +558,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -650,16 +613,12 @@
 <expression>
 <term>
 <symbol> ( </symbol>
-</term>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> &lt; </symbol>
@@ -679,7 +638,7 @@
 <term>
 <keyword> false </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -695,33 +654,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -733,11 +688,9 @@
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -752,7 +705,7 @@
 <term>
 <keyword> true </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -768,45 +721,37 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <symbol> ( </symbol>
 <expressionList>
 <expression>
 <term>
 <identifier> y </identifier>
-<symbol> + </symbol>
 </term>
-<term>
+<symbol> + </symbol>
 <identifier> size </identifier>
 </expressionList>
 </expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
-</term>
-</expression>
+</expression>5
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -857,7 +802,7 @@
 <term>
 <keyword> false </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -873,42 +818,36 @@
 <term>
 <symbol> ( </symbol>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
-</term>
-</expression>
+</expression>5
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -920,11 +859,9 @@
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -939,7 +876,7 @@
 <term>
 <keyword> true </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -955,33 +892,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -1014,16 +947,12 @@
 <expression>
 <term>
 <symbol> ( </symbol>
-</term>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> &lt; </symbol>
@@ -1043,7 +972,7 @@
 <term>
 <keyword> false </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -1059,33 +988,29 @@
 <term>
 <identifier> x </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -1097,11 +1022,9 @@
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -1116,7 +1039,7 @@
 <term>
 <keyword> true </keyword>
 </term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -1132,42 +1055,36 @@
 <term>
 <symbol> ( </symbol>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 </expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
 <identifier> size </identifier>
-</term>
-</expression>
+</expression>5
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> + </symbol>
-</term>
-<term>
-</term>
-</expression>
+</expression>5
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>

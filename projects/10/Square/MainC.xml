@@ -151,13 +151,13 @@
 <term>
 <identifier> a </identifier>
 <symbol> [ </symbol>
-</term>
 <expression>
 <term>
 <integerConstant> 2 </integerConstant>
 </term>
 </expression>
 <symbol> ] </symbol>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -173,18 +173,15 @@
 <expression>
 <term>
 <identifier> i </identifier>
-<symbol> * </symbol>
 </term>
+<symbol> * </symbol>
 <term>
 <symbol> ( </symbol>
 <expressionList>
 <symbol> - </symbol>
-</term>
-<term>
 <identifier> j </identifier>
 </expressionList>
 <symbol> ) </symbol>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -195,18 +192,15 @@
 <expression>
 <term>
 <identifier> j </identifier>
-<symbol> / </symbol>
 </term>
+<symbol> / </symbol>
 <term>
 <symbol> ( </symbol>
 <expressionList>
 <symbol> - </symbol>
-</term>
-<term>
 <integerConstant> 2 </integerConstant>
 </expressionList>
 <symbol> ) </symbol>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -217,11 +211,9 @@
 <expression>
 <term>
 <identifier> i </identifier>
+</term>
 <symbol> | </symbol>
-</term>
-<term>
 <identifier> j </identifier>
-</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
