@@ -166,7 +166,8 @@ for filename in os.listdir(directory):
         e.compile(tree) 
         tree = [item for item in tree if 'term' not in item]
         expression_tree = e.compile_expressions(tree)
-        ugly_print(expression_tree, compiled_file_path)
+        unary_tree = e.find_unary_ops(expression_tree)
+        ugly_print(unary_tree, compiled_file_path)
         #pretty_print_xml_to_file(tree, compiled_file_path)
         remove_blank_lines(compiled_file_path)
         print(f'Processed {token_file_path} and wrote to {compiled_file_path}\n\n')

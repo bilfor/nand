@@ -424,6 +424,64 @@ def compile_expressions(statements):
 
     return processed_statements
 
+def search_tuples(data, value):
+    for first, second in data:
+        if first == value:
+            return 0  # Found in the first position
+        elif second == value:
+            return 1  # Found in the second position
+    return -1  # Value not found
+
+def check_consec(lst, a, b):
+    # Ensure the indices are within the bounds of the list
+    if a < 0 or b >= len(lst) or a > b:
+        return False
+    
+    # Iterate through the subset of the list
+    for i in range(a, b):
+        if '(' in lst[i] and '-' in lst[i + 1]:
+            return True
+    
+    return False
+
+def find_unary_ops(input_list):
+    opens = []
+    ends = []
+    output_list = []
+    results = []
+
+    for index, line in enumerate(input_list):
+        if '<expressionList>' in line:
+            opens.append(index)
+        if '</expressionList>' in line:
+            ends.append(index)
+
+    index_tuples = list(zip(opens, ends))
+
+    for a, b in index_tuples:
+        result = check_consec(input_list, a, b)
+        results.append(result)
+
+    print(results)
+
+    for index, line in enumerate(input_list):
+        key = search_tuples(combined_list, index)
+
+        output_list.append('<expression>')
+        output_list.append('<term>')
+
+        output_list.append('</term>')
+        output_list.append('</expression>')
+
+        elif 'identifier' in line and '-' in input_list[index-1]:
+            output_list.append('<term>')
+            output_list.append(line)
+            output_list.append('</term>')
+        else:
+            output_list.append(line)
+
+    return output_list
+
 def compile(tree):
     tree = replace_first_and_last(tree, '<class>', '</class>')
 
