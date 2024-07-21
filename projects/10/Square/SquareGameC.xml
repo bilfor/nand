@@ -35,13 +35,15 @@
 <symbol> . </symbol>
 <identifier> new </identifier>
 <symbol> ( </symbol>
-<expressionList>
+<expression>
+<term>
 <integerConstant> 0 </integerConstant>
 <symbol> , </symbol>
 <integerConstant> 0 </integerConstant>
 <symbol> , </symbol>
 <integerConstant> 30 </integerConstant>
-</expressionList>
+</term>
+</expression>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -88,8 +90,10 @@
 <symbol> . </symbol>
 <identifier> dispose </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -99,13 +103,15 @@
 <symbol> . </symbol>
 <identifier> deAlloc </identifier>
 <symbol> ( </symbol>
-<expressionList>
+<expression>
+<term>
 <expression>
 <term>
 <keyword> this </keyword>
 </term>
 </expression>5
-</expressionList>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -147,8 +153,10 @@
 <symbol> . </symbol>
 <identifier> moveUp </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -174,8 +182,10 @@
 <symbol> . </symbol>
 <identifier> moveDown </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -201,8 +211,10 @@
 <symbol> . </symbol>
 <identifier> moveLeft </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -228,8 +240,10 @@
 <symbol> . </symbol>
 <identifier> moveRight </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -242,13 +256,15 @@
 <symbol> . </symbol>
 <identifier> wait </identifier>
 <symbol> ( </symbol>
-<expressionList>
+<expression>
+<term>
 <expression>
 <term>
 <integerConstant> 5 </integerConstant>
 </term>
 </expression>5
-</expressionList>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -340,8 +356,10 @@
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -394,8 +412,10 @@
 <symbol> . </symbol>
 <identifier> decSize </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -421,8 +441,10 @@
 <symbol> . </symbol>
 <identifier> incSize </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -577,8 +599,10 @@
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<expression>
+<term>
+</term>
+</expression>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>

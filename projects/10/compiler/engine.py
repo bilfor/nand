@@ -427,20 +427,27 @@ def compile_expressions(statements):
 def search_tuples(data, value):
     for first, second in data:
         if first == value:
+            #print('search_tuples: 0\n')
             return 0  # Found in the first position
         elif second == value:
+            #print('search_tuples: 1\n')
             return 1  # Found in the second position
+    #print('search_tuples: -1\n')
     return -1  # Value not found
 
 def check_consec(lst, a, b):
+    print('CHECKING')
     # Ensure the indices are within the bounds of the list
     if a < 0 or b >= len(lst) or a > b:
         return False
     
     # Iterate through the subset of the list
+    print('\nNEW')
     for i in range(a, b):
-        if '(' in lst[i] and '-' in lst[i + 1]:
-            return True
+        print('i: ' + str(i) + ' ' + lst[i])
+        #if '(' in lst[i] and '-' in lst[i + 1]:
+            #return True
+    print('b: ' + str(b) + ' ' + lst[b])
     
     return False
 
@@ -449,6 +456,8 @@ def find_unary_ops(input_list):
     ends = []
     output_list = []
     results = []
+    expression_list_count = 0
+    in_exp_list = False
 
     for index, line in enumerate(input_list):
         if '<expressionList>' in line:
@@ -457,26 +466,50 @@ def find_unary_ops(input_list):
             ends.append(index)
 
     index_tuples = list(zip(opens, ends))
+    #print(index_tuples)
 
     for a, b in index_tuples:
         result = check_consec(input_list, a, b)
         results.append(result)
 
-    print(results)
 
     for index, line in enumerate(input_list):
-        key = search_tuples(combined_list, index)
+        #print(results)
+        #print(expression_list_count)
+        #print(results[expression_list_count])
+        key = search_tuples(index_tuples, index)
 
-        output_list.append('<expression>')
-        output_list.append('<term>')
+        if key == 0:
+            in_exp_list = True
+            
+            if results[expression_list_count]:
+                output_list.append('<expression>')
+                output_list.append('<term>')
+            else:
+                output_list.append(line)
 
-        output_list.append('</term>')
-        output_list.append('</expression>')
+        elif in_exp_list and results[expression_list_count]:
+            if 'identifier' in line and '-' in input_list[index-1]:
+                output_list.append('<term>')
+                output_list.append(line)
+                output_list.append('</term>')
+            else:
+                output_list.append(line)
 
-        elif 'identifier' in line and '-' in input_list[index-1]:
-            output_list.append('<term>')
-            output_list.append(line)
-            output_list.append('</term>')
+        elif key == 1:
+            if results[expression_list_count]:
+                output_list.append('</term>')
+                output_list.append('</expression>')
+            else:
+                output_list.append(line)
+
+            if expression_list_count < len(results) - 1:
+                expression_list_count += 1
+            else:
+                results[expression_list_count] = False
+
+            in_unary_exp = False
+
         else:
             output_list.append(line)
 

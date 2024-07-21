@@ -158,7 +158,7 @@ def remove_blank_lines(filename):
         file.write('\n'.join(lines))
 
 for filename in os.listdir(directory):
-    if filename.endswith('T.xml'):
+    if filename.endswith('MainT.xml'):
         token_file_path = os.path.join(directory, filename)
         compiled_file_path = os.path.join(directory, filename.replace('T.xml', 'C.xml'))
         with open(token_file_path, 'r') as token_file: 
