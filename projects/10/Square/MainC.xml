@@ -177,10 +177,15 @@
 <symbol> * </symbol>
 <term>
 <symbol> ( </symbol>
-<expressionList>
+<expression>
+<term>
 <symbol> - </symbol>
+<term>
 <identifier> j </identifier>
-</expressionList>
+</term>
+</term>
+</expression>
+</term>
 <symbol> ) </symbol>
 </expression>
 <symbol> ; </symbol>
@@ -196,10 +201,13 @@
 <symbol> / </symbol>
 <term>
 <symbol> ( </symbol>
-<expressionList>
+<expression>
+<term>
 <symbol> - </symbol>
 <integerConstant> 2 </integerConstant>
-</expressionList>
+</term>
+</expression>
+</term>
 <symbol> ) </symbol>
 </expression>
 <symbol> ; </symbol>

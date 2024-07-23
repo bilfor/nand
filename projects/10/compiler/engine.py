@@ -436,18 +436,14 @@ def search_tuples(data, value):
     return -1  # Value not found
 
 def check_consec(lst, a, b):
-    print('CHECKING')
     # Ensure the indices are within the bounds of the list
     if a < 0 or b >= len(lst) or a > b:
         return False
     
     # Iterate through the subset of the list
-    print('\nNEW')
     for i in range(a, b):
-        print('i: ' + str(i) + ' ' + lst[i])
-        #if '(' in lst[i] and '-' in lst[i + 1]:
-            #return True
-    print('b: ' + str(b) + ' ' + lst[b])
+        if '-' in lst[i] and '(' in lst[i - 2]:
+            return True
     
     return False
 
@@ -458,6 +454,7 @@ def find_unary_ops(input_list):
     results = []
     expression_list_count = 0
     in_exp_list = False
+    fin_unary = False
 
     for index, line in enumerate(input_list):
         if '<expressionList>' in line:
@@ -472,14 +469,21 @@ def find_unary_ops(input_list):
         result = check_consec(input_list, a, b)
         results.append(result)
 
-
     for index, line in enumerate(input_list):
+
+        if fin_unary:
+            output_list.append('</term>')
+
+        fin_unary = False
         #print(results)
         #print(expression_list_count)
         #print(results[expression_list_count])
         key = search_tuples(index_tuples, index)
 
         if key == 0:
+            print(index)
+            print(key)
+            print(results[expression_list_count])
             in_exp_list = True
             
             if results[expression_list_count]:
@@ -488,8 +492,9 @@ def find_unary_ops(input_list):
             else:
                 output_list.append(line)
 
-        elif in_exp_list and results[expression_list_count]:
-            if 'identifier' in line and '-' in input_list[index-1]:
+        elif key != 1 and in_exp_list and results[expression_list_count]:
+            print('in exp list')
+            if 'identifier' in line:
                 output_list.append('<term>')
                 output_list.append(line)
                 output_list.append('</term>')
@@ -500,16 +505,13 @@ def find_unary_ops(input_list):
             if results[expression_list_count]:
                 output_list.append('</term>')
                 output_list.append('</expression>')
+                fin_unary = True
             else:
                 output_list.append(line)
 
-            if expression_list_count < len(results) - 1:
-                expression_list_count += 1
-            else:
-                results[expression_list_count] = False
-
-            in_unary_exp = False
-
+            expression_list_count += 1
+            in_exp_list = False
+                
         else:
             output_list.append(line)
 
