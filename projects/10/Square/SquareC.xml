@@ -72,10 +72,8 @@
 <keyword> do </keyword>
 <identifier> draw </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -85,7 +83,7 @@
 <term>
 <keyword> this </keyword>
 </term>
-</expression>6
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -109,15 +107,13 @@
 <symbol> . </symbol>
 <identifier> deAlloc </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> this </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -146,15 +142,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> true </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -164,37 +158,39 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>5
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>5
-<symbol> , </symbol>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<identifier> size </identifier>
-</expression>5
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -223,15 +219,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> false </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -241,37 +235,39 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-<expression>
-<term>
-<identifier> x </identifier>
-</term>
-</expression>5
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-</expression>5
-<symbol> , </symbol>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
-</term>
-<symbol> + </symbol>
-<identifier> size </identifier>
-</expression>5
-<symbol> , </symbol>
-<expression>
-<term>
-<identifier> y </identifier>
-</term>
-<symbol> + </symbol>
-<identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> x </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+<symbol> , </symbol>
+<expression>
+<term>
+<identifier> y </identifier>
+</term>
+<symbol> + </symbol>
+<term>
+<identifier> size </identifier>
+</term>
+</expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -308,14 +304,21 @@
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
 <symbol> &lt; </symbol>
+<term>
 <integerConstant> 254 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
 <symbol> &amp; </symbol>
+<term>
 <symbol> ( </symbol>
 <expression>
 <term>
@@ -325,11 +328,16 @@
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
 <symbol> &lt; </symbol>
+<term>
 <integerConstant> 510 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 </expression>
@@ -340,10 +348,8 @@
 <keyword> do </keyword>
 <identifier> erase </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -364,10 +370,8 @@
 <keyword> do </keyword>
 <identifier> draw </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -400,7 +404,9 @@
 <term>
 <identifier> size </identifier>
 <symbol> &gt; </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -410,10 +416,8 @@
 <keyword> do </keyword>
 <identifier> erase </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -434,10 +438,8 @@
 <keyword> do </keyword>
 <identifier> draw </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -470,7 +472,9 @@
 <term>
 <identifier> y </identifier>
 <symbol> &gt; </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -482,15 +486,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> false </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -500,46 +502,46 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
 </term>
-</expression>
-</term>
-</expression>
+</expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
-</expression>5
+</expression>
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -563,15 +565,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> true </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -581,27 +581,28 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
@@ -609,9 +610,8 @@
 </term>
 <symbol> + </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -648,11 +648,16 @@
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
 <symbol> &lt; </symbol>
+<term>
 <integerConstant> 254 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -663,15 +668,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> false </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -681,27 +684,28 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
@@ -709,9 +713,8 @@
 </term>
 <symbol> + </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -734,15 +737,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> true </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -752,46 +753,46 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
 </term>
-</expression>
-</term>
-</expression>
+</expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
-</expression>5
+</expression>
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -825,7 +826,9 @@
 <term>
 <identifier> x </identifier>
 <symbol> &gt; </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -837,15 +840,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> false </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -855,43 +856,45 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <symbol> ( </symbol>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
-</expression>5
+</expression>
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
@@ -915,15 +918,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> true </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -933,19 +934,18 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
@@ -953,17 +953,18 @@
 </term>
 <symbol> + </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -1000,11 +1001,16 @@
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
 <symbol> &lt; </symbol>
+<term>
 <integerConstant> 510 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -1015,15 +1021,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> false </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -1033,19 +1037,18 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
@@ -1053,17 +1056,18 @@
 </term>
 <symbol> + </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -1086,15 +1090,13 @@
 <symbol> . </symbol>
 <identifier> setColor </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> true </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -1104,43 +1106,45 @@
 <symbol> . </symbol>
 <identifier> drawRectangle </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <symbol> ( </symbol>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
 </term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> - </symbol>
 <integerConstant> 1 </integerConstant>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
-</expression>5
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <identifier> size </identifier>
-</expression>5
+</term>
+</expression>
 <symbol> , </symbol>
 <expression>
 <term>
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
-</expression>5
+</expression>
 <identifier> size </identifier>
 <symbol> ) </symbol>
 <symbol> ; </symbol>

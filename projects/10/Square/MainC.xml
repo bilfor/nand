@@ -185,8 +185,8 @@
 </term>
 </term>
 </expression>
-</term>
 <symbol> ) </symbol>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -204,11 +204,13 @@
 <expression>
 <term>
 <symbol> - </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
 </term>
-</expression>
 </term>
+</expression>
 <symbol> ) </symbol>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -221,7 +223,9 @@
 <identifier> i </identifier>
 </term>
 <symbol> | </symbol>
+<term>
 <identifier> j </identifier>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>

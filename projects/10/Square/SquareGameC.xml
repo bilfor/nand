@@ -35,15 +35,25 @@
 <symbol> . </symbol>
 <identifier> new </identifier>
 <symbol> ( </symbol>
+<expressionList>
 <expression>
 <term>
 <integerConstant> 0 </integerConstant>
+</term>
+</expression>
 <symbol> , </symbol>
+<expression>
+<term>
 <integerConstant> 0 </integerConstant>
+</term>
+</expression>
 <symbol> , </symbol>
+<expression>
+<term>
 <integerConstant> 30 </integerConstant>
 </term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -66,7 +76,7 @@
 <term>
 <keyword> this </keyword>
 </term>
-</expression>6
+</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -90,10 +100,8 @@
 <symbol> . </symbol>
 <identifier> dispose </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -103,15 +111,13 @@
 <symbol> . </symbol>
 <identifier> deAlloc </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <keyword> this </keyword>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -142,7 +148,9 @@
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -153,10 +161,8 @@
 <symbol> . </symbol>
 <identifier> moveUp </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -171,7 +177,9 @@
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -182,10 +190,8 @@
 <symbol> . </symbol>
 <identifier> moveDown </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -200,7 +206,9 @@
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 3 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -211,10 +219,8 @@
 <symbol> . </symbol>
 <identifier> moveLeft </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -229,7 +235,9 @@
 <identifier> direction </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 4 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -240,10 +248,8 @@
 <symbol> . </symbol>
 <identifier> moveRight </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -256,15 +262,13 @@
 <symbol> . </symbol>
 <identifier> wait </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
+<expressionList>
 <expression>
 <term>
 <integerConstant> 5 </integerConstant>
 </term>
-</expression>5
-</term>
 </expression>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -316,7 +320,9 @@
 <expression>
 <term>
 <symbol> ~ </symbol>
+<term>
 <identifier> exit </identifier>
+</term>
 </term>
 </expression>
 <symbol> ) </symbol>
@@ -330,7 +336,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 0 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -345,8 +353,8 @@
 <symbol> . </symbol>
 <identifier> keyPressed </identifier>
 <symbol> ( </symbol>
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -356,10 +364,8 @@
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -374,7 +380,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 81 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -401,7 +409,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 90 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -412,10 +422,8 @@
 <symbol> . </symbol>
 <identifier> decSize </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -430,7 +438,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 88 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -441,10 +451,8 @@
 <symbol> . </symbol>
 <identifier> incSize </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -459,7 +467,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 131 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -486,7 +496,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 133 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -513,7 +525,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 130 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -540,7 +554,9 @@
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 132 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -565,15 +581,20 @@
 <expression>
 <term>
 <symbol> ~ </symbol>
+<term>
 <symbol> ( </symbol>
 <expression>
 <term>
 <identifier> key </identifier>
 </term>
 <symbol> = </symbol>
+<term>
 <integerConstant> 0 </integerConstant>
+</term>
 </expression>
 <symbol> ) </symbol>
+</term>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -588,8 +609,8 @@
 <symbol> . </symbol>
 <identifier> keyPressed </identifier>
 <symbol> ( </symbol>
-<parameterList>
-</parameterList>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 </term>
 </expression>
@@ -599,10 +620,8 @@
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expression>
-<term>
-</term>
-</expression>
+<expressionList>
+</expressionList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
