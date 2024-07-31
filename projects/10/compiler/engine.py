@@ -168,8 +168,6 @@ def get_text(input_string):
     else:
         return None
   
-# def find_closing(symbol, start) 
-
 def group_lets(tree):
     index = 0
     statements = ['<letStatement>', '<ifStatement>', '<doStatement>', '<returnStatement>', '<whileStatement>']
@@ -256,11 +254,6 @@ def expressions(tree):
                     insertion_count += 2
                     index += 2
                     insertion_flag = True
-                #if '}' in element:
-                    #tree.insert(index, '</statements>')
-                    #insertion_count += 1
-                    #index += 1
-                    #insertion_flag = True
             if parent == '<whileStatement>':
                 if '(' in last:
                     tree.insert(index, '<term>')
@@ -394,34 +387,55 @@ def compile_expressions(statements):
     inside_eList = False
     tilde_flag = False
     tilde_term_count = 0
+    amp_term = False
 
     for statement in statements:
+        #if len(processed_statements) > 0 and '/term' in processed_statements[-1]:
+        #    term_open = False
+
         if "<expression>" in statement:
             processed_statements.append(statement)
             processed_statements.append("<term>")
             inside_expression = True
             term_open = True
+
         elif '&' in last and 'integerConstant' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
+
+        elif '&' in statement and 'identifier' in last:
+            processed_statements.append("</term>")
+            processed_statements.append(statement)
+
         elif '&' in last and '(' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
+            amp_term = True
+
+        elif 'expression' in statement and ')' in last and amp_term:
+            processed_statements.append("</term>")
+            processed_statements.append(statement)
+            amp_term = False
+
         elif 'symbol' in last and '&' in statement:
             processed_statements.append("</term>")
             processed_statements.append(statement)
+
         elif term_open and '</parameterList>' in statement and '<parameterList>' in last:
             processed_statements[-1] = '<expressionList>'
             processed_statements.append("</expressionList>")
+
         elif inside_expression and not inside_eList and '=' in last and 'integerConstant' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
-        elif '+' in last and 'identifier' in statement:
+
+        elif '+' in last and ('identifier' in statement or 'integerConstant' in statement):
             processed_statements.append("<term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
+
         elif "integerConstant" in statement and "expressionList" in last:
             inside_eList = True
             processed_statements.append("<expression>")
@@ -429,52 +443,62 @@ def compile_expressions(statements):
             processed_statements.append(statement)
             processed_statements.append("</term>")
             processed_statements.append("</expression>")
+
         elif inside_eList and 'symbol' in last and 'integerConstant' in statement:
             processed_statements.append("<expression>")
             processed_statements.append("<term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
             processed_statements.append("</expression>")
+
         elif ('|' in last or '~' in last) and 'identifier' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
+
         elif "</expression>" in statement:
             if term_open:
                 processed_statements.append("</term>")
                 term_open = False
+
             if ']' in last:
                 processed_statements.append('</term>')
+
             processed_statements.append(statement)
+
             if unary_condition:
                 processed_statements.append('</term>')
+
             inside_expression = False
+
         elif any(op in statement for op in op_list):
             if term_open:
                 processed_statements.append("</term>")
                 term_open = False
             processed_statements.append(statement)
+
         elif "(" in statement and inside_expression and not term_open:
             processed_statements.append("<term>")
             processed_statements.append(statement)
             unary_condition = True
+
         elif ")" in statement and unary_condition:
             #processed_statements.append("</term>")
             processed_statements.append(statement)
             processed_statements.append("</term>")
             unary_condition = False
+
         elif "(" in statement and '~' in last:
             processed_statements.append("<term>")
             processed_statements.append(statement)
             tilde_flag = True
+
         elif ")" in statement and tilde_flag:
             processed_statements.append(statement)
             processed_statements.append("</term>")
             processed_statements.append("</term>")
-            #while tilde_term_count > 0:
-            #    processed_statements.append("</term>")
-            #    tilde_term_count -= 1
             tilde_flag = False
+
         else:
             processed_statements.append(statement)
             if '</expressionList>' in statement:
@@ -531,7 +555,6 @@ def find_unary_ops(input_list):
             ends.append(index)
 
     index_tuples = list(zip(opens, ends))
-    #print(index_tuples)
 
     for a, b in index_tuples:
         result = check_consec(input_list, a, b)
@@ -539,19 +562,10 @@ def find_unary_ops(input_list):
 
     for index, line in enumerate(input_list):
 
-        #if fin_unary:
-        #    output_list.append('</term6>')
-
         fin_unary = False
-        #print(results)
-        #print(expression_list_count)
-        #print(results[expression_list_count])
         key = search_tuples(index_tuples, index)
 
         if key == 0:
-            #print(index)
-            #print(key)
-            #print(results[expression_list_count])
             in_exp_list = True
             
             if results[expression_list_count]:
@@ -561,7 +575,6 @@ def find_unary_ops(input_list):
                 output_list.append(line)
 
         elif key != 1 and in_exp_list and results[expression_list_count]:
-            #print('in exp list')
             if 'identifier' in line or 'integerConstant' in line:
                 output_list.append('<term>')
                 output_list.append(line)
@@ -608,5 +621,3 @@ def compile(tree):
     expressions(tree)
     group_lets(tree)
     rename_lists(tree)
-    #mark_on_condition(tree)
-    #get_expression_elements(tree)

@@ -340,6 +340,7 @@
 </term>
 </expression>
 <symbol> ) </symbol>
+</term>
 </expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
@@ -362,7 +363,9 @@
 <identifier> size </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -403,6 +406,7 @@
 <expression>
 <term>
 <identifier> size </identifier>
+</term>
 <symbol> &gt; </symbol>
 <term>
 <integerConstant> 2 </integerConstant>
@@ -471,6 +475,7 @@
 <expression>
 <term>
 <identifier> y </identifier>
+</term>
 <symbol> &gt; </symbol>
 <term>
 <integerConstant> 1 </integerConstant>
@@ -609,7 +614,9 @@
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </expression>
 </expressionList>
 <symbol> ) </symbol>
@@ -712,7 +719,9 @@
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </expression>
 </expressionList>
 <symbol> ) </symbol>
@@ -727,7 +736,9 @@
 <identifier> y </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
@@ -825,6 +836,7 @@
 <expression>
 <term>
 <identifier> x </identifier>
+</term>
 <symbol> &gt; </symbol>
 <term>
 <integerConstant> 1 </integerConstant>
@@ -952,7 +964,9 @@
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </expression>
 <symbol> , </symbol>
 <expression>
@@ -1055,7 +1069,9 @@
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 1 </integerConstant>
+</term>
 </expression>
 <symbol> , </symbol>
 <expression>
@@ -1080,7 +1096,9 @@
 <identifier> x </identifier>
 </term>
 <symbol> + </symbol>
+<term>
 <integerConstant> 2 </integerConstant>
+</term>
 </expression>
 <symbol> ; </symbol>
 </letStatement>
