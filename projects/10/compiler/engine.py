@@ -388,10 +388,15 @@ def compile_expressions(statements):
     tilde_flag = False
     tilde_term_count = 0
     amp_term = False
+    wrap_flag = 0
 
     for statement in statements:
         #if len(processed_statements) > 0 and '/term' in processed_statements[-1]:
         #    term_open = False
+
+        wrap_flag -= 1
+        if wrap_flag < 0:
+            wrap_flag = 0
 
         if "<expression>" in statement:
             processed_statements.append(statement)
@@ -402,10 +407,11 @@ def compile_expressions(statements):
         elif '&' in last and 'integerConstant' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #a
+            wrap_flag = 2
 
         elif '&' in statement and 'identifier' in last:
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #b
             processed_statements.append(statement)
 
         elif '&' in last and '(' in statement:
@@ -414,12 +420,12 @@ def compile_expressions(statements):
             amp_term = True
 
         elif 'expression' in statement and ')' in last and amp_term:
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #c
             processed_statements.append(statement)
             amp_term = False
 
         elif 'symbol' in last and '&' in statement:
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #d
             processed_statements.append(statement)
 
         elif term_open and '</parameterList>' in statement and '<parameterList>' in last:
@@ -429,51 +435,53 @@ def compile_expressions(statements):
         elif inside_expression and not inside_eList and '=' in last and 'integerConstant' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #e
 
         elif '+' in last and ('identifier' in statement or 'integerConstant' in statement):
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #f
 
         elif "integerConstant" in statement and "expressionList" in last:
             inside_eList = True
             processed_statements.append("<expression>")
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #g
             processed_statements.append("</expression>")
 
         elif inside_eList and 'symbol' in last and 'integerConstant' in statement:
             processed_statements.append("<expression>")
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #h
             processed_statements.append("</expression>")
 
         elif ('|' in last or '~' in last) and 'identifier' in statement:
             processed_statements.append("<term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #i
 
         elif "</expression>" in statement:
             if term_open:
-                processed_statements.append("</term>")
+                if wrap_flag != 1:
+                  processed_statements.append("</term>") #j
+
                 term_open = False
 
             if ']' in last:
-                processed_statements.append('</term>')
+                processed_statements.append('</term>') #k
 
             processed_statements.append(statement)
 
             if unary_condition:
-                processed_statements.append('</term>')
+                processed_statements.append('</term>') #l
 
             inside_expression = False
 
         elif any(op in statement for op in op_list):
             if term_open:
-                processed_statements.append("</term>")
+                processed_statements.append("</term>") #m
                 term_open = False
             processed_statements.append(statement)
 
@@ -485,7 +493,7 @@ def compile_expressions(statements):
         elif ")" in statement and unary_condition:
             #processed_statements.append("</term>")
             processed_statements.append(statement)
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #n
             unary_condition = False
 
         elif "(" in statement and '~' in last:
@@ -495,9 +503,19 @@ def compile_expressions(statements):
 
         elif ")" in statement and tilde_flag:
             processed_statements.append(statement)
-            processed_statements.append("</term>")
-            processed_statements.append("</term>")
+            processed_statements.append("</term>") #o
+            processed_statements.append("</term>") #p
             tilde_flag = False
+
+
+        elif '-' in last and 'integerConstant' in statement and not unary_condition:
+            processed_statements.append("<term>")
+            processed_statements.append(statement)
+            processed_statements.append("</term>") #q
+
+        elif ',' in last and '(' in statement:
+            processed_statements.append("flag")
+            processed_statements.append(statement)
 
         else:
             processed_statements.append(statement)
