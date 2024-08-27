@@ -29,54 +29,30 @@
 <keyword> let </keyword>
 <identifier> square </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <identifier> Square </identifier>
 <symbol> . </symbol>
 <identifier> new </identifier>
 <symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
+<parameterList>
 <integerConstant> 0 </integerConstant>
-</term>
-</expression>
 <symbol> , </symbol>
-<expression>
-<term>
 <integerConstant> 0 </integerConstant>
-</term>
-</expression>
 <symbol> , </symbol>
-<expression>
-<term>
 <integerConstant> 30 </integerConstant>
-</term>
-</expression>
-</expressionList>
+</parameterList>
 <symbol> ) </symbol>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 <letStatement>
 <keyword> let </keyword>
 <identifier> direction </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <integerConstant> 0 </integerConstant>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 <returnStatement>
 <keyword> return </keyword>
-<expression>
-<term>
 <keyword> this </keyword>
-</term>
-</expression>
 <symbol> ; </symbol>
 </returnStatement>
 </statements>
@@ -100,8 +76,8 @@
 <symbol> . </symbol>
 <identifier> dispose </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -111,13 +87,9 @@
 <symbol> . </symbol>
 <identifier> deAlloc </identifier>
 <symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
+<parameterList>
 <keyword> this </keyword>
-</term>
-</expression>
-</expressionList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -143,15 +115,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -161,8 +127,8 @@
 <symbol> . </symbol>
 <identifier> moveUp </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -172,15 +138,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -190,8 +150,8 @@
 <symbol> . </symbol>
 <identifier> moveDown </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -201,15 +161,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 3 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -219,8 +173,8 @@
 <symbol> . </symbol>
 <identifier> moveLeft </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -230,15 +184,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> direction </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 4 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -248,8 +196,8 @@
 <symbol> . </symbol>
 <identifier> moveRight </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -262,13 +210,9 @@
 <symbol> . </symbol>
 <identifier> wait </identifier>
 <symbol> ( </symbol>
-<expressionList>
-<expression>
-<term>
+<parameterList>
 <integerConstant> 5 </integerConstant>
-</term>
-</expression>
-</expressionList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -307,39 +251,23 @@
 <keyword> let </keyword>
 <identifier> exit </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <keyword> false </keyword>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <symbol> ~ </symbol>
-<term>
 <identifier> exit </identifier>
-</term>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 0 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -347,25 +275,21 @@
 <keyword> let </keyword>
 <identifier> key </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <identifier> Keyboard </identifier>
 <symbol> . </symbol>
 <identifier> keyPressed </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -375,15 +299,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 81 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -391,11 +309,7 @@
 <keyword> let </keyword>
 <identifier> exit </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <keyword> true </keyword>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -404,15 +318,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 90 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -422,8 +330,8 @@
 <symbol> . </symbol>
 <identifier> decSize </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -433,15 +341,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 88 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -451,8 +353,8 @@
 <symbol> . </symbol>
 <identifier> incSize </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
@@ -462,15 +364,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 131 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -478,11 +374,7 @@
 <keyword> let </keyword>
 <identifier> direction </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <integerConstant> 1 </integerConstant>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -491,15 +383,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 133 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -507,11 +393,7 @@
 <keyword> let </keyword>
 <identifier> direction </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <integerConstant> 2 </integerConstant>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -520,15 +402,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 130 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -536,11 +412,7 @@
 <keyword> let </keyword>
 <identifier> direction </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <integerConstant> 3 </integerConstant>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -549,15 +421,9 @@
 <ifStatement>
 <keyword> if </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 132 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -565,11 +431,7 @@
 <keyword> let </keyword>
 <identifier> direction </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <integerConstant> 4 </integerConstant>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 </statements>
@@ -578,24 +440,12 @@
 <whileStatement>
 <keyword> while </keyword>
 <symbol> ( </symbol>
-<expression>
-<term>
 <symbol> ~ </symbol>
-<term>
 <symbol> ( </symbol>
-<expression>
-<term>
 <identifier> key </identifier>
-</term>
 <symbol> = </symbol>
-<term>
 <integerConstant> 0 </integerConstant>
-</term>
-</expression>
 <symbol> ) </symbol>
-</term>
-</term>
-</expression>
 <symbol> ) </symbol>
 <symbol> { </symbol>
 <statements>
@@ -603,25 +453,21 @@
 <keyword> let </keyword>
 <identifier> key </identifier>
 <symbol> = </symbol>
-<expression>
-<term>
 <identifier> Keyboard </identifier>
 <symbol> . </symbol>
 <identifier> keyPressed </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
-</term>
-</expression>
 <symbol> ; </symbol>
 </letStatement>
 <doStatement>
 <keyword> do </keyword>
 <identifier> moveSquare </identifier>
 <symbol> ( </symbol>
-<expressionList>
-</expressionList>
+<parameterList>
+</parameterList>
 <symbol> ) </symbol>
 <symbol> ; </symbol>
 </doStatement>
