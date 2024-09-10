@@ -40,7 +40,9 @@ def compile_class(tokens):
     index = 0
     output = []
 
+
     token, content, tag = get_token_data(tokens, index)
+
 
     # first token will always be class
     if content == 'class':
@@ -50,6 +52,9 @@ def compile_class(tokens):
         
     # second token will always be class name
     if tag == 'identifier':
+        print('***************************************')
+        print(f"********** CLASS: {content} **********")
+        print('***************************************')
         output.append(token)
         index, token, content, tag = advance(tokens, index)
 
@@ -59,7 +64,7 @@ def compile_class(tokens):
         index, token, content, tag = advance(tokens, index)
 
     while content != '}':
-        print(f"Processing token: {token}")
+        #print(f"Processing token: {token}")
 
         if content in {"static", "field"}:
             index = compile_class_var_dec(tokens, index, output)
@@ -67,8 +72,8 @@ def compile_class(tokens):
         elif content in {"constructor", "function", "method"}:
             index = compile_subroutine(tokens, index, output)
 
-        else:
-            print(f"Unexpected token: {tokens[index]}")
+        #else:
+            #print(f"Unexpected token: {tokens[index]}")
 
         index, token, content, tag = advance(tokens, index)
 
@@ -76,9 +81,9 @@ def compile_class(tokens):
         output.append("<symbol> } </symbol>")
         output.append("</class>")
        
-    print('\n\n\n\n\n\n\n\n\n')
+    print('\n\n')
     print_list(output)
-    print('\n\n\n\n\n\n\n\n\n')
+    print('\n\n')
     return output 
 
 def compile_class_var_dec(tokens, index, output):
@@ -126,12 +131,50 @@ def compile_subroutine(tokens, index, output):
     output.append(token) # (
 
     index, token, content, tag = advance(tokens, index)
-    compile_parameter_list(token, index, output) # always a parameter list
+    index = compile_parameter_list(tokens, index, output) # always a parameter list
 
     index, token, content, tag = advance(tokens, index)
     output.append(token) # )
 
     index, token, content, tag = advance(tokens, index)
-    compile_subroutine_body(token, index, output) # always a SRB
+    index = compile_subroutine_body(tokens, index, output) # always a SRB
+
+    return index
+
+def compile_parameter_list(tokens, index, output):
+    output.append('<parameterList>')
+
+    token, content, tag = get_token_data(tokens, index)
+    
+    if content == ')':
+        output.append("</parameterList>")
+        return index # empty parameterList
+
+
+    while True:
+        output.append(token) # type, if not empty
+
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # varName
+    
+        index, token, content, tag = advance(tokens, index)
+
+        if content != ',':
+            break
+
+    output.append("</parameterList>")
+
+    return index
+
+def compile_subroutine_body(tokens, index, output):
+    # output.append('<subroutineBody>')
+
+    # token, content, tag = get_token_data(tokens, index)
+    # output.append(token) # {
+
+    # index, token, content, tag = advance(tokens, index)
+
+    # while content == 'var':
+        # index = compile_var_dec(tokens, index, output)
 
     return index
