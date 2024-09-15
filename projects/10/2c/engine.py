@@ -40,9 +40,7 @@ def compile_class(tokens):
     index = 0
     output = []
 
-
     token, content, tag = get_token_data(tokens, index)
-
 
     # first token will always be class
     if content == 'class':
@@ -133,7 +131,7 @@ def compile_subroutine(tokens, index, output):
     index, token, content, tag = advance(tokens, index)
     index = compile_parameter_list(tokens, index, output) # always a parameter list
 
-    index, token, content, tag = advance(tokens, index)
+    token, content, tag = get_token_data(tokens, index)
     output.append(token) # )
 
     index, token, content, tag = advance(tokens, index)
@@ -148,11 +146,11 @@ def compile_parameter_list(tokens, index, output):
     
     if content == ')':
         output.append("</parameterList>")
+        # output.append(token) # )
         return index # empty parameterList
 
-
     while True:
-        output.append(token) # type, if not empty
+        output.append(token) # type, if not empty list
 
         index, token, content, tag = advance(tokens, index)
         output.append(token) # varName
@@ -160,21 +158,171 @@ def compile_parameter_list(tokens, index, output):
         index, token, content, tag = advance(tokens, index)
 
         if content != ',':
-            break
+            break # no more
+
+        output.append(token) # ,
+        index, token, content, tag = advance(tokens, index)
 
     output.append("</parameterList>")
+    # output.append(token) # )
 
     return index
 
 def compile_subroutine_body(tokens, index, output):
-    # output.append('<subroutineBody>')
+    statements = ['let', 'if', 'while', 'do', 'return']
 
-    # token, content, tag = get_token_data(tokens, index)
-    # output.append(token) # {
+    output.append('<subroutineBody>')
 
-    # index, token, content, tag = advance(tokens, index)
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # {
 
-    # while content == 'var':
-        # index = compile_var_dec(tokens, index, output)
+    index, token, content, tag = advance(tokens, index)
+
+    if content == 'var':
+        # token, content, tag = get_token_data(tokens, index)
+        index = compile_var_dec(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+
+    if content in statements:
+        index = compile_statements(tokens, index, output)
+
+    return index
+
+def compile_var_dec(tokens, index, output):
+    output.append('<varDec>')
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while True:
+        output.append(token) # var
+
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # type
+    
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # varName
+
+        index, token, content, tag = advance(tokens, index)
+
+        if content == ';':
+            break # no more
+
+        output.append(token) # ,
+        index, token, content, tag = advance(tokens, index)
+
+    output.append(token) # ;
+    index, token, content, tag = advance(tokens, index)
+    output.append('</varDec>')
+
+    return index
+
+def compile_statements(tokens, index, output):
+    statements = ['let', 'if', 'while', 'do', 'return']
+
+    output.append('<statements>')
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while content in statements:
+
+        if content == 'let':
+            index = compile_let(tokens, index, output)
+
+        if content == 'if':
+            index = compile_if(tokens, index, output)
+
+        if content == 'while':
+            index = compile_while(tokens, index, output)
+
+        if content == 'do':
+            index = compile_do(tokens, index, output)
+
+        if content == 'return':
+            index = compile_return(tokens, index, output)
+
+        index, token, content, tag = advance(tokens, index)
+
+    output.append('</statements>')
+    return index
+
+def compile_let(tokens, index, output):
+    output.append('<letStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # let 
+    
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # varName
+
+    index, token, content, tag = advance(tokens, index)
+
+    if content == '[':
+        output.append(token) # [
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+
+    if content == '=':
+        output.append(token) # =
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+        
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # ;
+
+    output.append('</letStatement>')
+    return index
+
+def compile_if(tokens, index, output):
+    return index
+
+def compile_while(tokens, index, output):
+    return index
+
+def compile_do(tokens, index, output):
+    output.append('<doStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # do 
+    
+    index, token, content, tag = advance(tokens, index)
+    index = compile_subroutine_call(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # ; 
+
+    index, token, content, tag = advance(tokens, index)
+
+    output.append('</doStatement>')
+    return index
+
+def compile_return(tokens, index, output):
+    return index
+
+def compile_expression(tokens, index, output):
+    output.append('<expression>')
+    output.append('<term>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token)
+    index, token, content, tag = advance(tokens, index)
+
+    output.append('</term>')
+    output.append('</expression>')
+    return index
+
+def compile_subroutine_call(tokens, index, output):
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # subroutineName
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression_list(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
 
     return index
