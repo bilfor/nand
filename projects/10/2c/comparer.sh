@@ -2,10 +2,9 @@
 
 # Define the commands to run
 commands=(
-    "../../../tools/TextComparer.sh ../Square/SquareT.xml ../Square/SquareTstock.xml"
-    "../../../tools/TextComparer.sh ../Square/SquareGameT.xml ../Square/SquareGameTstock.xml"
-    "../../../tools/TextComparer.sh ../Square/MainT.xml ../Square/MainTstock.xml"
-    "../../../tools/TextComparer.sh ../ArrayTest/MainT.xml ../../../stock/nand2tetris/projects/10/ArrayTest/MainT.xml"
+    "../../../tools/TextComparer.sh ../ExpressionLessSquare/SquareC.xml ../ExpressionLessSquare/Square.xml"
+    "../../../tools/TextComparer.sh ../ExpressionLessSquare/SquareGameC.xml ../ExpressionLessSquare/SquareGame.xml"
+    "../../../tools/TextComparer.sh ../ExpressionLessSquare/MainC.xml ../ExpressionLessSquare/Main.xml"
 )
 
 # Loop through each command

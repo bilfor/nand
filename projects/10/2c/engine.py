@@ -29,12 +29,33 @@ def get_token_data(tokens, index):
     tag = get_tag(token)
     return token, content, tag 
 
+def add_indentation(output):
+    indented_output = []
+    indent_level = 0
+
+    for line in output:
+        if line.startswith("</"):  # Closing tag decreases indentation
+            indent_level -= 1
+
+        indented_output.append("  " * indent_level + line)
+
+        if line.startswith("<") and not line.startswith("</") and not line.endswith("/>"):  # Opening tag increases indentation
+            indent_level += 1
+
+    return indented_output
+
 def constructor(directory):
     for file_path in glob.glob(os.path.join(directory, '*T.xml')):
         with open(file_path, 'r') as file:
             tokens = [line.strip() for line in file]
             tokens = tokens[1:-1]
-            compile_class(tokens)
+            output = compile_class(tokens)
+            indented = add_indentation(output)
+
+            output_fp = file_path[:-5] + 'C.xml'
+            with open(output_fp, 'w') as file:
+                for item in output:
+                    file.write(item + '\n')
 
 def compile_class(tokens):
     index = 0
@@ -82,6 +103,7 @@ def compile_class(tokens):
     print('\n\n')
     print_list(output)
     print('\n\n')
+
     return output 
 
 def compile_class_var_dec(tokens, index, output):
@@ -137,6 +159,8 @@ def compile_subroutine(tokens, index, output):
     index, token, content, tag = advance(tokens, index)
     index = compile_subroutine_body(tokens, index, output) # always a SRB
 
+    output.append('</subroutineDec>')
+
     return index
 
 def compile_parameter_list(tokens, index, output):
@@ -186,6 +210,11 @@ def compile_subroutine_body(tokens, index, output):
 
     if content in statements:
         index = compile_statements(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
+
+    output.append('</subroutineBody>')
 
     return index
 
@@ -243,6 +272,8 @@ def compile_statements(tokens, index, output):
 
         index, token, content, tag = advance(tokens, index)
 
+        print(content)
+
     output.append('</statements>')
     return index
 
@@ -275,6 +306,48 @@ def compile_let(tokens, index, output):
     return index
 
 def compile_if(tokens, index, output):
+    output.append('<ifStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # if
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # {
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_statements(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
+
+    index, token, content, tag = advance(tokens, index)
+    
+    if content == 'else':
+        output.append(token) # else
+    
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # {
+
+        index, token, content, tag = advance(tokens, index)
+        index = compile_statements(tokens, index, output)
+
+        token, content, tag = get_token_data(tokens, index)
+        output.append(token) # }
+
+        index, token, content, tag = advance(tokens, index)
+
+    index -= 1
+
+    output.append('</ifStatement>')
     return index
 
 def compile_while(tokens, index, output):
@@ -292,12 +365,27 @@ def compile_do(tokens, index, output):
     token, content, tag = get_token_data(tokens, index)
     output.append(token) # ; 
 
-    index, token, content, tag = advance(tokens, index)
+    # index, token, content, tag = advance(tokens, index)
 
     output.append('</doStatement>')
     return index
 
 def compile_return(tokens, index, output):
+    output.append('<returnStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # return
+
+    index, token, content, tag = advance(tokens, index)
+
+    if content != ';':
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+
+    output.append(token) # ;
+
+    # index, token, content, tag = advance(tokens, index)
+    output.append('</returnStatement>')
     return index
 
 def compile_expression(tokens, index, output):
@@ -317,6 +405,15 @@ def compile_subroutine_call(tokens, index, output):
     output.append(token) # subroutineName
 
     index, token, content, tag = advance(tokens, index)
+
+    if content == '.':
+        output.append(token) # .
+
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # subroutineName
+
+        index, token, content, tag = advance(tokens, index)
+ 
     output.append(token) # (
 
     index, token, content, tag = advance(tokens, index)
@@ -324,5 +421,19 @@ def compile_subroutine_call(tokens, index, output):
 
     token, content, tag = get_token_data(tokens, index)
     output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+
+    return index
+
+def compile_expression_list(tokens, index, output):
+    output.append('<expressionList>')
+
+    token, content, tag = get_token_data(tokens, index)
+    
+    if content != ')':
+        index = compile_expression(tokens, index, output)
+
+    output.append('</expressionList>')
 
     return index
