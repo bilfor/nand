@@ -96,9 +96,8 @@ def compile_class(tokens):
 
         index, token, content, tag = advance(tokens, index)
 
-    if tokens[index] == "}":
-        output.append("<symbol> } </symbol>")
-        output.append("</class>")
+    output.append("<symbol> } </symbol>")
+    output.append("</class>")
        
     print('\n\n')
     print_list(output)
@@ -202,9 +201,14 @@ def compile_subroutine_body(tokens, index, output):
 
     index, token, content, tag = advance(tokens, index)
 
-    if content == 'var':
-        # token, content, tag = get_token_data(tokens, index)
-        index = compile_var_dec(tokens, index, output)
+    while True:
+        token, content, tag = get_token_data(tokens, index)
+
+        if content == 'var':
+            index = compile_var_dec(tokens, index, output)
+        
+        else:
+            break
 
     token, content, tag = get_token_data(tokens, index)
 
@@ -223,18 +227,20 @@ def compile_var_dec(tokens, index, output):
 
     token, content, tag = get_token_data(tokens, index)
 
-    while True:
-        output.append(token) # var
+    output.append(token) # var
 
-        index, token, content, tag = advance(tokens, index)
-        output.append(token) # type
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # type
+
+    index, token, content, tag = advance(tokens, index)
     
-        index, token, content, tag = advance(tokens, index)
+    while True:
+
         output.append(token) # varName
 
         index, token, content, tag = advance(tokens, index)
 
-        if content == ';':
+        if content != ',':
             break # no more
 
         output.append(token) # ,
@@ -271,8 +277,6 @@ def compile_statements(tokens, index, output):
             index = compile_return(tokens, index, output)
 
         index, token, content, tag = advance(tokens, index)
-
-        print(content)
 
     output.append('</statements>')
     return index
@@ -351,6 +355,34 @@ def compile_if(tokens, index, output):
     return index
 
 def compile_while(tokens, index, output):
+    output.append('<whileStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # while 
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # {
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_statements(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
+
+    index, token, content, tag = advance(tokens, index)
+    
+    index -= 1
+
+    output.append('</whileStatement>')
     return index
 
 def compile_do(tokens, index, output):
@@ -433,6 +465,18 @@ def compile_expression_list(tokens, index, output):
     
     if content != ')':
         index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while True:
+        if content == ',':
+            output.append(token) # ,
+            index, token, content, tag = advance(tokens, index)
+            index = compile_expression(tokens, index, output)
+            token, content, tag = get_token_data(tokens, index)
+        
+        else:
+            break
 
     output.append('</expressionList>')
 
