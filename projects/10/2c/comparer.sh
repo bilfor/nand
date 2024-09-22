@@ -2,9 +2,9 @@
 
 # Define the commands to run
 commands=(
-    "../../../tools/TextComparer.sh ../ExpressionLessSquare/SquareC.xml ../ExpressionLessSquare/Square.xml"
-    "../../../tools/TextComparer.sh ../ExpressionLessSquare/SquareGameC.xml ../ExpressionLessSquare/SquareGame.xml"
-    "../../../tools/TextComparer.sh ../ExpressionLessSquare/MainC.xml ../ExpressionLessSquare/Main.xml"
+    "../../../tools/TextComparer.sh ../Square/SquareC.xml ../Square/Square.xml"
+    "../../../tools/TextComparer.sh ../Square/SquareGameC.xml ../Square/SquareGame.xml"
+    "../../../tools/TextComparer.sh ../Square/MainC.xml ../Square/Main.xml"
 )
 
 # Loop through each command

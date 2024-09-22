@@ -13,6 +13,15 @@ def advance(tokens, index):
 def current_token(tokens, index):
     return tokens[index]
 
+def next_token(tokens, index):
+    return tokens[index + 1]
+
+def lookahead(tokens, index):
+    token = next_token(tokens, index)
+    content = get_content(token)
+    tag = get_tag(token)
+    return token, content, tag 
+
 def get_tag(token):
     start_tag_start = token.find("<") + 1
     start_tag_end = token.find(">", start_tag_start)
@@ -294,17 +303,25 @@ def compile_let(tokens, index, output):
 
     if content == '[':
         output.append(token) # [
+        index, token, content, tag = advance(tokens, index)
         index = compile_expression(tokens, index, output)
         token, content, tag = get_token_data(tokens, index)
+        output.append(token) # ]
+        index, token, content, tag = advance(tokens, index)
 
-    if content == '=':
-        output.append(token) # =
+    output.append(token) # =
 
     index, token, content, tag = advance(tokens, index)
     index = compile_expression(tokens, index, output)
         
     token, content, tag = get_token_data(tokens, index)
-    output.append(token) # ;
+
+    if token == ';':
+        output.append(token) # ;
+    else:
+        output.append('MAYDAY')
+        output.append(token)
+        output.append('MAYDAY')
 
     output.append('</letStatement>')
     return index
@@ -421,15 +438,69 @@ def compile_return(tokens, index, output):
     return index
 
 def compile_expression(tokens, index, output):
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=']
+    unops = ['-', '~']
+
     output.append('<expression>')
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while True:
+        index = compile_term(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+
+        if content not in ops:
+            break 
+
+        else:
+            output.append(token) # op
+            index, token, content, tag = advance(tokens, index)
+             
+    index, token, content, tag = advance(tokens, index)
+
+    output.append('</expression>')
+    return index
+
+def compile_term(tokens, index, output):
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=']
+    unops = ['-', '~']
+
     output.append('<term>')
 
     token, content, tag = get_token_data(tokens, index)
-    output.append(token)
-    index, token, content, tag = advance(tokens, index)
+
+    if content in unops:
+        output.append(token) # unop
+        index, token, content, tag = advance(tokens, index)
+
+    if 'Constant' in tag or 'keyword' in tag:
+        output.append(token)
+        index, token, content, tag = advance(tokens, index)
+
+    elif content == '(':
+        output.append(token) # (
+        index, token, content, tag = advance(tokens, index)
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+        output.append(token) # )
+        index, token, content, tag = advance(tokens, index)
+
+    elif tag == 'identifier':
+        n_token, n_content, n_tag = lookahead(tokens, index)
+
+        if n_content == '[': # array entry
+            output.append(token) # identifier 
+            index, token, content, tag = advance(tokens, index)
+            output.append(token) # [
+            index, token, content, tag = advance(tokens, index)
+            index = compile_expression(tokens, index, output)
+            token, content, tag = get_token_data(tokens, index)
+            output.append(token) # ]
+
+        if n_content == '.': # subroutine call
+            index = compile_subroutine_call(tokens, index, output)
 
     output.append('</term>')
-    output.append('</expression>')
     return index
 
 def compile_subroutine_call(tokens, index, output):
