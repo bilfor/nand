@@ -83,6 +83,7 @@ def compile_class(tokens):
         print('***************************************')
         print(f"********** CLASS: {content} **********")
         print('***************************************')
+        print('\n')
         output.append(token)
         index, token, content, tag = advance(tokens, index)
 
@@ -108,9 +109,9 @@ def compile_class(tokens):
     output.append("<symbol> } </symbol>")
     output.append("</class>")
        
-    print('\n\n')
-    print_list(output)
-    print('\n\n')
+    # print('\n\n')
+    # print_list(output)
+    # print('\n\n')
 
     return output 
 
@@ -316,14 +317,10 @@ def compile_let(tokens, index, output):
         
     token, content, tag = get_token_data(tokens, index)
 
-    if token == ';':
-        output.append(token) # ;
-    else:
-        output.append('MAYDAY')
-        output.append(token)
-        output.append('MAYDAY')
+    output.append(token) # ;
 
     output.append('</letStatement>')
+
     return index
 
 def compile_if(tokens, index, output):
@@ -438,7 +435,10 @@ def compile_return(tokens, index, output):
     return index
 
 def compile_expression(tokens, index, output):
-    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=']
+
+    print('C_E ENTRY ON: ' + tokens[index] + '\n')
+
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=', '&lt;', '&gt;', '&amp;']
     unops = ['-', '~']
 
     output.append('<expression>')
@@ -456,13 +456,16 @@ def compile_expression(tokens, index, output):
             output.append(token) # op
             index, token, content, tag = advance(tokens, index)
              
-    index, token, content, tag = advance(tokens, index)
+    # index, token, content, tag = advance(tokens, index)
 
     output.append('</expression>')
     return index
 
 def compile_term(tokens, index, output):
-    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=']
+
+    print('C_T ENTRY ON: ' + tokens[index] + '\n')
+
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=', '&lt;', '&gt;', '&amp;']
     unops = ['-', '~']
 
     output.append('<term>')
@@ -472,8 +475,9 @@ def compile_term(tokens, index, output):
     if content in unops:
         output.append(token) # unop
         index, token, content, tag = advance(tokens, index)
+        index = compile_term(tokens, index, output)
 
-    if 'Constant' in tag or 'keyword' in tag:
+    elif 'Constant' in tag or 'keyword' in tag:
         output.append(token)
         index, token, content, tag = advance(tokens, index)
 
@@ -496,9 +500,15 @@ def compile_term(tokens, index, output):
             index = compile_expression(tokens, index, output)
             token, content, tag = get_token_data(tokens, index)
             output.append(token) # ]
+            index, token, content, tag = advance(tokens, index)
 
-        if n_content == '.': # subroutine call
+        elif n_content == '.': # subroutine call
             index = compile_subroutine_call(tokens, index, output)
+
+        else:
+            output.append(token) # identifier
+            index, token, content, tag = advance(tokens, index)
+
 
     output.append('</term>')
     return index
