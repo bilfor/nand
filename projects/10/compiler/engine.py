@@ -1,641 +1,564 @@
-from lxml import etree
-import re
+import os
+import glob
 
-def find_next(tree, symbol, start):
-    index = start
-    for item in tree[start:]:
-        if get_text(item) == symbol:
-            return index + 1
-        else:
-            index += 1
+def print_list(input_list):
+    for item in input_list:
+        print(item)
 
-def sub_find_next(tree, symbol, start):
-    index = start
-    for item in tree[start:]:
-        if get_text(item) == symbol:
-            new_start = start + index + 1
-            ans = find_next(tree, symbol, new_start)
-            if ans is not None:
-                return ans
-            else:
-                return index
-        else:
-            index += 1
+def advance(tokens, index):
+    index = index + 1
+    token, content, tag = get_token_data(tokens, index)
+    return index, token, content, tag
 
-def get_parent(tree, index):
-    i = 0
-    stack = []
-    for element in tree:
-        if element.count('<') == 1 and element.count('/') == 1:
-            popped = stack.pop()
-        if element.count('<') == 1 and element.count('/') == 0:
-            stack.append(element)
-        if index == i:
-            if stack:
-                return stack.pop()
-            else:
-                return 'class'
+def current_token(tokens, index):
+    return tokens[index]
 
-        i += 1
+def next_token(tokens, index):
+    return tokens[index + 1]
 
-def get_parent_list(tree, index):
-    i = 0
-    stack = []
-    for element in tree:
-        if element.count('<') == 1 and element.count('/') == 1:
-            try: 
-                popped = stack.pop()
-            except IndexError:
-                return 'class'
-        if element.count('<') == 1 and element.count('/') == 0:
-            stack.append(element)
-        if index == i:
-            if stack:
-                return stack
-            else:
-                return 'class'
+def lookahead(tokens, index):
+    token = next_token(tokens, index)
+    content = get_content(token)
+    tag = get_tag(token)
+    return token, content, tag 
 
-        i += 1
+def get_tag(token):
+    start_tag_start = token.find("<") + 1
+    start_tag_end = token.find(">", start_tag_start)
+    return token[start_tag_start:start_tag_end]
 
-def find_match(tags, start_index):
-    opening_tag = tags[start_index]
-    nested_level = 0
+def get_content(token):
+    start_tag_end = token.find(">") + 1
+    end_tag_start = token.rfind("<")
+    return token[start_tag_end:end_tag_start]
 
-    for i in range(start_index, len(tags)):
-        tag = tags[i]
-        if "<symbol> { </symbol>" in tag:
-            nested_level += 1
-        elif "<symbol> } </symbol>" in tag:
-            nested_level -= 1
-            if nested_level == 0:
-                return i  # Found the matching closing tag
+def get_token_data(tokens, index):
+    token = current_token(tokens, index)
+    content = get_content(token)
+    tag = get_tag(token)
+    return token, content, tag 
 
-    # If no matching closing tag is found
-    return None
+def add_indentation(output):
+    indented_output = []
+    indent_level = 0
 
-def substring_in_list(substring, string_list):
-    for string in string_list:
-        if substring in string:
-            return True
-    return False
+    for line in output:
+        if line.startswith("</"):  # Closing tag decreases indentation
+            indent_level -= 1
 
-def triage(text, index, tree):
-    insertion = 'none' 
+        indented_output.append("  " * indent_level + line)
 
-    parent = get_parent(tree, index)
-    parent_list = get_parent_list(tree, index)
+        if line.startswith("<") and not line.startswith("</") and not line.endswith("/>"):  # Opening tag increases indentation
+            indent_level += 1
 
-    if (text == ' static ' or text == ' field '):
-        tree.insert(index, '<classVarDec>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</classVarDec>')
-        insertion = 'before'
+    return indented_output
 
-    elif (text == ' constructor ' or text == ' function ' or text == ' method ' ):
-        opening = find_next(tree, ' { ', index) - 1
-        closing = find_match(tree, opening)
-        tree.insert(index, '<subroutineDec>')
-        tree.insert(closing+2, '</subroutineDec>')
-        insertion = 'before'
+def constructor(directory):
+    for file_path in glob.glob(os.path.join(directory, '*T.xml')):
+        with open(file_path, 'r') as file:
+            tokens = [line.strip() for line in file]
+            tokens = tokens[1:-1]
+            output = compile_class(tokens)
+            indented = add_indentation(output)
 
-    elif (text == ' ( ' and 'ifStatement' not in parent and 'while' not in parent):
-        tree.insert(index + 1, '<parameterList>')
-        final_element_index = find_next(tree, ' ) ', index)
-        tree.insert(final_element_index - 1, '</parameterList>')
-        insertion = 'after'
+            output_fp = file_path[:-5] + 'C.xml'
+            with open(output_fp, 'w') as file:
+                for item in output:
+                    file.write(item + '\n')
 
-    elif (parent == '<subroutineDec>' and text == ' { '):
-        closing = find_match(tree, index)
-        tree.insert(index, '<subroutineBody>')
-        tree.insert(closing+2, '</subroutineBody>')
-        insertion = 'before'
-
-    elif (text == ' let '):
-        tree.insert(index, '<letStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</letStatement>')
-        insertion = 'before'
-
-    elif (text == ' do '):
-        tree.insert(index, '<doStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</doStatement>')
-        insertion = 'before'
-
-    elif (text == ' return '):
-        tree.insert(index, '<returnStatement>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</returnStatement>')
-        insertion = 'before'
-
-    elif (text == ' if '):
-        opening = find_next(tree, ' { ', index) - 1
-        closing = find_match(tree, opening)
-        tree.insert(index, '<ifStatement>')
-        if 'else' in tree[closing + 2]:
-            opening = find_next(tree, ' { ', closing) - 1
-            closing = find_match(tree, opening)
-            tree.insert(closing + 1, '</ifStatement>')
-        else:
-            tree.insert(closing + 2, '</ifStatement>')
-        insertion = 'before'
-
-    elif (text == ' while '):
-        opening = find_next(tree, ' { ', index) - 1
-        closing = find_match(tree, opening)
-        tree.insert(index, '<whileStatement>')
-        tree.insert(closing+2, '</whileStatement>')
-        insertion = 'before'
-
-    elif (text == ' var '):
-        tree.insert(index, '<varDec>')
-        final_element_index = find_next(tree, ' ; ', index)
-        tree.insert(final_element_index, '</varDec>')
-        insertion = 'before'
-
-    return insertion
-
-def get_text(input_string):
-    # Define a regular expression pattern to match the text between <tag> and </tag>
-    pattern = r'<[^>]+>([^<]+)</[^>]+>'
-    
-    # Search for the pattern in the input string
-    match = re.search(pattern, input_string)
-    
-    # If a match is found, return the text, otherwise return None
-    if match:
-        return match.group(1)
-    else:
-        return None
-  
-def group_lets(tree):
+def compile_class(tokens):
     index = 0
-    statements = ['<letStatement>', '<ifStatement>', '<doStatement>', '<returnStatement>', '<whileStatement>']
-    closing_statements = ['</letStatement>', '</ifStatement>', '</doStatement>', '</returnStatement>', '</whileStatement>']
-    prev_opening = False
-    prev_closing = False
-    flag = False
+    output = []
 
-    for element in tree:
-        opening = any(substring in element for substring in statements)
-        closing = any(substring in element for substring in closing_statements)
+    token, content, tag = get_token_data(tokens, index)
 
-        if flag:
-            flag = False
-            continue
+    # first token will always be class
+    if content == 'class':
+        output.append('<class>')
+        output.append(token)
+        index, token, content, tag = advance(tokens, index)
+        
+    # second token will always be class name
+    if tag == 'identifier':
+        print('***************************************')
+        print(f"********** CLASS: {content} **********")
+        print('***************************************')
+        print('\n')
+        output.append(token)
+        index, token, content, tag = advance(tokens, index)
 
-        if opening and not prev_closing: 
-            tree.insert(index, '<statements>')
-            index += 1
-            flag = True
+    # third token will always be '{'
+    if content == '{':
+        output.append(token)
+        index, token, content, tag = advance(tokens, index)
 
-        if prev_closing and not opening:
-            tree.insert(index, '</statements>')
-            index += 1
-            flag = True
-            
-        index += 1
-        prev_opening = opening
-        prev_closing = closing
+    while content != '}':
+        #print(f"Processing token: {token}")
 
-        if flag:
-            prev_opening = False
-            prev_closing = False
+        if content in {"static", "field"}:
+            index = compile_class_var_dec(tokens, index, output)
 
-def wrap(tree, index, content):
-    tree.insert(index, '<' + content + '>')
-    tree.insert(index+2, '</' + content + '>')
+        elif content in {"constructor", "function", "method"}:
+            index = compile_subroutine(tokens, index, output)
 
-def expressions(tree):
-    statements = ['<doStatement>', '<letStatement>', '<ifStatement>', '<returnStatement>', '<whileStatement>']
-    closing_statements = ['</doStatement>', '</letStatement>', '</ifStatement>', '</returnStatement>', '</whileStatement>']
-    op_list = [' + ', ' - ', ' * ', ' / ', ' & ', ' | ', ' < ', ' > ', ' = ']
-    index = 0
-    flag = False
-    insertion_count = 0
-    insertion_flag = False
-    last3 = None
-    last2 = None
-    last = None
+        #else:
+            #print(f"Unexpected token: {tokens[index]}")
 
-    for element in tree:
+        index, token, content, tag = advance(tokens, index)
 
-        if insertion_count > 0:
-            insertion_count -= 1
-            continue
+    output.append("<symbol> } </symbol>")
+    output.append("</class>")
+       
+    # print('\n\n')
+    # print_list(output)
+    # print('\n\n')
 
-        opening = any(substring in element for substring in statements)
-        closing = any(substring in element for substring in closing_statements)
+    return output 
 
-        parent_list = get_parent_list(tree, index)
-        if '<term>' in parent_list:
-            if get_text(element) in op_list: 
-                tree.insert(index, '</term>')
-                insertion_count += 1
-                index += 1
+def compile_class_var_dec(tokens, index, output):
+    output.append('<classVarDec>')
 
-        if flag:
-            if parent == '<ifStatement>':
-                if '(' in last:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if ')' in element:
-                    tree.insert(index, '</expression>')
-                    tree.insert(index, '</term>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if '{' in last and '}' in element:
-                    tree.insert(index, '</statements>')
-                    tree.insert(index, '<statements>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-            if parent == '<whileStatement>':
-                if '(' in last:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if ')' in element:
-                    tree.insert(index, '</expression>')
-                    tree.insert(index, '</term>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-            if parent == '<letStatement>':
-                if '[' in last:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                if ']' in element:
-                    tree.insert(index, '</expression>')
-                    tree.insert(index, '</term>')
-                    insertion_count += 2
-                    index += 2
-                if '=' in last:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                if ';' in last:
-                    tree.insert(index-1, '</expression>')
-                    tree.insert(index-1, '</term>')
-                    index += 2
-                    insertion_count += 2
-            if parent == '<doStatement>':
-                tree[index] = element.replace('parameter', 'expression')
-                if 'List' in last and not '/' in last and get_text(element):
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if ')' in last and insertion_flag and '<parameterList>' not in last2 and 'parameterList' not in last3:
-                    tree.insert(index-2, '</expression>')
-                    tree.insert(index-2, '</term>')
-                    index += 2
-                    insertion_count += 2
-                    insertion_flag = False
-                if ',' in element:
-                    tree.insert(index, '</expression>')
-                    tree.insert(index, '</term>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if ',' in last and 'identifier' in element:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-      
-            if parent == '<returnStatement>':
-                if ' return ' in last and not ' ; ' in element:
-                    tree.insert(index, '<term>')
-                    tree.insert(index, '<expression>')
-                    insertion_count += 2
-                    index += 2
-                    insertion_flag = True
-                if ';' in element and insertion_flag and not 'return' in last:
-                    tree.insert(index, '</expression>')
-                    tree.insert(index, '</term>')
-                    index += 2
-                    insertion_count += 2
-                    insertion_flag = False
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # either field or static
 
-        if opening:
-            flag = True
-            parent = element
-        if closing:
-            flag = False
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # type
 
-        last3 = last2
-        last2 = last
-        last = element
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # varName
 
-        index += 1
+    index, token, content, tag = advance(tokens, index)
 
-def rename_lists(tree):
-    index = 0
+    # handle additional varNames
+    while content == ",":
+        output.append(token) # comma
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # varName
+        index, token, content, tag = advance(tokens, index)
 
-    for element in tree:
-        if 'parameterList' in element:
-            parent_list = get_parent_list(tree, index)
-            #if '<expression>' in parent_list and '<term>' in parent_list:
-                #tree[index] = element.replace('parameterList', 'expression')
-            if '<expression>' in parent_list:
-                tree[index] = element.replace('parameter', 'expression')
-        index += 1
+    # end of classVarDec
+    if content == ";":
+        output.append(token)
+    
+    output.append("</classVarDec>")
 
-def replace_first_and_last(lst, x, y):
-    if len(lst) >= 1:
-        lst[0] = x
-    if len(lst) >= 2:
-        lst[-1] = y
-    return lst
+    return index
 
-def get_expression_elements(tree):
-    new_tree = []
-    for element in tree:
-        if 'term' not in element:
-            new_tree.append(element)
+def compile_subroutine(tokens, index, output):
+    output.append('<subroutineDec>')
 
-    tree = new_tree
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # constructor, function, or method
 
-def mark_on_condition(tree):
-    for i in range(len(tree)):
-        parent_list = get_parent_list(tree, i)
-        if '<expression>' in parent_list:
-            tree[i] = tree[i].upper()
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # void or type
 
-def compile_expressions(statements):
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # subroutineName 
 
-    op_list = [' + ', ' - ', ' * ', ' / ', ' & ', ' | ', ' < ', ' > ', ' = ']
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
 
-    processed_statements = []
-    inside_expression = False
-    term_open = False
-    last = ''
-    last2 = ''
-    unary_condition = False
-    inside_eList = False
-    tilde_flag = False
-    tilde_term_count = 0
-    amp_term = False
-    wrap_flag = 0
+    index, token, content, tag = advance(tokens, index)
+    index = compile_parameter_list(tokens, index, output) # always a parameter list
 
-    for statement in statements:
-        #if len(processed_statements) > 0 and '/term' in processed_statements[-1]:
-        #    term_open = False
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
 
-        wrap_flag -= 1
-        if wrap_flag < 0:
-            wrap_flag = 0
+    index, token, content, tag = advance(tokens, index)
+    index = compile_subroutine_body(tokens, index, output) # always a SRB
 
-        if "<expression>" in statement:
-            processed_statements.append(statement)
-            processed_statements.append("<term>")
-            inside_expression = True
-            term_open = True
+    output.append('</subroutineDec>')
 
-        elif '&' in last and 'integerConstant' in statement:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #a
-            wrap_flag = 2
+    return index
 
-        elif '&' in statement and 'identifier' in last:
-            processed_statements.append("</term>") #b
-            processed_statements.append(statement)
+def compile_parameter_list(tokens, index, output):
+    output.append('<parameterList>')
 
-        elif '&' in last and '(' in statement:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            amp_term = True
+    token, content, tag = get_token_data(tokens, index)
+    
+    if content == ')':
+        output.append("</parameterList>")
+        # output.append(token) # )
+        return index # empty parameterList
 
-        elif 'expression' in statement and ')' in last and amp_term:
-            processed_statements.append("</term>") #c
-            processed_statements.append(statement)
-            amp_term = False
+    while True:
+        output.append(token) # type, if not empty list
 
-        elif 'symbol' in last and '&' in statement:
-            processed_statements.append("</term>") #d
-            processed_statements.append(statement)
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # varName
+    
+        index, token, content, tag = advance(tokens, index)
 
-        elif term_open and '</parameterList>' in statement and '<parameterList>' in last:
-            processed_statements[-1] = '<expressionList>'
-            processed_statements.append("</expressionList>")
+        if content != ',':
+            break # no more
 
-        elif inside_expression and not inside_eList and '=' in last and 'integerConstant' in statement:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #e
+        output.append(token) # ,
+        index, token, content, tag = advance(tokens, index)
 
-        elif '+' in last and ('identifier' in statement or 'integerConstant' in statement):
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #f
+    output.append("</parameterList>")
+    # output.append(token) # )
 
-        elif "integerConstant" in statement and "expressionList" in last:
-            inside_eList = True
-            processed_statements.append("<expression>")
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #g
-            processed_statements.append("</expression>")
+    return index
 
-        elif inside_eList and 'symbol' in last and 'integerConstant' in statement:
-            processed_statements.append("<expression>")
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #h
-            processed_statements.append("</expression>")
+def compile_subroutine_body(tokens, index, output):
+    statements = ['let', 'if', 'while', 'do', 'return']
 
-        elif ('|' in last or '~' in last) and 'identifier' in statement:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #i
+    output.append('<subroutineBody>')
 
-        elif "</expression>" in statement:
-            if term_open:
-                if wrap_flag != 1:
-                  processed_statements.append("</term>") #j
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # {
 
-                term_open = False
+    index, token, content, tag = advance(tokens, index)
 
-            if ']' in last:
-                processed_statements.append('</term>') #k
+    while True:
+        token, content, tag = get_token_data(tokens, index)
 
-            processed_statements.append(statement)
+        if content == 'var':
+            index = compile_var_dec(tokens, index, output)
+        
+        else:
+            break
 
-            if unary_condition:
-                processed_statements.append('</term>') #l
+    token, content, tag = get_token_data(tokens, index)
 
-            inside_expression = False
+    if content in statements:
+        index = compile_statements(tokens, index, output)
 
-        elif any(op in statement for op in op_list):
-            if term_open:
-                processed_statements.append("</term>") #m
-                term_open = False
-            processed_statements.append(statement)
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
 
-        elif "(" in statement and inside_expression and not term_open:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            unary_condition = True
+    output.append('</subroutineBody>')
 
-        elif ")" in statement and unary_condition:
-            #processed_statements.append("</term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #n
-            unary_condition = False
+    return index
 
-        elif "(" in statement and '~' in last:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            tilde_flag = True
+def compile_var_dec(tokens, index, output):
+    output.append('<varDec>')
 
-        elif ")" in statement and tilde_flag:
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #o
-            processed_statements.append("</term>") #p
-            tilde_flag = False
+    token, content, tag = get_token_data(tokens, index)
 
+    output.append(token) # var
 
-        elif '-' in last and 'integerConstant' in statement and not unary_condition:
-            processed_statements.append("<term>")
-            processed_statements.append(statement)
-            processed_statements.append("</term>") #q
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # type
 
-        elif ',' in last and '(' in statement:
-            processed_statements.append("flag")
-            processed_statements.append(statement)
+    index, token, content, tag = advance(tokens, index)
+    
+    while True:
+
+        output.append(token) # varName
+
+        index, token, content, tag = advance(tokens, index)
+
+        if content != ',':
+            break # no more
+
+        output.append(token) # ,
+        index, token, content, tag = advance(tokens, index)
+
+    output.append(token) # ;
+    index, token, content, tag = advance(tokens, index)
+    output.append('</varDec>')
+
+    return index
+
+def compile_statements(tokens, index, output):
+    statements = ['let', 'if', 'while', 'do', 'return']
+
+    output.append('<statements>')
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while content in statements:
+
+        if content == 'let':
+            index = compile_let(tokens, index, output)
+
+        if content == 'if':
+            index = compile_if(tokens, index, output)
+
+        if content == 'while':
+            index = compile_while(tokens, index, output)
+
+        if content == 'do':
+            index = compile_do(tokens, index, output)
+
+        if content == 'return':
+            index = compile_return(tokens, index, output)
+
+        index, token, content, tag = advance(tokens, index)
+
+    output.append('</statements>')
+    return index
+
+def compile_let(tokens, index, output):
+    output.append('<letStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # let 
+    
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # varName
+
+    index, token, content, tag = advance(tokens, index)
+
+    if content == '[':
+        output.append(token) # [
+        index, token, content, tag = advance(tokens, index)
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+        output.append(token) # ]
+        index, token, content, tag = advance(tokens, index)
+
+    output.append(token) # =
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+        
+    token, content, tag = get_token_data(tokens, index)
+
+    output.append(token) # ;
+
+    output.append('</letStatement>')
+
+    return index
+
+def compile_if(tokens, index, output):
+    output.append('<ifStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # if
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # {
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_statements(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
+
+    index, token, content, tag = advance(tokens, index)
+    
+    if content == 'else':
+        output.append(token) # else
+    
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # {
+
+        index, token, content, tag = advance(tokens, index)
+        index = compile_statements(tokens, index, output)
+
+        token, content, tag = get_token_data(tokens, index)
+        output.append(token) # }
+
+        index, token, content, tag = advance(tokens, index)
+
+    index -= 1
+
+    output.append('</ifStatement>')
+    return index
+
+def compile_while(tokens, index, output):
+    output.append('<whileStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # while 
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+    output.append(token) # {
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_statements(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # }
+
+    index, token, content, tag = advance(tokens, index)
+    
+    index -= 1
+
+    output.append('</whileStatement>')
+    return index
+
+def compile_do(tokens, index, output):
+    output.append('<doStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # do 
+    
+    index, token, content, tag = advance(tokens, index)
+    index = compile_subroutine_call(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # ; 
+
+    # index, token, content, tag = advance(tokens, index)
+
+    output.append('</doStatement>')
+    return index
+
+def compile_return(tokens, index, output):
+    output.append('<returnStatement>')
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # return
+
+    index, token, content, tag = advance(tokens, index)
+
+    if content != ';':
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+
+    output.append(token) # ;
+
+    # index, token, content, tag = advance(tokens, index)
+    output.append('</returnStatement>')
+    return index
+
+def compile_expression(tokens, index, output):
+
+    print('C_E ENTRY ON: ' + tokens[index] + '\n')
+
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=', '&lt;', '&gt;', '&amp;']
+    unops = ['-', '~']
+
+    output.append('<expression>')
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while True:
+        index = compile_term(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+
+        if content not in ops:
+            break 
 
         else:
-            processed_statements.append(statement)
-            if '</expressionList>' in statement:
-                inside_eList = False
+            output.append(token) # op
+            index, token, content, tag = advance(tokens, index)
+             
+    # index, token, content, tag = advance(tokens, index)
 
-        if '<term>' in statement and tilde_flag:
-            tilde_term_count += 1
+    output.append('</expression>')
+    return index
 
-        last2 = last
-        last = statement
+def compile_term(tokens, index, output):
 
-    return processed_statements
+    print('C_T ENTRY ON: ' + tokens[index] + '\n')
 
-def search_tuples(data, value):
-    for first, second in data:
-        if first == value:
-            #print('search_tuples: 0\n')
-            return 0  # Found in the first position
-        elif second == value:
-            #print('search_tuples: 1\n')
-            return 1  # Found in the second position
-    #print('search_tuples: -1\n')
-    return -1  # Value not found
+    ops = ['+', '-', '*', '/', '&', '|', '<', '>', '=', '&lt;', '&gt;', '&amp;']
+    unops = ['-', '~']
 
-def check_consec(lst, a, b):
-    # Ensure the indices are within the bounds of the list
-    if a < 0 or b >= len(lst) or a > b:
-        return False
-    
-    # Iterate through the subset of the list
-    for i in range(a, b):
-        if '-' in lst[i] and '(' in lst[i - 2]:
-            #print('ayi')
-            return True
-        if '|' in lst[i]:
-            #print('ayo')
-            return True
-    
-    return False
+    output.append('<term>')
 
-def find_unary_ops(input_list):
-    opens = []
-    ends = []
-    output_list = []
-    results = []
-    expression_list_count = 0
-    in_exp_list = False
-    fin_unary = False
+    token, content, tag = get_token_data(tokens, index)
 
-    for index, line in enumerate(input_list):
-        if '<expressionList>' in line:
-            opens.append(index)
-        if '</expressionList>' in line:
-            ends.append(index)
+    if content in unops:
+        output.append(token) # unop
+        index, token, content, tag = advance(tokens, index)
+        index = compile_term(tokens, index, output)
 
-    index_tuples = list(zip(opens, ends))
+    elif 'Constant' in tag or 'keyword' in tag:
+        output.append(token)
+        index, token, content, tag = advance(tokens, index)
 
-    for a, b in index_tuples:
-        result = check_consec(input_list, a, b)
-        results.append(result)
+    elif content == '(':
+        output.append(token) # (
+        index, token, content, tag = advance(tokens, index)
+        index = compile_expression(tokens, index, output)
+        token, content, tag = get_token_data(tokens, index)
+        output.append(token) # )
+        index, token, content, tag = advance(tokens, index)
 
-    for index, line in enumerate(input_list):
+    elif tag == 'identifier':
+        n_token, n_content, n_tag = lookahead(tokens, index)
 
-        fin_unary = False
-        key = search_tuples(index_tuples, index)
+        if n_content == '[': # array entry
+            output.append(token) # identifier 
+            index, token, content, tag = advance(tokens, index)
+            output.append(token) # [
+            index, token, content, tag = advance(tokens, index)
+            index = compile_expression(tokens, index, output)
+            token, content, tag = get_token_data(tokens, index)
+            output.append(token) # ]
+            index, token, content, tag = advance(tokens, index)
 
-        if key == 0:
-            in_exp_list = True
-            
-            if results[expression_list_count]:
-                output_list.append('<expression>')
-                output_list.append('<term>')
-            else:
-                output_list.append(line)
+        elif n_content == '.': # subroutine call
+            index = compile_subroutine_call(tokens, index, output)
 
-        elif key != 1 and in_exp_list and results[expression_list_count]:
-            if 'identifier' in line or 'integerConstant' in line:
-                output_list.append('<term>')
-                output_list.append(line)
-                output_list.append('</term>')
-            else:
-                output_list.append(line)
-
-        elif key == 1:
-            if results[expression_list_count]:
-                output_list.append('</term>')
-                output_list.append('</expression>')
-                fin_unary = True
-            else:
-                output_list.append(line)
-
-            expression_list_count += 1
-            in_exp_list = False
-                
         else:
-            output_list.append(line)
+            output.append(token) # varName
+            index, token, content, tag = advance(tokens, index)
 
-    return output_list
 
-def compile(tree):
-    tree = replace_first_and_last(tree, '<class>', '</class>')
+    output.append('</term>')
+    return index
 
-    index = 0
-    insertion = 'none'
+def compile_subroutine_call(tokens, index, output):
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # subroutineName
 
-    for element in tree:
-        if insertion == 'before':
-            index += 1
-            insertion = 'none'
-            continue
-        if insertion == 'after':
-            index += 1
-            insertion = 'before'
-            continue
+    index, token, content, tag = advance(tokens, index)
 
-        text = get_text(element)
-        insertion = triage(text, index, tree)
-        index += 1
+    if content == '.':
+        output.append(token) # .
 
-    expressions(tree)
-    group_lets(tree)
-    rename_lists(tree)
+        index, token, content, tag = advance(tokens, index)
+        output.append(token) # subroutineName
+
+        index, token, content, tag = advance(tokens, index)
+ 
+    output.append(token) # (
+
+    index, token, content, tag = advance(tokens, index)
+    index = compile_expression_list(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+    output.append(token) # )
+
+    index, token, content, tag = advance(tokens, index)
+
+    return index
+
+def compile_expression_list(tokens, index, output):
+    output.append('<expressionList>')
+
+    token, content, tag = get_token_data(tokens, index)
+    
+    if content != ')':
+        index = compile_expression(tokens, index, output)
+
+    token, content, tag = get_token_data(tokens, index)
+
+    while True:
+        if content == ',':
+            output.append(token) # ,
+            index, token, content, tag = advance(tokens, index)
+            index = compile_expression(tokens, index, output)
+            token, content, tag = get_token_data(tokens, index)
+        
+        else:
+            break
+
+    output.append('</expressionList>')
+
+    return index

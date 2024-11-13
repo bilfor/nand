@@ -506,7 +506,7 @@ def compile_term(tokens, index, output):
             index = compile_subroutine_call(tokens, index, output)
 
         else:
-            output.append(token) # identifier
+            output.append(token) # varName
             index, token, content, tag = advance(tokens, index)
 
 
